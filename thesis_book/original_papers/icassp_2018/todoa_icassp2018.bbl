@@ -1,0 +1,101 @@
+\begin{thebibliography}{10}
+
+\bibitem{batstone2016robust}
+Kenneth Batstone, Magnus Oskarsson, and Kalle {\AA}str{\"o}m.
+\newblock Robust time-of-arrival self calibration with missing data and
+  outliers.
+\newblock In {\em Signal Processing Conference (EUSIPCO), 2016 24th European},
+  pages 2370--2374. IEEE, 2016.
+
+\bibitem{chum2003locally}
+Ond{\v{r}}ej Chum, Ji{\v{r}}{\'\i} Matas, and Josef Kittler.
+\newblock Locally optimized ransac.
+\newblock In {\em Joint Pattern Recognition Symposium}, pages 236--243.
+  Springer, 2003.
+
+\bibitem{engels-stewenius-etal-06}
+C.~Engels, H.~Stewenius, and D.~Nister.
+\newblock Bundle adjustment rules.
+\newblock In {\em PCV06}, 2006.
+
+\bibitem{fischler-bolles-ca-81}
+M.~A. Fischler and R.~C. Bolles.
+\newblock Random sample consensus: a paradigm for model fitting with
+  applications to image analysis and automated cartography.
+\newblock {\em Communications of the ACM}, 24(6):381--95, 1981.
+
+\bibitem{geier2015}
+M~Geier.
+\newblock sounddevice 0.3.5.
+\newblock
+  \url{https://python-sounddevice.readthedocs.io/en/0.3.5/_modules/sounddevice.html},
+  2015.
+
+\bibitem{klein2007parallel}
+Georg Klein and David Murray.
+\newblock Parallel tracking and mapping for small ar workspaces.
+\newblock In {\em Mixed and Augmented Reality, 2007. ISMAR 2007. 6th IEEE and
+  ACM International Symposium on}, pages 225--234. IEEE, 2007.
+
+\bibitem{korman2018latent}
+Simon Korman and Roee Litman.
+\newblock Latent ransac.
+\newblock In {\em Proc. Conf. Computer Vision and Pattern Recognition}, pages
+  6693--6702, 2018.
+
+\bibitem{kuang2013stratified}
+Yubin Kuang and Kalle Astrom.
+\newblock Stratified sensor network self-calibration from tdoa measurements.
+\newblock In {\em Signal Processing Conference (EUSIPCO), 2013 Proceedings of
+  the 21st European}, pages 1--5. IEEE, 2013.
+
+\bibitem{kuang-burgess-etal-icassp-13}
+Yubin Kuang, Simon Burgess, Anna Torstensson, and Kalle {\AA}str{\"o}m.
+\newblock A complete characterization and solution to the microphone position
+  self-calibration problem.
+\newblock In {\em The 38th International Conference on Acoustics, Speech, and
+  Signal Processing}, 2013.
+
+\bibitem{larsson2017polynomial}
+Viktor Larsson, Kalle {\AA}str{\"o}m, and Magnus Oskarsson.
+\newblock Polynomial solvers for saturated ideals.
+\newblock In {\em International Conference on Computer Vision (ICCV)}. IEEE,
+  2017.
+
+\bibitem{levenberg1944method}
+Kenneth Levenberg.
+\newblock A method for the solution of certain non-linear problems in least
+  squares.
+\newblock {\em Quarterly of applied mathematics}, 2(2):164--168, 1944.
+
+\bibitem{marquardt1963algorithm}
+Donald~W Marquardt.
+\newblock An algorithm for least-squares estimation of nonlinear parameters.
+\newblock {\em Journal of the society for Industrial and Applied Mathematics},
+  11(2):431--441, 1963.
+
+\bibitem{pollefeys-nister-icassp-08}
+M.~Pollefeys and D.~Nister.
+\newblock Direct computation of sound and microphone locations from
+  time-difference-of-arrival data.
+\newblock In {\em Proc. of International Conference on Acoustics, Speech and
+  Signal Processing}, 2008.
+
+\bibitem{raguram2013usac}
+Rahul Raguram, Ondrej Chum, Marc Pollefeys, Jiri Matas, and Jan-Michael Frahm.
+\newblock Usac: a universal framework for random sample consensus.
+\newblock {\em IEEE Trans. Pattern Analysis and Machine Intelligence},
+  35(8):2022--2038, 2013.
+
+\bibitem{stewenius-phd-2005}
+H.~Stew\'enius.
+\newblock {\em Gr{\"o}bner Basis Methods for Minimal Problems in Computer
+  Vision}.
+\newblock PhD thesis, Lund University, APR 2005.
+
+\bibitem{van1995python}
+Guido Van~Rossum and Fred~L Drake~Jr.
+\newblock {\em Python reference manual}.
+\newblock Centrum voor Wiskunde en Informatica Amsterdam, 1995.
+
+\end{thebibliography}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter5 Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival | Beleyur-Thesis</title>
+  <meta name="description" content="A thesis" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter5 Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival | Beleyur-Thesis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A thesis" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter5 Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival | Beleyur-Thesis" />
+  
+  <meta name="twitter:description" content="A thesis" />
+  
+
+<meta name="author" content="Thejasvi Beleyur" />
+
+
+<meta name="date" content="2020-10-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ushichka.html"/>
+<link rel="next" href="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><i class="fa fa-check"></i><b>2</b> Modeling active sensing in groups of bats reveals echo detection even in large groups</a><ul>
+<li class="chapter" data-level="" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#cpn_abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="2.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#materials-and-methods"><i class="fa fa-check"></i><b>2.2</b> Materials and methods</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-scenarios"><i class="fa fa-check"></i><b>2.2.1</b> Model Scenarios</a></li>
+<li class="chapter" data-level="2.2.2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-implementation"><i class="fa fa-check"></i><b>2.2.2</b> Model Implementation</a></li>
+<li class="chapter" data-level="2.2.3" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-parametrization"><i class="fa fa-check"></i><b>2.2.3</b> Model Parametrization</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#results"><i class="fa fa-check"></i><b>2.3</b> Results</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#effect-of-group-size-on-neighbor-detection"><i class="fa fa-check"></i><b>2.3.1</b> Effect of Group Size on Neighbor Detection</a></li>
+<li class="chapter" data-level="2.3.2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#effect-of-call-parameters-group-geometry-and-acoustic-parameters-on-neighbor-detection"><i class="fa fa-check"></i><b>2.3.2</b> Effect of Call Parameters, Group Geometry, and Acoustic Parameters on Neighbor Detection</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#discussion"><i class="fa fa-check"></i><b>2.4</b> Discussion</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#improved-echo-detection-in-real-world-situations"><i class="fa fa-check"></i><b>2.4.1</b> Improved Echo Detection in Real-World Situations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#conclusion"><i class="fa fa-check"></i><b>2.5</b> Conclusion</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#acknowledgements"><i class="fa fa-check"></i><b>2.5.1</b> Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#supplementary-information"><i class="fa fa-check"></i><b>2.6</b> Supplementary Information</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-parametrization-1"><i class="fa fa-check"></i><b>2.6.1</b> Model parametrization</a></li>
+<li class="chapter" data-level="2.6.2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-implementation-1"><i class="fa fa-check"></i><b>2.6.2</b> Model implementation</a></li>
+<li class="chapter" data-level="2.6.3" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#open-source-software-used-in-the-research"><i class="fa fa-check"></i><b>2.6.3</b> Open-source software used in the research</a></li>
+<li class="chapter" data-level="2.6.4" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#acknowledgements-1"><i class="fa fa-check"></i><b>2.6.4</b> Acknowledgements</a></li>
+<li class="chapter" data-level="2.6.5" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#supplementary-schematics-tables-and-figures"><i class="fa fa-check"></i><b>2.6.5</b> Supplementary Schematics, Tables and Figures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="horseshoe-bat-craziness-paper.html"><a href="horseshoe-bat-craziness-paper.html"><i class="fa fa-check"></i><b>3</b> Horseshoe bat craziness paper</a></li>
+<li class="chapter" data-level="4" data-path="ushichka.html"><a href="ushichka.html"><i class="fa fa-check"></i><b>4</b> ushichka</a><ul>
+<li class="chapter" data-level="4.1" data-path="ushichka.html"><a href="ushichka.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="ushichka.html"><a href="ushichka.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><i class="fa fa-check"></i><b>5</b> Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival</a><ul>
+<li class="chapter" data-level="" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html#sfsabstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="5.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html#time-difference-of-arrival-self-calibration"><i class="fa fa-check"></i><b>5.2</b> Time-difference-of-arrival self calibration</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems.html"><a href="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems.html"><i class="fa fa-check"></i><b>6</b> tacost: Testing and simulating the performance of acoustic tracking systems</a><ul>
+<li class="chapter" data-level="6.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="itsfm.html"><a href="itsfm.html"><i class="fa fa-check"></i><b>7</b> itsfm</a><ul>
+<li class="chapter" data-level="7.1" data-path="ushichka.html"><a href="ushichka.html#example-one"><i class="fa fa-check"></i><b>7.1</b> Example one</a></li>
+<li class="chapter" data-level="7.2" data-path="ushichka.html"><a href="ushichka.html#example-two"><i class="fa fa-check"></i><b>7.2</b> Example two</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Beleyur-Thesis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="robust-self-calibration-of-constant-offset-time-difference-of-arrival" class="section level1">
+<h1><span class="header-section-number">Chapter5</span> Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival</h1>
+
+<p>This chapter was published as a peer-reviewed paper in the conference proceedings of the International Conference on Acoustics, Speech, and Signal Processing:</p>
+<p><em>Batstone, K., Flood, G., Beleyur, T., Larsson, V., Goerlitz, H. R., Oskarsson, M., &amp; Åström, K. (2019, May). Robust self-calibration of constant offset time-difference-of-arrival. In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 4410-4414). IEEE.</em></p>
+<div style="page-break-after: always;"></div>
+<div id="sfsabstract" class="section level2 unnumbered">
+<h2>Abstract</h2>
+<p>In this paper we study the problem of estimating receiver and sender positions from time-difference-of-arrival measurements, assuming an unknown constant time-difference-of-arrival offset. This problem is relevant for example for repetitive sound events. In this paper it is shown that there are three minimal cases to the problem. One of these (the five receiver, five sender problem) is of particular importance. A fast solver (with run-time under <span class="math inline">\(4~ \mu s\)</span>) is given. We show how this solver can be used in robust estimation algorithms, based on RANSAC, for obtaining an initial estimate followed by local optimization using a robust error norm. The system is verified on both real and synthetic data.</p>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">5.1</span> Introduction</h2>
+<p>The problem of estimating receiver-sender node positions from measured arrival times of radio or sound signals is a key issue in different applications such as microphone array calibration, radio antenna array calibration, mapping and positioning. This field is well researched but in this paper we will focus on the anchor-free sensor network calibration both in terms of time-of-arrival measurements (TOA) and time-difference-of-arrival measurements (TDOA).
+For time-of-arrival the planar case of three receivers and three senders (3R/3S) was solved in .
+For the full 3D case the over-determined problem (10R/4S) was studied in , where a solver for this non-minimal case was provided.<br />
+There are actually three minimal cases for the 3D case, namely (4R/6S), (5R/5S) and (6R/5S). A practical solver was presented in
+. There are in general <span class="math inline">\(38\)</span>, <span class="math inline">\(42\)</span> and <span class="math inline">\(38\)</span> solutions respectively for the three different set ups.
+Faster solvers for these minimal cases were provided in .</p>
+<p>In this paper we study the constant offset TDOA self-calibration problem. It is a problem that naturally arises e.g. when signals are emitted with a known period. As an estimation problem it lies between TOA and full TDOA. In the paper we study the minimal (5R/5S) problem and provide a fast (few <span class="math inline">\(\mu s\)</span>) solver.
+Robust parameter estimation often use the hypothesize and test paradigm, e.g. using random sampling consensus,  or one of its many variants . In these frameworks minimal solvers are important building blocks for generating model hypotheses, and
+%DEGSAC - degenerate ransac solver - relevant if we do 4x4 solver
+we show in the paper how a minimal solver can be used for robust parameter estimation of sender positions, receiver positions and unknown offset.
+The system is capable of handling missing data, outliers and noise. The algorithms are tested on synthetic data as well as real data,<br />
+in an office environment and in a cave.The methods are straightforward to generalize for degenerate configurations which arise if senders or receivers are restricted to a plane or to a line.</p>
+</div>
+<div id="time-difference-of-arrival-self-calibration" class="section level2">
+<h2><span class="header-section-number">5.2</span> Time-difference-of-arrival self calibration</h2>
+<p>The problem we are considering involves <span class="math inline">\(m\)</span> receiver positions <span class="math inline">\(\mathbf{r}_i \in \mathbb R^3\)</span>, $ i = 1, , m,$ and<br />
+<span class="math inline">\(n\)</span> sender positions <span class="math inline">\(\mathbf{s}_j \in ^3\)</span>, $ j = 1, , n$.
+This could for example represent the microphone positions and locations of sound emissions, respectively.<br />
+Assume that the arrival time of a sound <span class="math inline">\(j\)</span> to receiver <span class="math inline">\(i\)</span> is <span class="math inline">\(t_{ij}\)</span> and that the time that sound <span class="math inline">\(j\)</span> is emitted is <span class="math inline">\(T_j\)</span>.
+Multiplying the travel time <span class="math inline">\(t_{ij} - T_j\)</span> with the speed <span class="math inline">\(v\)</span> of the signal we obtain the distance between senders and receiver,</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ushichka.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["beleyur_thesis.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

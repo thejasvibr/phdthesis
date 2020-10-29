@@ -1,0 +1,7 @@
+> run command on Ubuntu : 
+    sudo apt-get install lmodern
+> install tinytex, rbookdown and all
+> build the book by ctrl + shift + b
+> the output pdf is in the _book folder, and is updated after each build, once the HTML file has been compiled. 
+> bookdown allows simultaneous conversion to word, html and pdf formats
+> AVOID USING UNDERSCORES FOR ANY FILE NAMES -- RBOOKDOWN/LATEX/SOMETHING DOES NOOOOT LIKE THEM

@@ -1,0 +1,6 @@
+Publication,Study species,Time delay (ms),Masking condition,Echo-masker SPL ratio (dB)
+Siewert et al. (2004),Megaderma lyra,3,Forward,-17
+,,6,Forward,-23
+,,12,Forward,-29
+,,24,Forward,-34
+Sümer et al. 2009,Eptesicus fuscus,-0.65,Backward,-22.3

@@ -1,0 +1,31 @@
+--- 
+title: "Beleyur-Thesis"
+author: "Thejasvi Beleyur"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: ["beleyur-goerlitz-2020-refs.bib", "tacost-references.bib","cotdoa-filtered.bib"]
+biblio-style: apalike
+link-citations: true
+description: "A thesis" 
+---
+
+# Introduction
+
+This is the part where I say something broad and clever. And then proceed to make further connections into the topic of interest. 
+
+In chapter 1, I present miaow miaow miaow. 
+
+In Chapter 2, I present bow bow bow 
+
+In Chapter 3, I do kat kat kat kat 
+
+In Chapter 4, I do BOW BOW BOW BOW .
+
+
+1. About the SFS methodology : Multi-microphone arrays have been an important and indispensable tool in the study of echolocation in the laboratory ever since the work of  [Aubauer XXXX]. Working with microphone arrays in the field however comes with a series of challenges. Handling multi-microphone arrays in the field can be logistically and physically straining: the long cables involved must be brought to order each time, the arrays themselves can be bulky and must be assembled on site each time, and in certain configurations the positions of each microphone may need to be measured each time the array is setup. While rewarding in terms of the data it generates, the process of setting up a microphone array can be strenuous especially when it comes to taking positional measurements of microphone positions. The use of TotalStation type surveying systems that provide direct XYZ measurements are not common in the field (they are themselves another piece of bulky equipment), and instead it is more common to measure inter-microphone distances with a tape measure or laser range finders. Having measured the inter-microphone distances in an array, the final XYZ positions of each microphone can be reconstructed. In my search for a method that .......an academic 'Christmas present'. 
+
+
+Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+
+

@@ -1,0 +1,8 @@
+# tacost: Testing and simulating the performance of acoustic tracking systems
+\chaptermark{simulating performance of acoustic tracking}
+
+## Introduction
+Acoustic tracking is a common method used to study vocalising animals such as birds, bats and cetaceans [@suzuki2017harkbird;@aubauer1996acoustical;@mohl2000sperm;@Hugel2017;@Holderied20032293;@rhinehart2020a;@blumstein2011a].
+Using acoustic tracking, biologists can detect the position of the animal and track it through space as it moves over time. The localisation accuracy of an acoustic tracking system depends on a variety  of factors. There are *internal* factors such as microphone array geometry, signal processing routines, and the mathematical formulations used to localise sounds (time-of-arrival, time-of-arrival-difference, angle-of-arrival, power-steering). The *external* factors include aspects related to the actual signal itself, ie. signal-to-noise ratio, and spectro-temporal properties of the emitted sound (noise, linear/hyperbolic sweep) [@Wahlberg1999]. 
+While experiments and analytical modelling may be the definitive way to determine a tracking system's end accuracy, simulations allow  a quick and systematic method to estimate the source of tracking errors. `tacost` provides a flexible workflow to manipulate and study the effect of both internal and external factors. `tacost`  generates audio files for source positions and array geometries specified by the user. This allows the user to analyse the efficacy of their tracking system's baseline performance.
+

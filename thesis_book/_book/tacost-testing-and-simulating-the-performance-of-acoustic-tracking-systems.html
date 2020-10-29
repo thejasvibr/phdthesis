@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter6 tacost: Testing and simulating the performance of acoustic tracking systems | Beleyur-Thesis</title>
+  <meta name="description" content="A thesis" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter6 tacost: Testing and simulating the performance of acoustic tracking systems | Beleyur-Thesis" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A thesis" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter6 tacost: Testing and simulating the performance of acoustic tracking systems | Beleyur-Thesis" />
+  
+  <meta name="twitter:description" content="A thesis" />
+  
+
+<meta name="author" content="Thejasvi Beleyur" />
+
+
+<meta name="date" content="2020-10-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"/>
+<link rel="next" href="itsfm.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><i class="fa fa-check"></i><b>2</b> Modeling active sensing in groups of bats reveals echo detection even in large groups</a><ul>
+<li class="chapter" data-level="" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#cpn_abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="2.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#materials-and-methods"><i class="fa fa-check"></i><b>2.2</b> Materials and methods</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-scenarios"><i class="fa fa-check"></i><b>2.2.1</b> Model Scenarios</a></li>
+<li class="chapter" data-level="2.2.2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-implementation"><i class="fa fa-check"></i><b>2.2.2</b> Model Implementation</a></li>
+<li class="chapter" data-level="2.2.3" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-parametrization"><i class="fa fa-check"></i><b>2.2.3</b> Model Parametrization</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#results"><i class="fa fa-check"></i><b>2.3</b> Results</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#effect-of-group-size-on-neighbor-detection"><i class="fa fa-check"></i><b>2.3.1</b> Effect of Group Size on Neighbor Detection</a></li>
+<li class="chapter" data-level="2.3.2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#effect-of-call-parameters-group-geometry-and-acoustic-parameters-on-neighbor-detection"><i class="fa fa-check"></i><b>2.3.2</b> Effect of Call Parameters, Group Geometry, and Acoustic Parameters on Neighbor Detection</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#discussion"><i class="fa fa-check"></i><b>2.4</b> Discussion</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#improved-echo-detection-in-real-world-situations"><i class="fa fa-check"></i><b>2.4.1</b> Improved Echo Detection in Real-World Situations</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#conclusion"><i class="fa fa-check"></i><b>2.5</b> Conclusion</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#acknowledgements"><i class="fa fa-check"></i><b>2.5.1</b> Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#supplementary-information"><i class="fa fa-check"></i><b>2.6</b> Supplementary Information</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-parametrization-1"><i class="fa fa-check"></i><b>2.6.1</b> Model parametrization</a></li>
+<li class="chapter" data-level="2.6.2" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#model-implementation-1"><i class="fa fa-check"></i><b>2.6.2</b> Model implementation</a></li>
+<li class="chapter" data-level="2.6.3" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#open-source-software-used-in-the-research"><i class="fa fa-check"></i><b>2.6.3</b> Open-source software used in the research</a></li>
+<li class="chapter" data-level="2.6.4" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#acknowledgements-1"><i class="fa fa-check"></i><b>2.6.4</b> Acknowledgements</a></li>
+<li class="chapter" data-level="2.6.5" data-path="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html"><a href="modeling-active-sensing-in-groups-of-bats-reveals-echo-detection-even-in-large-groups.html#supplementary-schematics-tables-and-figures"><i class="fa fa-check"></i><b>2.6.5</b> Supplementary Schematics, Tables and Figures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="horseshoe-bat-craziness-paper.html"><a href="horseshoe-bat-craziness-paper.html"><i class="fa fa-check"></i><b>3</b> Horseshoe bat craziness paper</a></li>
+<li class="chapter" data-level="4" data-path="ushichka.html"><a href="ushichka.html"><i class="fa fa-check"></i><b>4</b> ushichka</a><ul>
+<li class="chapter" data-level="4.1" data-path="ushichka.html"><a href="ushichka.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="ushichka.html"><a href="ushichka.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><i class="fa fa-check"></i><b>5</b> Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival</a><ul>
+<li class="chapter" data-level="" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html#sfsabstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="5.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html#time-difference-of-arrival-self-calibration"><i class="fa fa-check"></i><b>5.2</b> Time-difference-of-arrival self calibration</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems.html"><a href="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems.html"><i class="fa fa-check"></i><b>6</b> tacost: Testing and simulating the performance of acoustic tracking systems</a><ul>
+<li class="chapter" data-level="6.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="itsfm.html"><a href="itsfm.html"><i class="fa fa-check"></i><b>7</b> itsfm</a><ul>
+<li class="chapter" data-level="7.1" data-path="ushichka.html"><a href="ushichka.html#example-one"><i class="fa fa-check"></i><b>7.1</b> Example one</a></li>
+<li class="chapter" data-level="7.2" data-path="ushichka.html"><a href="ushichka.html#example-two"><i class="fa fa-check"></i><b>7.2</b> Example two</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Beleyur-Thesis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems" class="section level1">
+<h1><span class="header-section-number">Chapter6</span> tacost: Testing and simulating the performance of acoustic tracking systems</h1>
+
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">6.1</span> Introduction</h2>
+<p>Acoustic tracking is a common method used to study vocalising animals such as birds, bats and cetaceans <span class="citation">(Suzuki et al. <a href="#ref-suzuki2017harkbird">2017</a>; Aubauer <a href="#ref-aubauer1996acoustical">1996</a>; Møhl et al. <a href="#ref-mohl2000sperm">2000</a>; Hügel et al. <a href="#ref-Hugel2017">2017</a>; Holderied and Von Helversen <a href="#ref-Holderied20032293">2003</a>; Rhinehart et al. <a href="#ref-rhinehart2020a">2020</a>; Blumstein et al. <a href="#ref-blumstein2011a">2011</a>)</span>.
+Using acoustic tracking, biologists can detect the position of the animal and track it through space as it moves over time. The localisation accuracy of an acoustic tracking system depends on a variety of factors. There are <em>internal</em> factors such as microphone array geometry, signal processing routines, and the mathematical formulations used to localise sounds (time-of-arrival, time-of-arrival-difference, angle-of-arrival, power-steering). The <em>external</em> factors include aspects related to the actual signal itself, ie. signal-to-noise ratio, and spectro-temporal properties of the emitted sound (noise, linear/hyperbolic sweep) <span class="citation">(Wahlberg <a href="#ref-Wahlberg1999">1999</a>)</span>.
+While experiments and analytical modelling may be the definitive way to determine a tracking system’s end accuracy, simulations allow a quick and systematic method to estimate the source of tracking errors. <code>tacost</code> provides a flexible workflow to manipulate and study the effect of both internal and external factors. <code>tacost</code> generates audio files for source positions and array geometries specified by the user. This allows the user to analyse the efficacy of their tracking system’s baseline performance.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-aubauer1996acoustical">
+<p>Aubauer, Roland. 1996. “Acoustical Flight Path Tracking of Echolocating Bats.” PhD thesis, Acoustical Society of America.</p>
+</div>
+<div id="ref-blumstein2011a">
+<p>Blumstein, Daniel T., Daniel J. Mennill, Patrick Clemins, Lewis Girod, Kung Yao, Gail Patricelli, Jill L. Deppe, et al. 2011. “Acoustic Monitoring in Terrestrial Environments Using Microphone Arrays: Applications, Technological Considerations and Prospectus.” <em>Journal of Applied Ecology</em> 48 (3): 758–67. <a href="https://doi.org/10.1111/j.1365-2664.2011.01993.x">https://doi.org/10.1111/j.1365-2664.2011.01993.x</a>.</p>
+</div>
+<div id="ref-Holderied20032293">
+<p>Holderied, M.W., and O. Von Helversen. 2003. “Echolocation Range and Wingbeat Period Match in Aerial-Hawking Bats.” <em>Proceedings of the Royal Society B: Biological Sciences</em> 270 (1530): 2293–9. <a href="https://doi.org/10.1098/rspb.2003.2487">https://doi.org/10.1098/rspb.2003.2487</a>.</p>
+</div>
+<div id="ref-Hugel2017">
+<p>Hügel, Theresa, Vincent van Meir, Amanda Muñoz-Meneses, B. Markus Clarin, Björn M. Siemers, and Holger R. Goerlitz. 2017. “Does similarity in call structure or foraging ecology explain interspecific information transfer in wild Myotis bats?” <em>Behavioral Ecology and Sociobiology</em> 71 (11). <a href="https://doi.org/10.1007/s00265-017-2398-x">https://doi.org/10.1007/s00265-017-2398-x</a>.</p>
+</div>
+<div id="ref-mohl2000sperm">
+<p>Møhl, Bertel, Magnus Wahlberg, Peter T Madsen, Lee A Miller, and Annemarie Surlykke. 2000. “Sperm Whale Clicks: Directionality and Source Level Revisited.” <em>The Journal of the Acoustical Society of America</em> 107 (1). Acoustical Society of America: 638–48.</p>
+</div>
+<div id="ref-rhinehart2020a">
+<p>Rhinehart, Tessa A., Lauren M. Chronister, Trieste Devlin, and Justin Kitzes. 2020. “Acoustic Localization of Terrestrial Wildlife: Current Practices and Future Opportunities.” <em>Ecology and Evolution</em> n/a (n/a). <a href="https://doi.org/10.1002/ece3.6216">https://doi.org/10.1002/ece3.6216</a>.</p>
+</div>
+<div id="ref-suzuki2017harkbird">
+<p>Suzuki, Reiji, Shiho Matsubayashi, Richard W Hedley, Kazuhiro Nakadai, and Hiroshi G Okuno. 2017. “HARKBird: Exploring Acoustic Interactions in Bird Communities Using a Microphone Array.” <em>Journal of Robotics and Mechatronics</em> 29 (1). Fuji Technology Press Ltd.: 213–23.</p>
+</div>
+<div id="ref-Wahlberg1999">
+<p>Wahlberg, Magnus. 1999. “Positioning accuracy of a large‐aperture hydrophone array for sperm whale research.” <em>The Journal of the Acoustical Society of America</em> 105 (2): 1318–8. <a href="https://doi.org/10.1121/1.424536">https://doi.org/10.1121/1.424536</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="itsfm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["beleyur_thesis.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

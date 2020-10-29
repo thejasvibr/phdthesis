@@ -1,0 +1,43 @@
+# Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival
+\chaptermark{Self-calibration of time-difference-of-arrival}
+
+This chapter was published as a peer-reviewed paper in the conference proceedings of the International Conference on Acoustics, Speech, and Signal Processing: 
+
+*Batstone, K., Flood, G., Beleyur, T., Larsson, V., Goerlitz, H. R., Oskarsson, M., & Åström, K. (2019, May). Robust self-calibration of constant offset time-difference-of-arrival. In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) (pp. 4410-4414). IEEE.*
+
+\newpage
+
+## Abstract {-#sfsabstract}
+
+In this paper we study the problem of estimating receiver and sender positions  from time-difference-of-arrival measurements, assuming an unknown constant time-difference-of-arrival offset. This problem is relevant for example for repetitive sound events. In this paper it is shown that there are three minimal cases to the problem. One of these (the five receiver, five sender problem) is of particular importance. A fast solver (with run-time under $4~ \mu s$) is given. We show how this solver can be used in robust estimation algorithms, based on RANSAC, for obtaining an initial estimate followed by local optimization using a robust error norm. The system is verified on both real and synthetic data. 
+
+\newpage 
+
+## Introduction
+
+The problem of estimating receiver-sender node positions from measured arrival times of radio or sound signals is a key issue in different applications such as microphone array calibration, radio antenna array calibration, mapping and positioning. This field is well researched but in this paper we will focus on the anchor-free sensor network calibration both in terms of time-of-arrival measurements (TOA) and time-difference-of-arrival measurements (TDOA). 
+For time-of-arrival the planar case of three receivers and three senders (3R/3S) was solved in \cite{stewenius-phd-2005}.
+For the full 3D case the over-determined problem (10R/4S) was studied in \cite{pollefeys-nister-icassp-08}, where a solver for this non-minimal case was provided.   
+There are actually three minimal cases for the 3D case, namely (4R/6S), (5R/5S) and (6R/5S). A practical solver was presented in
+\cite{kuang-burgess-etal-icassp-13}. There are in general $38$, $42$ and $38$ solutions respectively for the three different set ups. 
+Faster solvers for these minimal cases were provided in \cite{larsson2017polynomial}.
+
+
+
+In this paper we study the constant offset TDOA self-calibration problem. It is a problem that naturally arises e.g.\ when signals are emitted  with a known period. As an estimation problem it lies between TOA and full TDOA. In the paper we study the minimal (5R/5S) problem and provide a fast (few $\mu s$) solver. 
+Robust parameter estimation often use the hypothesize and test paradigm, e.g.\ using random sampling consensus, \cite{fischler-bolles-ca-81} or one of its many variants \cite{chum2003locally,raguram2013usac,korman2018latent}. In these frameworks minimal solvers are important building blocks for generating model hypotheses, and 
+%DEGSAC - degenerate ransac solver - relevant if we do 4x4 solver 
+we show in the  paper how a minimal solver can be used for robust parameter estimation of sender positions, receiver positions and unknown offset. 
+The system is capable of handling missing data, outliers and noise. The algorithms are tested on synthetic data as well as real data,  
+in an office environment and in a cave.The methods are straightforward to generalize for degenerate configurations which arise if senders or receivers are restricted to a plane or to a line.
+
+
+## Time-difference-of-arrival self calibration
+The problem we are considering involves $m$ receiver positions  $\mathbf{r}_i \in \mathbb R^3$, $ i = 1, \dots, m,$ and  
+$n$ sender positions $\mathbf{s}_j \in ^3$, $ j = 1, \dots, n$.
+This could for example represent the microphone positions and locations of sound emissions, respectively.  
+Assume that the arrival time of a sound $j$ to receiver $i$ is $t_{ij}$ and that the time that sound $j$ is emitted is $T_j$. 
+Multiplying the travel time $t_{ij} - T_j$ with the speed $v$ of the signal we obtain the distance between senders and receiver,
+
+
+
