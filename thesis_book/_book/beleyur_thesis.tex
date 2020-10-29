@@ -1,42 +1,55 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{book}
+\documentclass[
+]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={Beleyur-Thesis},
-            pdfauthor={Thejasvi Beleyur},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  pdftitle={Beleyur-Thesis},
+  pdfauthor={Thejasvi Beleyur},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs}
-% Fix footnotes in tables (requires footnote package)
-\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -46,25 +59,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{graphicx}
@@ -72,12 +74,51 @@
 \usepackage{booktabs}
 \usepackage{caption}
 \captionsetup{font=footnotesize}
+
+\usepackage{amsmath,amssymb,graphicx,todonotes}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{epstopdf}
+
+\def\x{{\mathbf x}}
+\def\L{{\cal L}}
+\def\lone{{$l^1$}}
+\def\ltwo{{$l^2$}}
+\def \fatR {{ \mathbb R}}
+\DeclareMathOperator{\Tr}{Tr}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\newtheorem{problem1}{\noindent \textbf{Problem}}
+\newtheorem{theorem}{\noindent \textbf{Theorem}}
+\newtheorem{algorithm1}{\noindent \textbf{Algorithm}}
+\newtheorem{lemma}{\noindent \textbf{Lemma}}
+\newtheorem{conjecture}{\noindent \textbf{Conjecture}}
+
+%\makeatletter
+%\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+%\newcommand{\onedot}{\futurelet\@let@token\@onedot}
+%\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+
+\def\eg{\emph{e.g.\ }}
+\def\Eg{\emph{E.g.\ }}
+\def\ie{\emph{i.e.\ }}
+\def\Ie{\emph{I.e.\ }}
+\def\cf{\emph{c.f.\ }} 
+\def\Cf{\emph{C.f.\ }}
+\def\etc{\emph{etc.\ }} 
+\def\vs{\emph{vs.\ }}
+\def\wrt{w.r.t.\ }
+ \def\dof{d.o.f.\ }
+\def\etal{\emph{et al.\ }}
+\def\Win{W_{\text{in}}}
+\def\Wout{W_{\text{out}}}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Beleyur-Thesis}
 \author{Thejasvi Beleyur}
-\date{2020-10-28}
+\date{\(2020-10-29\)}
 
 \begin{document}
 \maketitle
@@ -103,7 +144,7 @@ In Chapter 4, I do BOW BOW BOW BOW .
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  About the SFS methodology : Multi-microphone arrays have been an important and indispensable tool in the study of echolocation in the laboratory ever since the work of {[}Aubauer XXXX{]}. Working with microphone arrays in the field however comes with a series of challenges. Handling multi-microphone arrays in the field can be logistically and physically straining: the long cables involved must be brought to order each time, the arrays themselves can be bulky and must be assembled on site each time, and in certain configurations the positions of each microphone may need to be measured each time the array is setup. While rewarding in terms of the data it generates, the process of setting up a microphone array can be strenuous especially when it comes to taking positional measurements of microphone positions. The use of TotalStation type surveying systems that provide direct XYZ measurements are not common in the field (they are themselves another piece of bulky equipment), and instead it is more common to measure inter-microphone distances with a tape measure or laser range finders. Having measured the inter-microphone distances in an array, the final XYZ positions of each microphone can be reconstructed. In my search for a method that \ldots{}\ldots{}.an academic `Christmas present'.
+  About the SFS methodology : Multi-microphone arrays have been an important and indispensable tool in the study of echolocation in the laboratory ever since the work of {[}Aubauer XXXX{]}. Working with microphone arrays in the field however comes with a series of challenges. Handling multi-microphone arrays in the field can be logistically and physically straining: the long cables involved must be brought to order each time, the arrays themselves can be bulky and must be assembled on site each time, and in certain configurations the positions of each microphone may need to be measured each time the array is setup. While rewarding in terms of the data it generates, the process of setting up a microphone array can be strenuous especially when it comes to taking positional measurements of microphone positions. The use of TotalStation type surveying systems that provide direct XYZ measurements are not common in the field (they are themselves another piece of bulky equipment), and instead it is more common to measure inter-microphone distances with a tape measure or laser range finders. Having measured the inter-microphone distances in an array, the final XYZ positions of each microphone can be reconstructed. In my search for a method that \ldots\ldots.an academic `Christmas present'.
 \end{enumerate}
 
 Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
@@ -235,7 +276,7 @@ Among the physical parameters, acoustic shadowing increased neighbor detection (
 
 We present a conceptual framework to quantify what a focal bat experiences in the sonar cocktail party nightmare. We quantified the probability of detecting neighbors across a range of group sizes, which allows calculating the rate at which a focal bat detects its neighbors. When flying alone, a focal bat will detect objects around it at a rate equal to its call rate, while in a group,its object detection rate is reduced due to masking. We show that even in a group of 100 bats, bats still detect at least 1 neighbor per call about 3 times per second (for a 10 Hz call rate), while in smaller group sizes, neighbor detection rate is larger at 5 to 10 Hz. Bat echolocation is generally ``stroboscopic,''meaning that in-formation is received intermittently with time gaps (griffin1958a). We suggest that bats in smaller group sizes still experience a sufficiently high information update rate for performing collision avoidance and neighbor following. With increasing group size, perception might become ``hyper-stroboscopic,''i.e., so scarce that different sensorimotor heuristics might be required to maintain group coordination.
 
-The low level of masking at smaller group sizes allows the focal bat to detect all its neighbors per call. With increasing group size,however, the focal bat detects maximally 1 neighbor per call in a group of 100 bats. This neighbor detection rate of at least 1 neighbor per call even in large group sizes provides a formal sensory basis for group movement in active sensing animals. While a bat in a large group cannot track the position of all its neighbors, it still can track the movement of a few neighbors, specifically those close to and in front of it. This reduction in rate, range, and direction of detected neighbors has predictive consequences for the kind of collective behavior bat groups may show in nature. Many models of collective movement assume that each individual in a group detects the position and orientation of neighbors in the whole of its sensory volume, and then performs an averaging across all neighbors to decide its next movement (\citet{couzin2002a},\citet{g2004a},\citet{t1995a},\citet{reynolds1987a}), leading to the impressive coordinated behaviors of fish schools and insect swarms (\citet{sumpter2006a},\citet{vicsek2012a}). As the number of neighbors that an individual detects decreases, more ``limited interactions'' begin to dominate,causing anisotropy in the group structure (\citet{bode2011a},\citet{ballerini2008a}). For bats in the cocktail party nightmare, we predict that large groups may show higher anisotropy than smaller groups due to the limited number of neighbors that they can detect and react to. All things being equal, we predict that in large groups (\textgreater{}50 bats), the neighbors in the frontal field of a bat will have a disproportionate influence on its movement decisions. Bats in larger groups may thus maintain higher alignment with their frontal neighbors compared to bats in smaller groups.
+The low level of masking at smaller group sizes allows the focal bat to detect all its neighbors per call. With increasing group size,however, the focal bat detects maximally 1 neighbor per call in a group of 100 bats. This neighbor detection rate of at least 1 neighbor per call even in large group sizes provides a formal sensory basis for group movement in active sensing animals. While a bat in a large group cannot track the position of all its neighbors, it still can track the movement of a few neighbors, specifically those close to and in front of it. This reduction in rate, range, and direction of detected neighbors has predictive consequences for the kind of collective behavior bat groups may show in nature. Many models of collective movement assume that each individual in a group detects the position and orientation of neighbors in the whole of its sensory volume, and then performs an averaging across all neighbors to decide its next movement (\citet{couzin2002a},\citet{g2004a},\citet{t1995a},\citet{reynolds1987a}), leading to the impressive coordinated behaviors of fish schools and insect swarms (\citet{sumpter2006a},\citet{vicsek2012a}). As the number of neighbors that an individual detects decreases, more ``limited interactions'' begin to dominate,causing anisotropy in the group structure (\citet{bode2011a},\citet{ballerini2008a}). For bats in the cocktail party nightmare, we predict that large groups may show higher anisotropy than smaller groups due to the limited number of neighbors that they can detect and react to. All things being equal, we predict that in large groups (\textgreater50 bats), the neighbors in the frontal field of a bat will have a disproportionate influence on its movement decisions. Bats in larger groups may thus maintain higher alignment with their frontal neighbors compared to bats in smaller groups.
 
 Our simulations allow for a direct quantitative comparison of the effects of echolocation, group geometry, and acoustic parameters in group echolocation. Among the call parameterstested, reducing call rate (increasing interpulse interval) was most effective in increasing neighbor detection in jamming conditions, matching experimental evidence for reduced calling rate in \emph{Tadarida brasiliensis} (\citet{jarvis2013a}, \citet{adams2017a}). In contrast, other FM batspecies increase their call rates in groups and background noise(\citet{amichai2015a},\citet{lin2016a},\citet{cvikel2015b},\citet{luo2015a}). Likewise, our result that shorter call duration should improve neighbor detection is opposite to experiments showing that most bat species increased call duration in the presence of maskers (11, 23, 24, 43, 44), except (42). Lastly, ourresult of no effect of changing source level on neighbor detectionmight also seem to differ from experimental data showing thatbats in laboratory conditions do increase source level in thepresence of maskers (11, 23, 43, 44). While there might bespecies-specific variation, we suggest that these differences aremostly due to the experimental situation. Bats in these experi-ments experienced constant maskers. Calling more often, forlonger, and for louder thus improved the bats'signal redundancy,echo-to-masker ratio, and overall echo detection. In contrast,our model simulates group flight of many bats with simultaneousand uniform changes in their call parameters. When all bats in agroup shorten call duration, this reduces the overall duration ofmasking sounds, thus improving echo detection. Likewise, whenall bats in a group increase their call amplitudes to optimizetheir own echo-to-masker ratios, all bats will eventually call attheir maximum, with no overall effect on neighbor detection.Analyzing bat calls in mass emergences is technically challengingand it remains unknown whetherT. brasiliensisand other gre-garious bat species reduce their call rate in the field.
 
@@ -285,9 +326,9 @@ echo and masker arrival time. We linearly interpolated (in a piecewise fashion) 
 \hypertarget{spatial-unmasking-function}{%
 \subsubsection{\texorpdfstring{Spatial unmasking function \label{cpn_spatiunmasking}}{Spatial unmasking function }}\label{spatial-unmasking-function}}
 
-Sümer et al. (2009) performed a backward masking study to address spatial unmasking in the bat Eptesicus fuscus. In a two-alternative forced-choice paradigm, they increased the angular separation between a target object and a masker object while also varying the level of the target object's echo (by varying the size of the target object and thus the target object's target strength).
+Sümer et al.~(2009) performed a backward masking study to address spatial unmasking in the bat Eptesicus fuscus. In a two-alternative forced-choice paradigm, they increased the angular separation between a target object and a masker object while also varying the level of the target object's echo (by varying the size of the target object and thus the target object's target strength).
 
-We define the spatial unmasking function as the echo-to-masker SPL ratio at just-noticeable echo detection as a function of angular separation. To obtain the echo-to-masker level ratios, we subtracted the target object's target strengths from the masker object's target strength. We normalized the spatial unmasking function to the co-localised echo-masker case (i.e., when both echo and masker arrive from the same direction). This describes the reduction in echo-to-masker ratio required for echo detection as a function of angular separation between target and masker,compared to the co-localized case. We digitized the data points from Figure \ref{cpn_fig4}B of Sümer et al. (2009) by hand with WebPlotDigitiser \citep{rohatgi2015a} to obtain the target's target strength as a function of angular separation. Masker target strength was given by Sümer et al. (2009) as -14.5 dB. We then calculated the target-masker SPL ratios and interpolated them with a quadratic polynomial fit (Figure \ref{cpn_figS2}). The interpolated data was then further upsampled to 0.47° intervals. As Sümer et al. (2009) only measured angular separations up to 23°. We conservatively used the echo-masker SPL ratio at 23° also for all larger angular separations.
+We define the spatial unmasking function as the echo-to-masker SPL ratio at just-noticeable echo detection as a function of angular separation. To obtain the echo-to-masker level ratios, we subtracted the target object's target strengths from the masker object's target strength. We normalized the spatial unmasking function to the co-localised echo-masker case (i.e., when both echo and masker arrive from the same direction). This describes the reduction in echo-to-masker ratio required for echo detection as a function of angular separation between target and masker,compared to the co-localized case. We digitized the data points from Figure \ref{cpn_fig4}B of Sümer et al.~(2009) by hand with WebPlotDigitiser \citep{rohatgi2015a} to obtain the target's target strength as a function of angular separation. Masker target strength was given by Sümer et al.~(2009) as -14.5 dB. We then calculated the target-masker SPL ratios and interpolated them with a quadratic polynomial fit (Figure \ref{cpn_figS2}). The interpolated data was then further upsampled to 0.47° intervals. As Sümer et al.~(2009) only measured angular separations up to 23°. We conservatively used the echo-masker SPL ratio at 23° also for all larger angular separations.
 
 \hypertarget{call-and-hearing-directionality}{%
 \subsubsection{\texorpdfstring{Call and hearing directionality \label{cpn_directionality}}{Call and hearing directionality }}\label{call-and-hearing-directionality}}
@@ -301,7 +342,7 @@ attenuates or amplifies the same sound depending on its direction of arrival \ci
 \hypertarget{atmospheric-attenuation}{%
 \subsubsection{\texorpdfstring{Atmospheric attenuation \label{cpn_atmabs}}{Atmospheric attenuation }}\label{atmospheric-attenuation}}
 
-Ultrasound in air is heavily attenuated by atmospheric attenuation, even over short distances of a few meters \citep[\citet{lawrence1982a}]{h2018a}. Atmospheric attenuation will reduce the received SPL of a masker or echo at the focal bat. We chose a range of values for the atmospheric attenuation coefficient α between 0 to -2 dB/m. These values approximate the atmospheric attenuation experienced by a bat calling at very low (\(\leq\) 20 kHz, \textasciitilde{}0 dB/m) to high (60 kHz, \textasciitilde{}-2 dB/m) peak frequencies.
+Ultrasound in air is heavily attenuated by atmospheric attenuation, even over short distances of a few meters \citep[\citet{lawrence1982a}]{h2018a}. Atmospheric attenuation will reduce the received SPL of a masker or echo at the focal bat. We chose a range of values for the atmospheric attenuation coefficient α between 0 to -2 dB/m. These values approximate the atmospheric attenuation experienced by a bat calling at very low (\(\leq\) 20 kHz, \textasciitilde0 dB/m) to high (60 kHz, \textasciitilde-2 dB/m) peak frequencies.
 
 \hypertarget{geometric-attenuation}{%
 \subsubsection{\texorpdfstring{Geometric attenuation \label{cpn_geomattn}}{Geometric attenuation }}\label{geometric-attenuation}}
@@ -333,7 +374,7 @@ knowledge of the target strength of a bat when emitter and receiver are at the s
 
 In the simulations, all incoming and outgoing sounds at the bat are between abs(0-180)°. Sounds with 0° angle are along the heading direction of the focal bat. Sounds arriving/reflecting on the left have negative angles (0° \(\geq \theta \geq\)-180°), and those on the right have positive angles (0° \$\leq \theta \leq\$180°).
 
-\textbf{Methods}: We ensonified a stuffed \emph{Myotis myotis} with outstretched wings, which was suspended from the ceiling at \textasciitilde{}1 m height and placed on a rotating base, which could be rotated in 45° steps. A speaker (electrostatic Polaroid, custom built) and microphone (CM16/CMPA, Avisoft Bioacoustics, Glienicke, Germany) were placed at a 1 m radial distance to the center of the bat (Figure \ref{cpn_figS4}). The speaker emitted linear frequency modulated sweeps between 96-20 kHz, with durations of 170 μs, 1 ms and 2 ms at 92 dB rms SPL re 20 μPa at 1 m. The speaker was driven by a custom-built amplifier with input from a soundcard (Player 216H, Avisoft Bioacoustics, 1 MHz sampling rate). The microphone signal was recorded simultaneously with an attenuated version of the speaker signal on a multichannel soundcard (USG 416H, Avisoft Bioacoustics, 500 kHz sampling rate). The microphone had a noise floor of 24 dB rms SPL re 20 μPa. All echoes were recorded at \(\geq\) 22dB signal-to-noise ratio. The experiment was performed in the middle of a large empty room (\textasciitilde{}4x4x2 m) to temporally separate bat echoes from background echoes.
+\textbf{Methods}: We ensonified a stuffed \emph{Myotis myotis} with outstretched wings, which was suspended from the ceiling at \textasciitilde1 m height and placed on a rotating base, which could be rotated in 45° steps. A speaker (electrostatic Polaroid, custom built) and microphone (CM16/CMPA, Avisoft Bioacoustics, Glienicke, Germany) were placed at a 1 m radial distance to the center of the bat (Figure \ref{cpn_figS4}). The speaker emitted linear frequency modulated sweeps between 96-20 kHz, with durations of 170 μs, 1 ms and 2 ms at 92 dB rms SPL re 20 μPa at 1 m. The speaker was driven by a custom-built amplifier with input from a soundcard (Player 216H, Avisoft Bioacoustics, 1 MHz sampling rate). The microphone signal was recorded simultaneously with an attenuated version of the speaker signal on a multichannel soundcard (USG 416H, Avisoft Bioacoustics, 500 kHz sampling rate). The microphone had a noise floor of 24 dB rms SPL re 20 μPa. All echoes were recorded at \(\geq\) 22dB signal-to-noise ratio. The experiment was performed in the middle of a large empty room (\textasciitilde4x4x2 m) to temporally separate bat echoes from background echoes.
 
 We ensonified the bat from front (0°) to back (180°) in steps of 45°. We assumed
 that the bat was symmetrical and thus did not ensonify angles from 180-360°. The
@@ -357,7 +398,7 @@ The speaker was placed as far as possible from the microphone to calculate
 acoustic shadowing without the effects of speaker directionality. The speaker
 played back a variety of 7 ms Tukey windowed signals consisting of pure tones
 (20, 35, 50, 100 kHz) and a downward modulated linear sweep (100-15 kHz). Each
-signal type was played back 15 times at \textasciitilde{}4\% duty cycle. Multiple signal types were used to obtain a generalized estimate of shadowing across a wide range of call peak frequencies and call types. The playback signals and recordings are available here: \url{https://doi.org/10.5281/zenodo.3469845}. Additionally, we also recorded the same playback without model bats being present. We calculated acoustic shadowing as the reduction in received level by subtracting the received level (in dB rms) without bats from the received level with bats. We performed a linear regression of attenuation as a function of factors number of bats and inter-bat-distance, to estimate the amount of acoustic shadowing caused per bat and the spacing between them.
+signal type was played back 15 times at \textasciitilde4\% duty cycle. Multiple signal types were used to obtain a generalized estimate of shadowing across a wide range of call peak frequencies and call types. The playback signals and recordings are available here: \url{https://doi.org/10.5281/zenodo.3469845}. Additionally, we also recorded the same playback without model bats being present. We calculated acoustic shadowing as the reduction in received level by subtracting the received level (in dB rms) without bats from the received level with bats. We performed a linear regression of attenuation as a function of factors number of bats and inter-bat-distance, to estimate the amount of acoustic shadowing caused per bat and the spacing between them.
 
 \textbf{Results}: Bats effectively shadowed the sound, with strong effects of the inter-bat-spacing and the number of bats. Bats at 0.5 m distance in front of the receiving bat (=microphone) reduced the received SPL by 5.17 dB (SEM=0.44, t=-11.639, 95\% CI =-6.05,-4.30), while bats at 1.0 m interbat-spacing reduced the received SPL by 1.85 dB (SEM=0.44, t=-4.164, 95\% CI =-2.72,-0.98). Each bat reduced received SPL by 0.83 dB (SEM=0.08, t=-9.852, 95\% CI =-0.99,-0.66).
 For further details on experimental protocol, raw data and reproduction of
@@ -455,7 +496,7 @@ normalizing the SPL of the target echo to the masker SPL profile:
 
 The echo-to-masker-ratio profile is comparable to a signal-to-noise-ratio: at 0 dB, echo and masker have the same SPL. The masker is louder than the echo for negative values, and the echo is louder than the masker for positive values.
 
-To determine whether a given target echo was heard or not, we compared the echo-to-masker ratio for this echo with the temporal masking envelope (see \ref{cpn_tempmasking}). The temporal masking envelope describes the echo-to-masker ratio at which masking occurs as a function of relative timing between echo and masker. Using the temporal masking envelope is important because masking does not only occur when the masker coincides with the echo, but also when the masker does not overlap with the echo and arrives before (forward masking) or after (backward masking) it. In our case, echo and masker had durations of only 1-2.5 ms, while a masker arriving at up to \textasciitilde{}25 ms before and up to \textasciitilde{}1 ms after the echo still causes some amount of masking. Thus, our temporal masker envelope had a duration of either \textasciitilde{}27 or \textasciitilde{}28.5 ms (Figure \ref{cpn_figS5}F). We compared the echo-to-masker ratio profile to the temporal masking envelope. The echo was considered not heard if the echo-to-masker ratio profile lay below the temporal masking envelope, i.e., the echo-to-masker ratio was lower than required for echo detection. Alternatively, the echo was considered heard if the echo-to-masker ratio profile lay above the temporal masking function, i.e., the echo-to-masker SPL ratio was higher than required for echo detection.
+To determine whether a given target echo was heard or not, we compared the echo-to-masker ratio for this echo with the temporal masking envelope (see \ref{cpn_tempmasking}). The temporal masking envelope describes the echo-to-masker ratio at which masking occurs as a function of relative timing between echo and masker. Using the temporal masking envelope is important because masking does not only occur when the masker coincides with the echo, but also when the masker does not overlap with the echo and arrives before (forward masking) or after (backward masking) it. In our case, echo and masker had durations of only 1-2.5 ms, while a masker arriving at up to \textasciitilde25 ms before and up to \textasciitilde1 ms after the echo still causes some amount of masking. Thus, our temporal masker envelope had a duration of either \textasciitilde27 or \textasciitilde28.5 ms (Figure \ref{cpn_figS5}F). We compared the echo-to-masker ratio profile to the temporal masking envelope. The echo was considered not heard if the echo-to-masker ratio profile lay below the temporal masking envelope, i.e., the echo-to-masker ratio was lower than required for echo detection. Alternatively, the echo was considered heard if the echo-to-masker ratio profile lay above the temporal masking function, i.e., the echo-to-masker SPL ratio was higher than required for echo detection.
 
 However, as the echo-to-masker ratio continuously fluctuates over time, it is possible that it is not fully above or below the temporal masking envelope throughout the envelope's duration. We thus defined an echo to be masked (= not heard), if it was masked for more than 25\% of its duration (of 1 or 2.5 ms). To calculate the total duration of masking, we analyzed the total duration that the echo-to-masker ratio was below the temporal masking envelope. As long as the total masking duration was shorter than 25\% of the echo duration (of 1-2.5 ms) the echo was considered detected. If this duration was longer than 25\% of the echo duration, the echo was masked and the corresponding neighboring bat was considered not detected. This 25\% threshold was set to make the simulated
 auditory system immune to short spikes in masking sound pressure level occurring during the temporal masking function.
@@ -630,20 +671,256 @@ There are actually three minimal cases for the 3D case, namely (4R/6S), (5R/5S) 
 Faster solvers for these minimal cases were provided in \cite{larsson2017polynomial}.
 
 In this paper we study the constant offset TDOA self-calibration problem. It is a problem that naturally arises e.g.~when signals are emitted with a known period. As an estimation problem it lies between TOA and full TDOA. In the paper we study the minimal (5R/5S) problem and provide a fast (few \(\mu s\)) solver.
-Robust parameter estimation often use the hypothesize and test paradigm, e.g.~using random sampling consensus, \cite{fischler-bolles-ca-81} or one of its many variants \cite{chum2003locally,raguram2013usac,korman2018latent}. In these frameworks minimal solvers are important building blocks for generating model hypotheses, and
-\%DEGSAC - degenerate ransac solver - relevant if we do 4x4 solver
-we show in the paper how a minimal solver can be used for robust parameter estimation of sender positions, receiver positions and unknown offset.
-The system is capable of handling missing data, outliers and noise. The algorithms are tested on synthetic data as well as real data,\\
-in an office environment and in a cave.The methods are straightforward to generalize for degenerate configurations which arise if senders or receivers are restricted to a plane or to a line.
+Robust parameter estimation often use the hypothesize and test paradigm, e.g.~using random sampling consensus, \cite{fischler-bolles-ca-81} or one of its many variants \cite{chum2003locally,raguram2013usac,korman2018latent}. In these frameworks minimal solvers are important building blocks for generating model hypotheses, and we show in the paper how a minimal solver can be used for robust parameter estimation of sender positions, receiver positions and unknown offset. The system is capable of handling missing data, outliers and noise. The algorithms are tested on synthetic data as well as real data, in an office environment and in a cave.The methods are straightforward to generalize for degenerate configurations which arise if senders or receivers are restricted to a plane or to a line.
 
 \hypertarget{time-difference-of-arrival-self-calibration}{%
 \section{Time-difference-of-arrival self calibration}\label{time-difference-of-arrival-self-calibration}}
 
-The problem we are considering involves \(m\) receiver positions \(\mathbf{r}_i \in \mathbb R^3\), \$ i = 1, \dots, m,\$ and\\
-\(n\) sender positions \(\mathbf{s}_j \in ^3\), \$ j = 1, \dots, n\$.
-This could for example represent the microphone positions and locations of sound emissions, respectively.\\
-Assume that the arrival time of a sound \(j\) to receiver \(i\) is \(t_{ij}\) and that the time that sound \(j\) is emitted is \(T_j\).
+The problem we are considering involves \(m\) receiver positions \(\mathbf{r}_i \in \mathbb R^3\), \$ i = 1, \dots, m,\$ and \(n\) sender positions \(\mathbf{s}_j \in ^3\), \$ j = 1, \dots, n\$. This could for example represent the microphone positions and locations of sound emissions, respectively. Assume that the arrival time of a sound \(j\) to receiver \(i\) is \(t_{ij}\) and that the time that sound \(j\) is emitted is \(T_j\).
 Multiplying the travel time \(t_{ij} - T_j\) with the speed \(v\) of the signal we obtain the distance between senders and receiver,
+
+\begin{equation}
+v (t_{ij}-T_j)   = {\norm{\mathbf{r}_i - \mathbf{s}_j}}_2 ,
+\label{eq:tdoa}
+\end{equation}
+where \({\norm{.}}_2\) is the \ltwo-norm. The speed \(v\) is throughout the paper assumed to be known and constant.
+
+In many settings the times of emissions \(T_j\) are unknown, but regular, \eg
+\begin{equation}
+T_j = k_1 j + k_0, 
+\label{eq:regular}
+\end{equation}
+where the interval \(k_1\) is known. Inserting \eqref{eq:regular} into \eqref{eq:tdoa} we
+obtain
+\begin{equation}
+v (t_{ij}-k_1 j - k_0)   = {\norm{\mathbf{r}_i - \mathbf{s}_j}}_2 . 
+\end{equation}
+Assuming an erroneous (but regular) emission time
+\(\tilde{T}_j = k_1 j + \tilde{k}_0\) and
+introducing (the measured) \(z_{ij} = v (t_{ij}-\tilde{T}_j)\) and (the unknown) \(o = v (k_0-\tilde{k}_0)\) yields the following expression
+\begin{equation}
+ z_{ij}   = {\norm{\mathbf{r}_i - \mathbf{s}_j}}_2 + o. 
+\end{equation}
+Note that this is a simplified variant of the general time-difference-of-arrival problem (see \eg  \cite{kuang2013stratified}), which allows for a different offset \(o\) for every \(j\),
+\begin{equation}
+ z_{ij}   = {\norm{\mathbf{r}_i - \mathbf{s}_j}}_2 + o_j.
+\end{equation}
+
+\noindent 
+
+\begin{problem1} \label{prob_misstoa}
+({{Constant Offset Time-Difference-of-Arrival  Self-Calibration}}) Given measurements $\tilde{z}_{ij}$ 
+\vspace{-5pt}
+\begin{equation}
+\tilde{z}_{ij} = {\norm{\mathbf{r}_i - \mathbf{s}_j}}_2 + o  + \epsilon_{ij}, 
+\label{eq:distance}
+\vspace{-5pt}
+\end{equation}
+for a subset $W \subset I$ of all the receiver-sender index pairs $I = \{ (i,j) | i = 1, \ldots m, j = 1, \ldots, n \}$ determine receiver positions $\mathbf{r}_i$, $ i = 1, \dots, m$ and sender positions $\mathbf{s}_j$,  $j = 1, \dots, n$ and offset $o$. 
+Here the errors $\epsilon_{ij}$ are assumed to be either 
+{\bf inliers}, in which case the errors are small ($\epsilon_{ij} \in N(0,\sigma)$) or {\bf outliers}, in which case the measurements are way off. 
+\end{problem1}
+
+Here we will use the set \(\Win\) for the indices \((i,j)\) corresponding to the inlier measurements and \(\Wout\) for the indices corresponding to the outlier set.
+\vspace{-5pt}
+
+\section{Local optimization and the low~rank~relaxation}
+\label{sec:rank}
+\vspace{-5pt}
+
+If an initial estimate of the parameters \(\theta_1 = \{ R, S, o \}\) is given and if the set of inliers is known, then refinement of the estimate can be found by optimization methods, \eg Levenberg-Marquardt (LM) \cite{levenberg1944method,marquardt1963algorithm},
+\begin{equation}
+\min_{\theta_1} f(\theta_1) = \sum_{(i,j) \in \Win} (z_{ij} - ( {\norm{\mathbf{r}_i - \mathbf{s}_j}}_2 +o) )^2 .
+\end{equation}
+
+There is an interesting relaxation to the problem, that exploits the fact that the matrix with elements \$ (z\_\{ij\}-o)\^{}2 \$ is rank \(5\), \cite{pollefeys-nister-icassp-08}. Further simplifications use the double compaction method \cite{kuang2013stratified}. The double compaction matrix \(M\) is defined as the matrix with elements
+\begin{equation}
+M_{ij}=(z_{ij}-o)^2 -a_i-b_j,
+\label{eq:dc}
+\end{equation}
+and it can be shown to have rank \(3\), i.e.~\(M = U^T V\), where \(U\) is of size \(3 \times m\) and \(V\) is of size \(3 \times n\).
+The relaxed problem involves a set of parameters
+\(\theta_2 = \{ U, V, b, a, o \}\). Here the constraints can be written as
+\begin{equation}
+z_{ij} =  \sqrt{u_i^T v_j + a_i + b_j} + o ,
+\end{equation}
+where \(u_i\) denotes column \(i\) of \(U\) and \(v_j\) denotes column \(j\) of \(V\).
+Refinement of parameters can be done by performing local optimization on
+\begin{equation}
+\min_{\theta_2} f(\theta_2) = \sum_{(i,j) \in \Win} \left ( z_{ij} - ( \sqrt{u_i^T v_j + a_i + b_j} + o ) \right )^2 .
+\label{eq:relaxed}
+\end{equation}
+
+\vspace{-5pt}
+\section{Minimal problems and solvers}
+\label{sec:minimal}
+\vspace{-5pt}
+
+By counting equations and unknowns, one finds that there are three minimal problems. The first two are the symmetric case when \(m=4, n=7\) or \(m=7, n=4\). This case is not addressed in this paper, but we believe it to be difficult to solve. The other case is \(m=n= 5\). Here, we first present a solver for the constant offset and then discuss how to solve for sender and receiver positions.
+
+Given a \(5 \times 5\) matrix, \(Z\), with time-difference-of-arrival measurements \(z_{ij}\), the rank \(3\) constraint on the double compaction matrix in \eqref{eq:dc}
+can be written as
+\begin{equation}
+f(o) = \det ( C^T (Z-o)^{\circ 2} C )  = 0, 
+\end{equation}
+where
+\begin{equation}
+C = \begin{pmatrix}
+-1 & -1 & -1 & -1\\
+1 & 0 & 0 & 0\\
+0  & 1 & 0 & 0\\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 
+\end{pmatrix} 
+\end{equation}
+and \(^{\circ 2}\) denotes element-wise squaring (Hadamard power).
+Although the elements of \$ (Z-o)\^{}\{\circ 2\}\$ are of degree 2 in \(o\), the quadratic terms cancel out after multiplication with \(C^T\) and \(C\). Thus the elements of \(C^T (Z-o)^{\circ 2} C\) are linear in \(o\).
+Since the determinant is linear in each column, the determinant \(f(o)\) is a polynomial of degree four in the offset \(o\). This can be summarized as
+
+\begin{theorem}
+Given time-difference-of-arrival measurements from five receivers to five senders, there are four possible offsets $o$, given as the roots to the fourth degree polynomial $f(o)$, counting complex roots and multiplicity of roots. 
+\end{theorem}
+
+For each solution \(o\) it is possible to generate a solution \(\theta_2\) to the relaxed problem,
+according to
+
+\begin{equation*}
+\! b \! = \! \begin{pmatrix} (z_{11} \! - \! o)^2  \! \!  &  \! \!  (z_{12}-o)^2  \! \!  &  \! \!  (z_{13}-o)^2 \! \!  &  \! \!   (z_{14}-o)^2 \! \!  &  \! \!   (z_{15}-o)^2 \end{pmatrix} \! ,
+\end{equation*}
+\begin{equation}
+a =  \begin{pmatrix} 0 \\ (z_{21}-o)^2 -(z_{11}-o)^2\\ (z_{31}-o)^2 -(z_{11}-o)^2 \\ (z_{41}-o)^2 -(z_{11}-o)^2 \\ (z_{51}-o)^2 -(z_{11}-o)^2 \end{pmatrix},
+\end{equation}
+\begin{equation}
+U =  \begin{pmatrix} 0 & u_2 & u_3 & u_4 & u_5\end{pmatrix}, 
+\end{equation}
+\begin{equation}
+V =  \begin{pmatrix}0 & v_2 & v_3 & v_4 & v_5\end{pmatrix} ,
+\end{equation}
+where \(\begin{pmatrix}u_2 & u_3 & u_4 & u_5\end{pmatrix}^T \begin{pmatrix} v_2 & v_3 & v_4 & v_5\end{pmatrix}\) is any rank \(3\) factorization of the matrix \(C^T (Z-o)^{\circ 2} C\).
+
+From a solution \(\theta_2\) to the relaxed problem it is possible to upgrade to a solution \(\theta_1\) to the original problem. This involves solving a system of polynomial equations. The procedure was first described in \cite{kuang-burgess-etal-icassp-13}, where an algorithm for solving this was presented. Recently, a faster algorithm was presented in \cite{larsson2017polynomial}.
+
+An efficient implementation for calculating the four solutions of the offset \(o\) given the measurements \(z\) takes \(4~ \mu s\) for a C++-implementation. Generating the solution \(\theta_2\) to the relaxed problem adds a few \(\mu s\). However, calculating a solution \(\theta_1\) to the original problem takes another \(22 ~ms\). Thus, it is advantageous to estimate the parameters of the relaxed problem and postpone the upgrade from \(\theta_2\) to \(\theta_1\) as a final step, see Table \ref{Tabletime}.
+
+\begin{table}
+\caption{Execution times for $5 \times 5$ minimal solvers steps. Notice that the steps of calculating $o$ and the relaxed solution is significantly faster than upgrading to the full solution}
+\centering
+\vspace{4mm}
+\begin{tabular}{@{}ccc@{}} \toprule
+%& \multicolumn{5}{c}{CS (dB)} & \multicolumn{5}{c}{SSIM} \\ \cmidrule(r){2-11}
+Implementation & Matlab  & C++ \\
+\midrule 
+Calculation of $o$ & $38 \, \mu s$ & $3.7 \, \mu s$ \\
+Calculation of $\theta_2 = \{ U,V,a,b,o \}$ & $100 \, \mu s$ & N/A \\
+Calculation of $\theta_1 = \{ R,S,o \}$ & $600 \, ms$ & $22 \, ms$ \\
+\bottomrule
+\end{tabular}
+\label{Tabletime}
+\end{table}
+
+\vspace{-5pt}
+
+\section{Using RANSAC for five rows}
+\label{sec:ransac}
+\vspace{-5pt}
+
+We propose the use of the fast minimal solver in an hypothesize and test framework to obtain (i) a initial estimate on the offset \(o\) and (ii) an initial inlier set. The steps are described in Algorithm\textasciitilde{}\ref{a_offset}
+
+\begin{algorithm}
+\caption{Offset RANSAC}\label{a_offset}
+\begin{algorithmic}[1]
+\State Randomly select $5$ rows and columns. Find the four solutions on $o$ given the time-difference-of-arrival measurements. 
+\State For each solution $o$, calculate the relaxed solution $\theta_2 = \{ U,V,a,b,o \}$.
+\State For selected rows and for each remaining column, check for inliers according to the residuals in \eqref{eq:relaxed}.
+\end{algorithmic}
+\end{algorithm}
+
+\%There are two key questions here. First, how many inliers do we expect for the null hypothesis, \ie if all data is random noise. Secondly, how many iterations do we typically need to find all the inliers, when the data is
+\vspace{-5pt}
+
+\section{Robust estimation of parameters}
+\label{sec:ransac}
+\vspace{-5pt}
+
+We use these minimal solvers with RANSAC as described in the previous section to find one or several initial estimates of the parameters \(\theta_2\) for a subset of five receivers and \(k\) senders. The solution is extended to additional rows and/or columns using robust techniques as described in \cite{batstone2016robust}. During this process it is useful to keep the errors down by occasionally refining the solutions using local optimization. This has shown to reduce failures, see e.g.~\cite{engels-stewenius-etal-06,klein2007parallel}.
+In the proposed estimation algorithm we postpone the upgrade from \(\theta_2\) to \(\theta_1\) until we have found a good solution involving a large portion of the receiver and sender positions.
+\vspace{-5pt}
+
+\section{Experimental Validation}
+\label{sec:exp}
+\vspace{-5pt}
+\subsection{Minimal Solver}
+\vspace{-5pt}
+
+To test the numerical accuracy and robustness of our minimal solver we conducted an experiment using simulated data without noise. We generated a large number of instance problems (10,000) with known offsets. We then ran our solvers and compared the returned solutions with the ground truth solution. For each instance problem we recorded the distance to the closest solution. In Figure\textasciitilde{}\ref{fig:f_hist} the resulting histogram of the logarithm of the absolute errors are shown. As can be seen, both implementations get close to machine precision.
+
+\begin{figure}
+\includegraphics[width=0.23\textwidth]{original_papers/icassp_2018/figs/hist_matlabsolver.pdf}
+\includegraphics[width=0.23\textwidth]{original_papers/icassp_2018/figs/hist_mexsolver.pdf}
+\caption{Left shows the histogram of the logarithm of the absolute errors, for the Matlab implementation of our minimal solver. To the right the corresponding histogram for the C++ implementation.}
+\label{fig:f_hist}
+\end{figure}
+
+\vspace{-5pt}
+\subsection{Experimental Setup for Real Data}
+\vspace{-5pt}
+
+We have tested our system on (i) experiments made in an office environment and (ii) experiments made at the Orlova Chuka cave, Bulgaria.
+
+For the office experiments, 12 microphones (8x t.bone MM-1, 4x Shure SV100) were positioned around a room (\(\sim 3 \times 5~m^2\)) and measured using a laser to obtain ground truth positions of the microphones with an error of \(\pm 2~ mm\). The space was cleared of most the furniture to create an open space to conduct the experiment in. The sound recordings were captured using a Roland UA-1610 Sound Capture audio interface and automatically amplified. The recordings were made using the open source software Audacity 2.3.0 with a sampling frequency of \(96~kHz\) on a laptop. A synthetically generated chirp was then played using a simple loudspeaker every half second for \(30~s\) while moving the speaker around in the room.
+
+For the cave experiments, 12 microphones (4x Sanken CO-100K, 8x Knowles SPU0410) were positioned in a section of the cave, four microphones were placed on an inverted T array near one wall, while the other eight microphones were placed on the adjacent wall. The sound recordings were captured using pre-amplifiers (Quadmic, RME) and two synchronised Fireface 800 (RME) audio interfaces running at a sampling frequency of \(192 ~kHz\). Recording and playback were controlled via a custom written script based on the sound device library
+\cite{geier2015} in Python 2.7.12 \cite{van1995python}. Ultrasonic chirps (\(8~ms\), \(16-96~kHz\) upward hyperbolic sweep) were played every second via one of the audio interfaces, amplified (Basetech AP-2100) and presented through a Peerless XT25SC90-04 loudspeaker. The speaker was attached to a 3-m-long pole and slowly waved in the approximately \(5 \times 9 \times 3 ~m^3\) recording volume. Playbacks were done past 6:00 am to prevent disturbing the resident bat population.
+
+\vspace{-5pt}
+\subsection{Experimental Evaluation for Real Data}
+\vspace{-5pt}
+
+Once the office recordings were taken, an algorithm was used to find the chirps in the captured sound recordings and the algorithm then outputs the \(z_{ij}\) matrix. This can then be used in our RANSAC scheme, Algorithm\textasciitilde{}\ref{a_offset}. For this experiment we used the (5R/5S) minimal solver. A fixed number of iterations was used; 100 iterations for the initial selection of 5 receivers and senders, then the extension to more columns and rows was allowed until there was no better solution. The tolerance was set to \(T=0.01\) for the initial selection and extension of rows and column.
+
+Once the initial values have been estimated, it underwent \(l^{2}\) optimization on the inlier set. The results of the estimated microphone positions after the optimization are shown in Figure\textasciitilde{}\ref{f_454H}.
+
+This produced an Euclidean distance error between each of the microphones calculated position and its ground truth position as \$(0.2016,0.0587,0.1444,0.1153,0.2017, 0.1326, \$ \(0.1407, 0.1198,0.2041,0.2010,0.1908,0.2110)~ m\).
+
+For graphical purposes, a Procrustes fitting was used on the microphone positions to spread the total error over all 12 microphones. In the Procrustes fitting only rotation and translation were allowed.
+
+For the cave experiment a similar scheme was devised and the results are shown in Figure\textasciitilde{}\ref{f_bat}.
+
+\begin{figure}
+\begin{tabular}{c}
+\includegraphics[width=0.43\textwidth]{original_papers/icassp_2018/figs/MH454_F_inl.eps} \\
+\includegraphics[width=0.21\textwidth]{original_papers/icassp_2018/figs/MH454_F_res.eps} 
+\includegraphics[width=0.26\textwidth]{original_papers/icassp_2018/figs/MH454_F_fig_new.pdf} 
+\end{tabular}
+\caption{For the office experiment the figure shows  detected inliers $\Win$ (top),  inlier residual histogram (bottom left), and  estimated and ground truth microphone positions (bottom right).}
+\label{f_454H}
+\end{figure}
+
+\begin{figure}
+\begin{tabular}{c}
+\includegraphics[width=0.43\textwidth]{original_papers/icassp_2018/figs/bat_20180710_inl.eps} \\
+\includegraphics[width=0.24\textwidth]{original_papers/icassp_2018/figs/bat_20180710_res.eps} 
+\includegraphics[width=0.23\textwidth]{original_papers/icassp_2018/figs/bat_20180710_fig.eps} \\
+\end{tabular}
+\caption{For the cave experiment the figure shows detected inliers $\Win$ (top), inlier residual histogram (bottom left) and  estimated microphone and sound source positions, red dots and line respectively (bottom right).}
+\label{f_bat}
+\end{figure}
+
+\vspace{-5pt}
+\section{Conclusions}
+\label{sec:exp}
+\vspace{-5pt}
+
+In this paper, a novel method has been constructed to efficiently solve a TDOA problem with a constant offset. This has been verified using simulated data to test the solver and real experimental data to test our algorithms in realistic scenarios.
+
+Looking at Figure\textasciitilde{}\ref{fig:f_hist} and Table\textasciitilde{}\ref{Tabletime}, it can be seen that the calculation of the offsets and the calculation of the relaxed form \(\theta_2\) are very fast solvers without loss in numerical accuracy. The advantage of this is that when using a RANSAC approach, the iterations are performed quickly, giving a good initial estimate in which to optimize over, which is important in highly
+non-linear systems such as this.
+
+Looking at the results from the office experiment, Figure\textasciitilde{}\ref{f_454H}, we can see that the calculated microphone positions are accurate and the residuals are small, mostly in the range \(\pm 0.04~m\). Further to this our inlier set appears to be accurate. The first and last few columns (corresponding to sound emissions) are not used in our initialisation. This is correct because the recording started before the chirps were sounded and ended after, so the chirp detection algorithm falsely determined that they were also chirps but our method decided that the data in those regions do not fit the model. A comparison of the calculated microphone positions were made to a solution from a Full TDOA system, \cite{kuang2013stratified}, which produced similar results and very similar residuals. This provided a sanity check that the chirp detection was working correctly and that from this dataset a better solution could not be found.
+
+For the cave experiment, similar conclusions can be made, since the residuals are very low, we can conclude that we have an accurate model. This gives a real life example of how algorithms such as the one proposed can be used.
+
+For future work, the study of the number of inliers could be of use. At the moment our algorithm may not extend to more rows and columns if the initial solution is poor, perturbing our final solution. Perhaps a method which could adapt the initial selection in order to give a required amount of inliers could be more advantageous.
 
 \hypertarget{tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems}{%
 \chapter{tacost: Testing and simulating the performance of acoustic tracking systems}\label{tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems}}
@@ -668,6 +945,6 @@ Some \emph{significant} applications are demonstrated in this chapter.
 \hypertarget{example-two}{%
 \section{Example two}\label{example-two}}
 
-\bibliography{beleyur-goerlitz-2020-refs.bib,tacost-references.bib,cotdoa-filtered.bib}
+  \bibliography{beleyur-goerlitz-2020-refs.bib,tacost-references.bib,cotdoa-filtered.bib}
 
 \end{document}

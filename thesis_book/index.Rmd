@@ -1,13 +1,17 @@
 --- 
 title: "Beleyur-Thesis"
 author: "Thejasvi Beleyur"
-date: "`r Sys.Date()`"
+date: "$`r Sys.Date()`$"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["beleyur-goerlitz-2020-refs.bib", "tacost-references.bib","cotdoa-filtered.bib"]
 biblio-style: apalike
 link-citations: true
 description: "A thesis" 
+output:
+  bookdown::pdf_book:
+    includes:
+      in_header: preamble.tex
 ---
 
 # Introduction
