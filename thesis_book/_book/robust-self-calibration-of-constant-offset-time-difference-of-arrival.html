@@ -24,7 +24,7 @@
 <meta name="author" content="Thejasvi Beleyur" />
 
 
-<meta name="date" content="2020-10-29" />
+<meta name="date" content="2020-11-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -104,8 +104,9 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><i class="fa fa-check"></i><b>5</b> Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival</a><ul>
 <li class="chapter" data-level="" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html#sfsabstract"><i class="fa fa-check"></i>Abstract</a></li>
-<li class="chapter" data-level="5.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html#time-difference-of-arrival-self-calibration"><i class="fa fa-check"></i><b>5.2</b> Time-difference-of-arrival self calibration</a></li>
+<li class="chapter" data-level="5.1" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html#things-to-do"><i class="fa fa-check"></i><b>5.1</b> THINGS TO DO</a></li>
+<li class="chapter" data-level="5.2" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>5.2</b> Introduction</a></li>
+<li class="chapter" data-level="5.3" data-path="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html"><a href="robust-self-calibration-of-constant-offset-time-difference-of-arrival.html#time-difference-of-arrival-self-calibration"><i class="fa fa-check"></i><b>5.3</b> Time-difference-of-arrival self calibration</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems.html"><a href="tacost-testing-and-simulating-the-performance-of-acoustic-tracking-systems.html"><i class="fa fa-check"></i><b>6</b> tacost: Testing and simulating the performance of acoustic tracking systems</a><ul>
 <li class="chapter" data-level="6.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
@@ -145,8 +146,14 @@
 <p>In this paper we study the problem of estimating receiver and sender positions from time-difference-of-arrival measurements, assuming an unknown constant time-difference-of-arrival offset. This problem is relevant for example for repetitive sound events. In this paper it is shown that there are three minimal cases to the problem. One of these (the five receiver, five sender problem) is of particular importance. A fast solver (with run-time under <span class="math inline">\(4~ \mu s\)</span>) is given. We show how this solver can be used in robust estimation algorithms, based on RANSAC, for obtaining an initial estimate followed by local optimization using a robust error norm. The system is verified on both real and synthetic data.</p>
 <div style="page-break-after: always;"></div>
 </div>
+<div id="things-to-do" class="section level2">
+<h2><span class="header-section-number">5.1</span> THINGS TO DO</h2>
+<ol style="list-style-type: decimal">
+<li>FIX THE FIGURE SIZES – THEY’RE REALLY SMALL RIGHT NOW….</li>
+</ol>
+</div>
 <div id="introduction" class="section level2">
-<h2><span class="header-section-number">5.1</span> Introduction</h2>
+<h2><span class="header-section-number">5.2</span> Introduction</h2>
 <p>The problem of estimating receiver-sender node positions from measured arrival times of radio or sound signals is a key issue in different applications such as microphone array calibration, radio antenna array calibration, mapping and positioning. This field is well researched but in this paper we will focus on the anchor-free sensor network calibration both in terms of time-of-arrival measurements (TOA) and time-difference-of-arrival measurements (TDOA).
 For time-of-arrival the planar case of three receivers and three senders (3R/3S) was solved in .
 For the full 3D case the over-determined problem (10R/4S) was studied in , where a solver for this non-minimal case was provided.<br />
@@ -157,7 +164,7 @@ Faster solvers for these minimal cases were provided in .</p>
 Robust parameter estimation often use the hypothesize and test paradigm, e.g. using random sampling consensus,  or one of its many variants . In these frameworks minimal solvers are important building blocks for generating model hypotheses, and we show in the paper how a minimal solver can be used for robust parameter estimation of sender positions, receiver positions and unknown offset. The system is capable of handling missing data, outliers and noise. The algorithms are tested on synthetic data as well as real data, in an office environment and in a cave.The methods are straightforward to generalize for degenerate configurations which arise if senders or receivers are restricted to a plane or to a line.</p>
 </div>
 <div id="time-difference-of-arrival-self-calibration" class="section level2">
-<h2><span class="header-section-number">5.2</span> Time-difference-of-arrival self calibration</h2>
+<h2><span class="header-section-number">5.3</span> Time-difference-of-arrival self calibration</h2>
 <p>The problem we are considering involves <span class="math inline">\(m\)</span> receiver positions <span class="math inline">\(\mathbf{r}_i \in \mathbb R^3\)</span>, $ i = 1, , m,$ and <span class="math inline">\(n\)</span> sender positions <span class="math inline">\(\mathbf{s}_j \in ^3\)</span>, $ j = 1, , n$. This could for example represent the microphone positions and locations of sound emissions, respectively. Assume that the arrival time of a sound <span class="math inline">\(j\)</span> to receiver <span class="math inline">\(i\)</span> is <span class="math inline">\(t_{ij}\)</span> and that the time that sound <span class="math inline">\(j\)</span> is emitted is <span class="math inline">\(T_j\)</span>.
 Multiplying the travel time <span class="math inline">\(t_{ij} - T_j\)</span> with the speed <span class="math inline">\(v\)</span> of the signal we obtain the distance between senders and receiver,</p>
 <p><span class="math display">\[\begin{equation}

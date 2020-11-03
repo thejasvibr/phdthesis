@@ -204,8 +204,8 @@ In the proposed estimation algorithm we postpone the upgrade from $\theta_2$ to 
 
 To test the numerical accuracy and robustness of our minimal solver we conducted an experiment using simulated data without noise. We generated a large number of instance problems (10,000) with known offsets. We then ran our solvers and compared the returned solutions with the ground truth solution. For each instance problem we recorded the distance to the closest solution. In Figure~\ref{fig:f_hist} the resulting histogram of the logarithm of the absolute errors are shown. As can be seen, both implementations get close to machine precision. 
 \begin{figure}
-\includegraphics[width=0.23\textwidth]{original_papers/icassp_2018/figs/hist_matlabsolver.pdf}
-\includegraphics[width=0.23\textwidth]{original_papers/icassp_2018/figs/hist_mexsolver.pdf}
+\includegraphics[width=0.4\textwidth]{original_papers/icassp_2018/figs/hist_matlabsolver.pdf}
+\includegraphics[width=0.4\textwidth]{original_papers/icassp_2018/figs/hist_mexsolver.pdf}
 \caption{Left shows the histogram of the logarithm of the absolute errors, for the Matlab implementation of our minimal solver. To the right the corresponding histogram for the C++ implementation.}
 \label{fig:f_hist}
 \end{figure}
@@ -237,9 +237,9 @@ For the cave experiment a similar scheme was devised and the results are shown i
 
 \begin{figure}
 \begin{tabular}{c}
-\includegraphics[width=0.43\textwidth]{original_papers/icassp_2018/figs/MH454_F_inl.eps} \\
-\includegraphics[width=0.21\textwidth]{original_papers/icassp_2018/figs/MH454_F_res.eps} 
-\includegraphics[width=0.26\textwidth]{original_papers/icassp_2018/figs/MH454_F_fig_new.pdf} 
+\includegraphics[width=0.8\textwidth]{original_papers/icassp_2018/figs/MH454_F_inl.eps} \\
+\includegraphics[width=0.4\textwidth]{original_papers/icassp_2018/figs/MH454_F_res.eps} 
+\includegraphics[width=0.4\textwidth]{original_papers/icassp_2018/figs/MH454_F_fig_new.pdf} 
 \end{tabular}
 \caption{For the office experiment the figure shows  detected inliers $\Win$ (top),  inlier residual histogram (bottom left), and  estimated and ground truth microphone positions (bottom right).}
 \label{f_454H}
@@ -248,9 +248,9 @@ For the cave experiment a similar scheme was devised and the results are shown i
 
 \begin{figure}
 \begin{tabular}{c}
-\includegraphics[width=0.43\textwidth]{original_papers/icassp_2018/figs/bat_20180710_inl.eps} \\
-\includegraphics[width=0.24\textwidth]{original_papers/icassp_2018/figs/bat_20180710_res.eps} 
-\includegraphics[width=0.23\textwidth]{original_papers/icassp_2018/figs/bat_20180710_fig.eps} \\
+\includegraphics[width=0.8\textwidth]{original_papers/icassp_2018/figs/bat_20180710_inl.eps} \\
+\includegraphics[width=0.4\textwidth]{original_papers/icassp_2018/figs/bat_20180710_res.eps} 
+\includegraphics[width=0.4\textwidth]{original_papers/icassp_2018/figs/bat_20180710_fig.eps} \\
 \end{tabular}
 \caption{For the cave experiment the figure shows detected inliers $\Win$ (top), inlier residual histogram (bottom left) and  estimated microphone and sound source positions, red dots and line respectively (bottom right).}
 \label{f_bat}
