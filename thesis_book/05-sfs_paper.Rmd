@@ -13,9 +13,6 @@ In this paper we study the problem of estimating receiver and sender positions  
 
 \newpage 
 
-## THINGS TO DO
-1. FIX THE FIGURE SIZES -- THEY'RE REALLY SMALL RIGHT NOW....
-
 ## Introduction
 
 The problem of estimating receiver-sender node positions from measured arrival times of radio or sound signals is a key issue in different applications such as microphone array calibration, radio antenna array calibration, mapping and positioning. This field is well researched but in this paper we will focus on the anchor-free sensor network calibration both in terms of time-of-arrival measurements (TOA) and time-difference-of-arrival measurements (TDOA). 
@@ -188,7 +185,6 @@ We propose the use of the fast minimal solver in an hypothesize and test framewo
 
 
 
-%There are two key questions here. First, how many inliers do we expect for the null hypothesis, \ie if all data is random noise. Secondly, how many iterations do we typically need to find all the inliers, when the data is 
 \vspace{-5pt}
 \section{Robust estimation of parameters}
 \label{sec:ransac}
