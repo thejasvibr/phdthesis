@@ -10,26 +10,77 @@ link-citations: true
 description: "A thesis" 
 output:
   bookdown::pdf_book:
+    latex_engine: lualatex
     includes:
       in_header: preamble.tex
+always_allow_html: true
+
 ---
+
+# Zusammenfassung {-#zusammenf}
+
+Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutsch
+
+\newpage 
+
+# Summary {-#summary}
+
+Sometyhing here and there Sometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and there
+Sometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and there
+
+Sometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and thereSometyhing here and there
+Sometyhing here and thereSometyhing here and thereSometyhing here and there
+
+\newpage
 
 # Introduction
 
+### Animal communication often consists of public signals. 
+Proceeds through a variety of modalities - sound, light, smell. While 
+
+### Listening in the noise 
+Animals have to deal with the task of sorting out noise from signal all the time - bird choruses [species can be trained to dteect single species in a chorus], frogs [Bee], cricket chorusses[Balakrishinan], and finally even humans. 
+
+* There are all kinds of adaptations in the animal kingdom. 
+* Training/experience is known to improve performance
+
+### Active sensing animals and listening in the noise
+1. Active sensing animals emit energy and blah blah blah.
+1. Discerning the correct type of signal from the bakcground is important but most of these other animals use the cues for decisions that are made over somewhat longer time scales eg. a few seconds to a few minutes. 
+
+1. But active sensing animals need to manage in the *now*, and show a variety of adaptations in response. Electric fish, dolphins, bats. eg. JAR in electric fish, calling louder in bats, dolphins etc. The rapidness of the adaptation indicates how vital it is for the animals??
+
+### Active sensing in bats and in noise
+1. Echolocating bats emit loud calls and listen for echoes --
+1. The returning echoes serve as packets of information that the bat uses to gain insights about its surroundings. The time delay, echo level, interference and spectral properties and other blah blah tell the bat more about the objects. 
+1. Echolocation might work based on a type of efference copy based mechanism. 
+1. 
+
+
+
+
+### Group echolocation as a serious sensory challenge
+
+### Implications of group echolocation on collective behaviour 
+
+1. Analogies to RADAR: one might think a negative signal-to-noise ratio is not possible. But published data clearly shows this - and also, that when there is a
+
 This is the part where I say something broad and clever. And then proceed to make further connections into the topic of interest. 
 
-In chapter 1, I present miaow miaow miaow. 
+## Thesis outline 
 
-In Chapter 2, I present bow bow bow 
+In chapter 2 (CPN), I present miaow miaow miaow. 
 
-In Chapter 3, I do kat kat kat kat 
+In Chapter 3 (Horseshoebat), I present bow bow bow 
 
-In Chapter 4, I do BOW BOW BOW BOW .
+In Chapter 4 (Uschichka), I do kat kat kat kat 
 
+In Chapter 5 (SFS), I do BOW BOW BOW BOW .
+
+In Chapter 6 (tacost), 
+
+In Chapter 7 (itsfm)
 
 1. About the SFS methodology : Multi-microphone arrays have been an important and indispensable tool in the study of echolocation in the laboratory ever since the work of  [Aubauer XXXX]. Working with microphone arrays in the field however comes with a series of challenges. Handling multi-microphone arrays in the field can be logistically and physically straining: the long cables involved must be brought to order each time, the arrays themselves can be bulky and must be assembled on site each time, and in certain configurations the positions of each microphone may need to be measured each time the array is setup. While rewarding in terms of the data it generates, the process of setting up a microphone array can be strenuous especially when it comes to taking positional measurements of microphone positions. The use of TotalStation type surveying systems that provide direct XYZ measurements are not common in the field (they are themselves another piece of bulky equipment), and instead it is more common to measure inter-microphone distances with a tape measure or laser range finders. Having measured the inter-microphone distances in an array, the final XYZ positions of each microphone can be reconstructed. In my search for a method that .......an academic 'Christmas present'. 
-
-
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
 
 
