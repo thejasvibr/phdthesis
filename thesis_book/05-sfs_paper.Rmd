@@ -17,19 +17,16 @@ In this paper we study the problem of estimating receiver and sender positions  
 
 The problem of estimating receiver-sender node positions from measured arrival times of radio or sound signals is a key issue in different applications such as microphone array calibration, radio antenna array calibration, mapping and positioning. This field is well researched but in this paper we will focus on the anchor-free sensor network calibration both in terms of time-of-arrival measurements (TOA) and time-difference-of-arrival measurements (TDOA). 
 For time-of-arrival the planar case of three receivers and three senders (3R/3S) was solved in \cite{stewenius-phd-2005}.
-For the full 3D case the over-determined problem (10R/4S) was studied in \cite{pollefeys-nister-icassp-08}, where a solver for this non-minimal case was provided.   
-There are actually three minimal cases for the 3D case, namely (4R/6S), (5R/5S) and (6R/5S). A practical solver was presented in
+For the full 3D case the over-determined problem (10R/4S) was studied in \cite{pollefeys-nister-icassp-08}, where a solver for this non-minimal case was provided. There are actually three minimal cases for the 3D case, namely (4R/6S), (5R/5S) and (6R/5S). A practical solver was presented in
 \cite{kuang-burgess-etal-icassp-13}. There are in general $38$, $42$ and $38$ solutions respectively for the three different set ups. 
 Faster solvers for these minimal cases were provided in \cite{larsson2017polynomial}.
 
-
-
 In this paper we study the constant offset TDOA self-calibration problem. It is a problem that naturally arises e.g.\ when signals are emitted  with a known period. As an estimation problem it lies between TOA and full TDOA. In the paper we study the minimal (5R/5S) problem and provide a fast (few $\mu s$) solver. 
-Robust parameter estimation often use the hypothesize and test paradigm, e.g.\ using random sampling consensus, \cite{fischler-bolles-ca-81} or one of its many variants \cite{chum2003locally,raguram2013usac,korman2018latent}. In these frameworks minimal solvers are important building blocks for generating model hypotheses, and we show in the  paper how a minimal solver can be used for robust parameter estimation of sender positions, receiver positions and unknown offset. The system is capable of handling missing data, outliers and noise. The algorithms are tested on synthetic data as well as real data, in an office environment and in a cave.The methods are straightforward to generalize for degenerate configurations which arise if senders or receivers are restricted to a plane or to a line.
+Robust parameter estimation often use the hypothesize and test paradigm, e.g.\ using random sampling consensus, \cite{fischler-bolles-ca-81} or one of its many variants (\cite{chum2003locally,raguram2013usac,korman2018latent}). In these frameworks minimal solvers are important building blocks for generating model hypotheses, and we show in the  paper how a minimal solver can be used for robust parameter estimation of sender positions, receiver positions and unknown offset. The system is capable of handling missing data, outliers and noise. The algorithms are tested on synthetic data as well as real data, in an office environment and in a cave.The methods are straightforward to generalize for degenerate configurations which arise if senders or receivers are restricted to a plane or to a line.
 
 
 ## Time-difference-of-arrival self calibration
-The problem we are considering involves $m$ receiver positions  $\mathbf{r}_i \in \mathbb R^3$, $ i = 1, \dots, m,$ and  $n$ sender positions $\mathbf{s}_j \in ^3$, $ j = 1, \dots, n$. This could for example represent the microphone positions and locations of sound emissions, respectively. Assume that the arrival time of a sound $j$ to receiver $i$ is $t_{ij}$ and that the time that sound $j$ is emitted is $T_j$. 
+The problem we are considering involves $m$ receiver positions  $\mathbf{r}_i \in \mathbb R^3$, $i = 1, \dots, m$ and  $n$ sender positions $\mathbf{s}_j \in \mathbb R^3$, $ j = 1, \dots, n$.  This could for example represent the microphone positions and locations of sound emissions, respectively. Assume that the arrival time of a sound $j$ to receiver $i$ is $t_{ij}$ and that the time that sound $j$ is emitted is $T_j$. 
 Multiplying the travel time $t_{ij} - T_j$ with the speed $v$ of the signal we obtain the distance between senders and receiver, 
 
 \begin{equation}
@@ -77,12 +74,12 @@ Here we will use the set $\Win$ for the indices $(i,j)$ corresponding to the inl
 \section{Local optimization and the low~rank~relaxation}
 \label{sec:rank}
 \vspace{-5pt}
-If an initial estimate of the parameters $\theta_1 = \{ R, S, o \}$ is given and if the set of inliers is known, then refinement of the estimate can be found by optimization methods, \eg Levenberg-Marquardt (LM) \cite{levenberg1944method,marquardt1963algorithm}, 
+If an initial estimate of the parameters $\theta_1 = \{ R, S, o \}$ is given and if the set of inliers is known, then refinement of the estimate can be found by optimization methods, \eg Levenberg-Marquardt (LM) (\cite{levenberg1944method,marquardt1963algorithm}), 
 \begin{equation}
 \min_{\theta_1} f(\theta_1) = \sum_{(i,j) \in \Win} (z_{ij} - ( {\norm{\mathbf{r}_i - \mathbf{s}_j}}_2 +o) )^2 .
 \end{equation}
 
-There is an interesting relaxation to the problem, that exploits the fact that the matrix with elements $ (z_{ij}-o)^2 $ is rank $5$, \cite{pollefeys-nister-icassp-08}. Further simplifications use the double compaction method \cite{kuang2013stratified}. The double compaction matrix $M$ is defined as the matrix with elements
+There is an interesting relaxation to the problem, that exploits the fact that the matrix with elements $(z_{ij}-o)^2$ is rank $5$, (\cite{pollefeys-nister-icassp-08}). Further simplifications use the double compaction method (\cite{kuang2013stratified}). The double compaction matrix $M$ is defined as the matrix with elements
 \begin{equation}
 M_{ij}=(z_{ij}-o)^2 -a_i-b_j,
 \label{eq:dc}
@@ -122,7 +119,7 @@ C = \begin{pmatrix}
 \end{pmatrix} 
 \end{equation}
 and $^{\circ 2}$ denotes element-wise squaring (Hadamard power).
-Although the elements of $ (Z-o)^{\circ 2}$ are of degree 2 in $o$, the quadratic terms cancel out after multiplication with $C^T$ and $C$. Thus the elements of $C^T (Z-o)^{\circ 2} C$ are linear in $o$.
+Although the elements of $(Z-o)^{\circ 2}$ are of degree 2 in $o$, the quadratic terms cancel out after multiplication with $C^T$ and $C$. Thus the elements of $C^T (Z-o)^{\circ 2} C$ are linear in $o$.
 Since the determinant is linear in each column, the determinant $f(o)$ is a polynomial of degree four in the offset $o$. This can be summarized as 
 \begin{theorem}
 Given time-difference-of-arrival measurements from five receivers to five senders, there are four possible offsets $o$, given as the roots to the fourth degree polynomial $f(o)$, counting complex roots and multiplicity of roots. 
@@ -189,7 +186,7 @@ We propose the use of the fast minimal solver in an hypothesize and test framewo
 \section{Robust estimation of parameters}
 \label{sec:ransac}
 \vspace{-5pt}
-We use these minimal solvers with RANSAC as described in the previous section to find one or several initial estimates of the parameters $\theta_2$ for a subset of five receivers and $k$ senders. The solution is extended to additional rows and/or columns using robust techniques as described in \cite{batstone2016robust}. During this process it is useful to keep the errors down by occasionally refining the solutions using local optimization. This has shown to reduce failures, see e.g.\ \cite{engels-stewenius-etal-06,klein2007parallel}.
+We use these minimal solvers with RANSAC as described in the previous section to find one or several initial estimates of the parameters $\theta_2$ for a subset of five receivers and $k$ senders. The solution is extended to additional rows and/or columns using robust techniques as described in \cite{batstone2016robust}. During this process it is useful to keep the errors down by occasionally refining the solutions using local optimization. This has shown to reduce failures, see e.g. (\cite{engels-stewenius-etal-06,klein2007parallel}).
 In the proposed estimation algorithm we postpone the upgrade from $\theta_2$ to $\theta_1$ until we have found a good solution involving a large portion of the receiver and sender positions. 
 \vspace{-5pt}
 \section{Experimental Validation}
@@ -198,7 +195,7 @@ In the proposed estimation algorithm we postpone the upgrade from $\theta_2$ to 
 \subsection{Minimal Solver}
 \vspace{-5pt}
 
-To test the numerical accuracy and robustness of our minimal solver we conducted an experiment using simulated data without noise. We generated a large number of instance problems (10,000) with known offsets. We then ran our solvers and compared the returned solutions with the ground truth solution. For each instance problem we recorded the distance to the closest solution. In Figure~\ref{fig:f_hist} the resulting histogram of the logarithm of the absolute errors are shown. As can be seen, both implementations get close to machine precision. 
+To test the numerical accuracy and robustness of our minimal solver we conducted an experiment using simulated data without noise. We generated a large number of instance problems (10,000) with known offsets. We then ran our solvers and compared the returned solutions with the ground truth solution. For each instance problem we recorded the distance to the closest solution. In Figure \ref{fig:f_hist} the resulting histogram of the logarithm of the absolute errors are shown. As can be seen, both implementations get close to machine precision. 
 \begin{figure}
 \includegraphics[width=0.4\textwidth]{original_papers/icassp_2018/figs/hist_matlabsolver.pdf}
 \includegraphics[width=0.4\textwidth]{original_papers/icassp_2018/figs/hist_mexsolver.pdf}
@@ -216,20 +213,20 @@ We have tested our system on (i) experiments made in an office environment and (
 For the office experiments, 12 microphones (8x t.bone MM-1, 4x Shure SV100) were positioned around a room ($\sim 3 \times 5~m^2$) and measured using a laser to obtain ground truth positions of the microphones with an error of $\pm 2~ mm$. The space was cleared of most the furniture to create an open space to conduct the experiment in. The sound recordings were captured using a Roland UA-1610 Sound Capture audio interface and automatically amplified. The recordings were made using the open source software Audacity 2.3.0 with a sampling frequency of $96~kHz$ on a laptop. A synthetically generated chirp was then played using a simple loudspeaker every half second for $30~s$ while moving the speaker around in the room. 
 
 For the cave experiments, 12 microphones (4x Sanken CO-100K, 8x Knowles SPU0410) were positioned in a section of the cave, four microphones were placed on an inverted T array near one wall, while the other eight microphones were placed on the adjacent wall. The sound recordings were captured using pre-amplifiers (Quadmic, RME) and two synchronised Fireface 800 (RME) audio interfaces running at a sampling frequency of $192 ~kHz$. Recording and playback were controlled via a custom written script based on the sound device library
-\cite{geier2015} in Python 2.7.12  \cite{van1995python}. Ultrasonic chirps ($8~ms$, $16-96~kHz$ upward hyperbolic sweep) were played every second via one of the audio interfaces, amplified (Basetech AP-2100) and presented through a Peerless XT25SC90-04 loudspeaker. The speaker was attached to a 3-m-long pole and slowly waved in the approximately $5 \times 9 \times 3 ~m^3$ recording volume. Playbacks were done past 6:00 am to prevent disturbing the resident bat population.
+(\cite{geier2015}) in Python 2.7.12  (\cite{van1995python}). Ultrasonic chirps ($8~ms$, $16-96~kHz$ upward hyperbolic sweep) were played every second via one of the audio interfaces, amplified (Basetech AP-2100) and presented through a Peerless XT25SC90-04 loudspeaker. The speaker was attached to a 3-m-long pole and slowly waved in the approximately $5 \times 9 \times 3 ~m^3$ recording volume. Playbacks were done past 6:00 am to prevent disturbing the resident bat population.
 
 \vspace{-5pt}
 \subsection{Experimental Evaluation for Real Data}
 \vspace{-5pt}
 Once the office recordings were taken, an algorithm was used to find the chirps in the captured sound recordings and the algorithm then outputs the $z_{ij}$ matrix.  This can then be used in our RANSAC scheme, Algorithm~\ref{a_offset}. For this experiment we used the (5R/5S)  minimal solver. A fixed number of iterations was used; 100 iterations for the initial selection of 5 receivers and senders, then the extension to more columns and rows was allowed until there was no better solution. The tolerance was set to $T=0.01$ for the initial selection and extension of rows and column.
 
-Once the initial values have been estimated, it underwent $l^{2}$ optimization on the inlier set. The results of the estimated microphone positions after the optimization are shown in Figure~\ref{f_454H}. 
+Once the initial values have been estimated, it underwent $l^{2}$ optimization on the inlier set. The results of the estimated microphone positions after the optimization are shown in Figure \ref{f_454H}. 
 
-This produced an Euclidean distance error between each of the microphones calculated position and its ground truth position as $(0.2016,0.0587,0.1444,0.1153,0.2017, 0.1326, $ $0.1407, 0.1198,0.2041,0.2010,0.1908,0.2110)~ m$.
+This produced an Euclidean distance error between each of the microphones calculated position and its ground truth position as 0.2016,0.0587,0.1444,0.1153,0.2017, 0.1326,0.1407, 0.1198,0.2041,0.2010,0.1908,0.2110) m.
 
 For graphical purposes, a Procrustes fitting was used on the microphone positions to spread the total error over all 12 microphones. In the Procrustes fitting only rotation and translation were allowed.
 
-For the cave experiment a similar scheme was devised and the results are shown in Figure~\ref{f_bat}.
+For the cave experiment a similar scheme was devised and the results are shown in Figure \ref{f_bat}.
 
 \begin{figure}
 \begin{tabular}{c}
@@ -258,10 +255,10 @@ For the cave experiment a similar scheme was devised and the results are shown i
 \vspace{-5pt}
 In this paper, a novel method has been constructed to efficiently solve a TDOA problem with a constant offset. This has been verified using simulated data to test the solver and real experimental data to test our algorithms in realistic scenarios.
 
-Looking at Figure~\ref{fig:f_hist} and Table~\ref{Tabletime}, it can be seen that the calculation of the offsets and the calculation of the relaxed form $\theta_2$ are very fast solvers without loss in numerical accuracy. The advantage of this is that when using a RANSAC approach, the iterations are performed quickly, giving a good initial estimate in which to optimize over, which is important in highly
+Looking at Figure \ref{fig:f_hist} and Table \ref{Tabletime}, it can be seen that the calculation of the offsets and the calculation of the relaxed form $\theta_2$ are very fast solvers without loss in numerical accuracy. The advantage of this is that when using a RANSAC approach, the iterations are performed quickly, giving a good initial estimate in which to optimize over, which is important in highly
 non-linear systems such as this.
 
-Looking at the results from the office experiment, Figure~\ref{f_454H}, we can see that the calculated microphone positions are accurate and the residuals are small, mostly in the range $\pm 0.04~m$. Further to this our inlier set appears to be accurate. The first and last few columns (corresponding to sound emissions) are not used in our initialisation. This is correct because the recording started before the chirps were sounded and ended after, so the chirp detection algorithm falsely determined that they were also chirps but our method decided that the data in those regions do not fit the model. A comparison of the calculated microphone positions were made to a solution from a Full TDOA system, \cite{kuang2013stratified}, which produced similar results and very similar residuals. This provided a sanity check that the chirp detection was working correctly and that from this dataset a better solution could not be found.
+Looking at the results from the office experiment, Figure \ref{f_454H}, we can see that the calculated microphone positions are accurate and the residuals are small, mostly in the range $\pm 0.04~m$. Further to this our inlier set appears to be accurate. The first and last few columns (corresponding to sound emissions) are not used in our initialisation. This is correct because the recording started before the chirps were sounded and ended after, so the chirp detection algorithm falsely determined that they were also chirps but our method decided that the data in those regions do not fit the model. A comparison of the calculated microphone positions were made to a solution from a Full TDOA system, (\cite{kuang2013stratified}), which produced similar results and very similar residuals. This provided a sanity check that the chirp detection was working correctly and that from this dataset a better solution could not be found.
 
 For the cave experiment, similar conclusions can be made, since the residuals are very low, we can conclude that we have an accurate model. This gives a real life example of how algorithms such as the one proposed can be used.
 
