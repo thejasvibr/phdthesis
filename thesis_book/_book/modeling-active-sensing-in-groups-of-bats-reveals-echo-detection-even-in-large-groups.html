@@ -24,7 +24,7 @@
 <meta name="author" content="Thejasvi Beleyur" />
 
 
-<meta name="date" content="2020-11-12" />
+<meta name="date" content="2020-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,8 +51,6 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 
@@ -197,7 +195,7 @@ TODO STUFF:
 <p>The arrival time of target echoes within the interpulse interval was determined according to the 2-way travel time to the echo-reflecting neighboring bat. The arrival time of masking calls and secondary echoes was assigned randomly with uniform probability across the interpulse interval. The random arrival time assignment of calls and secondary echoes recreates the uncoordinated echolocation of all bats in the group. It is unlikely that multiple bats in large groups can coordinate their calls effectively, and independent calling has been reported even in small groups of 4 bats (<span class="citation">Hase (<a href="#ref-hase2018a" role="doc-biblioref">2018</a>)</span>).</p>
 <p>All bats in a group were identical in their calling properties, and we treated all sounds as constant tones of equal duration, i.e., we did not explicitly model spectral emission, propagation, and reception properties. The only difference between each of the sounds was their path and source of sound production. The omission of spectral properties is a conservative choice that assumes maximal masking of the primary echoes, thus allowing us to study the role of intensity differences and temporal separation between target echoes and masking sounds.</p>
 <p>Once we calculated the timing and received level of all sounds at the focal bat, we accounted for directional hearing sensitivity (SI Appendix, Figure ) and spatial unmasking. Spatial unmasking describes the reduction in experienced masking as the arrival angle between masker and target sound increases (<span class="citation">Ebata (<a href="#ref-ebata2003a" role="doc-biblioref">2003</a>)</span>, <span class="citation">Sümer, Denzinger, and Schnitzler (<a href="#ref-suemer2009a" role="doc-biblioref">2009</a>)</span>). We simulated spatial unmasking by the reduction of a masker’s effective received level based on its angular separation to an echo. For each echo, the same masker will have a different effective masking level as its relative angle of arrival will be unique for each echo. We thus calculated the effective masking level of each masker for each echo. The effective masking levels of all maskers were then combined to form a time-variant and echo-specific “masker SPL profile” (SI Appendix, Figure D). This is essentially the joint sound pressure level (SPL) of all maskers over time. We then expressed this echo-specific masker SPL profile in relation to the echo’s SPL, thus obtaining a relative “echo-to-masker ratio profile” (SI Appendix,Figure E). This is equivalent to a signal-to-noise ratio profile, where the echo is the signal and the masker profile is the noise.</p>
-<p>In addition to angular separation, signal detection is also determined by the temporal separation between signal (echo) and masker (<span class="citation">Møhl and Surlykke (<a href="#ref-m1989a" role="doc-biblioref">1989</a>)</span>,<span class="citation">Yost (<a href="#ref-yost2007a" role="doc-biblioref">2007</a><a href="#ref-yost2007a" role="doc-biblioref">a</a>)</span>,<span class="citation">Siewert, Schillinger, and Schmidt (<a href="#ref-siewert2004a" role="doc-biblioref">2004</a>)</span>). Masking increases as the masker arrives closer in time to the echo. Masking occurs over longer durations when maskers arrive before the signal (forward masking) than afterward (backward masking). We recreated the asymmetric masking by a “temporal masking envelope” temporally centered at the echo (SI Appendix, Figure ). The echo was considered heard if the echo-to-masker ratio profile was above the temporal masking envelope. We allowed short drops of the echo-to-masker ratio profile below the temporal masking envelope, for a combined maximum duration of less than 25% of an echo’s duration. Alternatively, we defined an echo to be masked (= not heard), if the echo-to-masker ratio profile was below the temporal masking envelope for more than 25% of the echo duration. The 25% threshold was an arbitrarily chosen conservative value to prevent masking by rare and short bursts of high sound pressure level that are unlikely to affect echo detection biologically (SI Appendix, ).</p>
+<p>In addition to angular separation, signal detection is also determined by the temporal separation between signal (echo) and masker (<span class="citation">Møhl and Surlykke (<a href="#ref-m1989a" role="doc-biblioref">1989</a>)</span>,<span class="citation">Yost (<a href="#ref-yost2007a" role="doc-biblioref">2007</a>)</span>,<span class="citation">Siewert, Schillinger, and Schmidt (<a href="#ref-siewert2004a" role="doc-biblioref">2004</a>)</span>). Masking increases as the masker arrives closer in time to the echo. Masking occurs over longer durations when maskers arrive before the signal (forward masking) than afterward (backward masking). We recreated the asymmetric masking by a “temporal masking envelope” temporally centered at the echo (SI Appendix, Figure ). The echo was considered heard if the echo-to-masker ratio profile was above the temporal masking envelope. We allowed short drops of the echo-to-masker ratio profile below the temporal masking envelope, for a combined maximum duration of less than 25% of an echo’s duration. Alternatively, we defined an echo to be masked (= not heard), if the echo-to-masker ratio profile was below the temporal masking envelope for more than 25% of the echo duration. The 25% threshold was an arbitrarily chosen conservative value to prevent masking by rare and short bursts of high sound pressure level that are unlikely to affect echo detection biologically (SI Appendix, ).</p>
 </div>
 <div id="model-parametrization" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Model Parametrization</h3>
@@ -256,12 +254,12 @@ TODO STUFF:
 <p>Here, we present the details of how we parametrized our model of the sonar cocktail party nightmare, based on empirical data of behavioral studies in bats and our own measurements.</p>
 <div id="temporal-masking-envelope" class="section level4">
 <h4><span class="header-section-number">2.6.1.1</span> Temporal masking envelope </h4>
-<p>We derived the echo-to-masker sound pressure level (SPL) ratios for forward, backward and simultaneous masking from two empirical target-detection studies in echolocating bats (Table S1). We only chose studies where the target and masker were co-located along the same direction. Both studies presented the ratio between the echo and masker SPL at target detection for various delays between
+<p>We derived the echo-to-masker sound pressure level (SPL) ratios for forward, backward and simultaneous masking from two empirical target-detection studies in echolocating bats (Table <a href="#tab:maskingtable"><strong>??</strong></a>). We only chose studies where the target and masker were co-located along the same direction. Both studies presented the ratio between the echo and masker SPL at target detection for various delays between
 echo and masker arrival time. We linearly interpolated (in a piecewise fashion) the echo-to-masker SPL ratios between each of the time delays measured in the studies to obtain the full temporal masking envelope ranging from -0.65 and +24 ms delay of the target echo relative to the masker edge (Figure ).</p>
 </div>
 <div id="spatial-unmasking-function" class="section level4">
 <h4><span class="header-section-number">2.6.1.2</span> Spatial unmasking function </h4>
-<p>Sümer et al. (2009) performed a backward masking study to address spatial unmasking in the bat Eptesicus fuscus. In a two-alternative forced-choice paradigm, they increased the angular separation between a target object and a masker object while also varying the level of the target object’s echo (by varying the size of the target object and thus the target object’s target strength).</p>
+<p>Sümer et al. (2009) performed a backward masking study to address spatial unmasking in the bat <em>Eptesicus fuscus</em>. In a two-alternative forced-choice paradigm, they increased the angular separation between a target object and a masker object while also varying the level of the target object’s echo (by varying the size of the target object and thus its target strength).</p>
 <p>We define the spatial unmasking function as the echo-to-masker SPL ratio at just-noticeable echo detection as a function of angular separation. To obtain the echo-to-masker level ratios, we subtracted the target object’s target strengths from the masker object’s target strength. We normalized the spatial unmasking function to the co-localised echo-masker case (i.e., when both echo and masker arrive from the same direction). This describes the reduction in echo-to-masker ratio required for echo detection as a function of angular separation between target and masker,compared to the co-localized case. We digitized the data points from Figure B of Sümer et al. (2009) by hand with WebPlotDigitiser <span class="citation">(Rohatgi <a href="#ref-rohatgi2015a" role="doc-biblioref">2015</a>)</span> to obtain the target’s target strength as a function of angular separation. Masker target strength was given by Sümer et al. (2009) as -14.5 dB. We then calculated the target-masker SPL ratios and interpolated them with a quadratic polynomial fit (Figure ). The interpolated data was then further upsampled to 0.47° intervals. As Sümer et al. (2009) only measured angular separations up to 23°. We conservatively used the echo-masker SPL ratio at 23° also for all larger angular separations.</p>
 </div>
 <div id="call-and-hearing-directionality" class="section level4">
@@ -280,7 +278,7 @@ attenuates or amplifies the same sound depending on its direction of arrival <sp
 <p>Sound pressure level reduces with increasing distance from the source, called
 geometric attenuation. For all sounds in our model (target echoes, masking calls
 and secondary echoes), we implemented spherical geometric spreading, i.e.,
-uniform spreading of sound in all directions<span class="citation">(Speaks <a href="#ref-speaks1996a" role="doc-biblioref">1996</a>)</span>.</p>
+uniform spreading of sound in all directions <span class="citation">(Speaks <a href="#ref-speaks1996a" role="doc-biblioref">1996</a>)</span>.</p>
 </div>
 <div id="group-geometry" class="section level4">
 <h4><span class="header-section-number">2.6.1.6</span> Group geometry </h4>
@@ -297,8 +295,8 @@ heading angle for each individual. Each individual called into the direction of 
 <h4><span class="header-section-number">2.6.1.8</span> Monostatic and bistatic target strength of a flying bat </h4>
 <p>Quantifying the received levels of echoes and secondary echoes requires
 knowledge of the target strength of a bat when emitter and receiver are at the same and at different locations. Here, we measured monostatic and bistatic target strengths <span class="citation">(Richards, J., and Holm <a href="#ref-richards2010a" role="doc-biblioref">2010</a>)</span> of a flying stuffed <em>Myotis myotis</em> bat. Monostatic target strengths refer to the situation where the emitter and receiver are at the same location, i.e.,they are the same bat (this is the ‘classical’ target strength usually considered in echolocation research). Bistatic target strength refers to a situation where the emitter and receiver are at different locations, i.e., the receiving bat hears the echo of a call that was emitted by another bat, i.e. a secondary echo.</p>
-<p>In the simulations, all incoming and outgoing sounds at the bat are between abs(0-180)°. Sounds with 0° angle are along the heading direction of the focal bat. Sounds arriving/reflecting on the left have negative angles (0° <span class="math inline">\(\geq \theta \geq\)</span>-180°), and those on the right have positive angles (0° $$180°).</p>
-<p><strong>Methods</strong>: We ensonified a stuffed <em>Myotis myotis</em> with outstretched wings, which was suspended from the ceiling at 1 m height and placed on a rotating base, which could be rotated in 45° steps. A speaker (electrostatic Polaroid, custom built) and microphone (CM16/CMPA, Avisoft Bioacoustics, Glienicke, Germany) were placed at a 1 m radial distance to the center of the bat (Figure ). The speaker emitted linear frequency modulated sweeps between 96-20 kHz, with durations of 170 μs, 1 ms and 2 ms at 92 dB rms SPL re 20 μPa at 1 m. The speaker was driven by a custom-built amplifier with input from a soundcard (Player 216H, Avisoft Bioacoustics, 1 MHz sampling rate). The microphone signal was recorded simultaneously with an attenuated version of the speaker signal on a multichannel soundcard (USG 416H, Avisoft Bioacoustics, 500 kHz sampling rate). The microphone had a noise floor of 24 dB rms SPL re 20 μPa. All echoes were recorded at <span class="math inline">\(\geq\)</span> 22dB signal-to-noise ratio. The experiment was performed in the middle of a large empty room (4x4x2 m) to temporally separate bat echoes from background echoes.</p>
+<p>In the simulations, all incoming and outgoing sounds at the bat are between abs(0-180)°. Sounds with 0° angle are along the heading direction of the focal bat. Sounds arriving/reflecting on the left have negative angles (0° <span class="math inline">\(\geq \theta \geq\)</span>-180°), and those on the right have positive angles (0° &gt; <span class="math inline">\(\theta\)</span> &gt;180°).</p>
+<p><strong>Methods</strong>: We ensonified a stuffed <em>Myotis myotis</em> with outstretched wings, which was suspended from the ceiling at 1 m height and placed on a rotating base, which could be rotated in 45° steps. A speaker (electrostatic Polaroid, custom built) and microphone (CM16/CMPA, Avisoft Bioacoustics, Glienicke, Germany) were placed at a 1 m radial distance to the center of the bat (Figure ). The speaker emitted linear frequency modulated sweeps between 96-20 kHz, with durations of 170 <span class="math inline">\(\mu\)</span>s, 1 ms and 2 ms at 92 dB rms SPL re 20 μPa at 1 m. The speaker was driven by a custom-built amplifier with input from a soundcard (Player 216H, Avisoft Bioacoustics, 1 MHz sampling rate). The microphone signal was recorded simultaneously with an attenuated version of the speaker signal on a multichannel soundcard (USG 416H, Avisoft Bioacoustics, 500 kHz sampling rate). The microphone had a noise floor of 24 dB rms SPL re 20 μPa. All echoes were recorded at <span class="math inline">\(\geq\)</span> 22dB signal-to-noise ratio. The experiment was performed in the middle of a large empty room (4x4x2 m) to temporally separate bat echoes from background echoes.</p>
 <p>We ensonified the bat from front (0°) to back (180°) in steps of 45°. We assumed
 that the bat was symmetrical and thus did not ensonify angles from 180-360°. The
 angular separation between the speaker and the microphone was also altered in
@@ -311,7 +309,7 @@ measurements (5 sound directions x 8 angular separations).</p>
 <h4><span class="header-section-number">2.6.1.9</span> Acoustic shadowing in bat groups with varying number of bats and inter-bat spacing </h4>
 <p>As multiple bats fly together in a group, the bats themselves will block all sounds travelling between an emitter and a receiver. Essentially, the bats themselves act as obstacles that cause acoustic shadowing, reducing the received sound pressure level at the focal bat. In a large group, multiple bats may shadow a sound as it moves from the emitter and to the receiver. We quantified acoustic shadowing in a series of playback experiments that varied the inter-bat spacing (0.5 and 1.0 m) and the number of bats (1 – 6) in a line.</p>
 <p><strong>Methods:</strong> A microphone (CM16/CMPA, Avisoft Bioacoustics) and speaker
-(Polaroid, custom-built) were placed at a fixed distance of 9.9 m apart, facing each other. We hung 1 to 6 “model bats” made of foam with paper wings at 0.5 or 1.0 m distance to each other from a string running above the speaker to the microphone. The designed model bat showed acoustic shadowing similar to that of the stuffed <em>Myotis myotis</em> used in the target strength measurements described in 1.8.</p>
+(Polaroid, custom-built) were placed at a fixed distance of 9.9 m apart, facing each other. We hung 1 to 6 “model bats” made of foam with paper wings at 0.5 or 1.0 m distance to each other from a string running above the speaker to the microphone. The designed model bat showed acoustic shadowing similar to that of the stuffed <em>Myotis myotis</em> used in the target strength measurements described in .</p>
 <p>The speaker was placed as far as possible from the microphone to calculate
 acoustic shadowing without the effects of speaker directionality. The speaker
 played back a variety of 7 ms Tukey windowed signals consisting of pure tones
@@ -340,7 +338,7 @@ characteristics and sound physics.</p>
 <p>All echoes, calls and secondary echoes were considered to be equal in duration,
 amplitude envelope, and frequency composition. Frequency composition was not
 explicitly specified, which is a conservative modelling choice that maximizes
-masking potential <span class="citation">(Yost <a href="#ref-w2007a" role="doc-biblioref">2007</a><a href="#ref-w2007a" role="doc-biblioref">b</a>)</span> and makes our model generalizable to multiple bat species. All sounds were treated as having a constant amplitude envelope (i.e., no amplitude modulations), but they differed in the sound pressure level received by the focal bat.</p>
+masking potential <span class="citation">(Yost <a href="#ref-yost2007a" role="doc-biblioref">2007</a>)</span> and makes our model generalizable to multiple bat species. All sounds were treated as having a constant amplitude envelope (i.e., no amplitude modulations), but they differed in the sound pressure level received by the focal bat.</p>
 </div>
 <div id="model-initialization" class="section level4">
 <h4><span class="header-section-number">2.6.2.2</span> Model initialization</h4>
@@ -371,7 +369,7 @@ arrival direction was determined based on the position of each neighboring bat.<
 <div id="masker-call-properties" class="section level4">
 <h4><span class="header-section-number">2.6.2.4</span> Masker call properties</h4>
 <p>Masker calls arrived at random time points with uniform probability within the
-interpulse interval (Figure B), based on the observed lack of call synchronization in groups of Miniopterus fuliginosus <span class="citation">(Hase <a href="#ref-hase2018a" role="doc-biblioref">2018</a>)</span>. Call directionality was based on the directionality function in Giuggioli et al., 2015, who fit a cosine based function to describe the overall call directionality of <em>Myotis daubentonii</em> echolocating in the field. We set the asymmetry parameter A to 7.0. We calculated the angle of call emission towards the focal bat for each conspecific bat based on its angular position (heading) and distance. We then calculated the effective source level into the direction of the focal bat by reducing the call’s on-axis source level (Table <a href="#tab:modelscenarios"><strong>??</strong></a> in main text) according to the call directionality function and the focal bat’s relative position to the conspecific (Figure ). This reduced level was the final received level of the conspecific masker call. If acoustic shadowing and atmospheric attenuation were included in a simulation run, the received level was reduced based on the number of bats in the path and the overall distance travelled by the call.</p>
+interpulse interval (Figure B), based on the observed lack of call synchronization in groups of <em>Miniopterus fuliginosus</em> <span class="citation">(Hase <a href="#ref-hase2018a" role="doc-biblioref">2018</a>)</span>. Call directionality was based on the directionality function in Giuggioli et al., 2015, who fit a cosine based function to describe the overall call directionality of <em>Myotis daubentonii</em> echolocating in the field. We set the asymmetry parameter A to 7.0. We calculated the angle of call emission towards the focal bat for each conspecific bat based on its angular position (heading) and distance. We then calculated the effective source level into the direction of the focal bat by reducing the call’s on-axis source level (Table <a href="#tab:modelscenarios"><strong>??</strong></a> in main text) according to the call directionality function and the focal bat’s relative position to the conspecific (Figure ). This reduced level was the final received level of the conspecific masker call. If acoustic shadowing and atmospheric attenuation were included in a simulation run, the received level was reduced based on the number of bats in the path and the overall distance travelled by the call.</p>
 </div>
 <div id="secondary-echo-properties" class="section level4">
 <h4><span class="header-section-number">2.6.2.5</span> Secondary echo properties</h4>
@@ -417,117 +415,7 @@ auditory system immune to short spikes in masking sound pressure level occurring
 <p>Pseudo-code of the steps in a simulation run to determine the detected neighbors per call emission.</p>
 
 <div style="page-break-after: always;"></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>
-<span id="tab:maskingtable">Table 2.1: </span> Target-detection studies in echolocating bats used to extract echo-masker SPL ratio for our model. The time delay is the time between the edge of a masker and the target echo. A positive time delay indicates forward masking (masker arrives before the target), a negative time delay indicates backward masking (masker arrives after the target).
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-Publication
-</th>
-<th style="text-align:left;">
-Species
-</th>
-<th style="text-align:left;">
-Time delay (ms)
-</th>
-<th style="text-align:left;">
-Masking condition
-</th>
-<th style="text-align:left;">
-Echo-masker SPL (dB)
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-<span class="citation">(Siewert, Schillinger, and Schmidt <a href="#ref-siewert2004a" role="doc-biblioref">2004</a>)</span>
-</td>
-<td style="text-align:left;">
-<em>Megaderma lyra</em>
-</td>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:left;">
-Forward
-</td>
-<td style="text-align:left;">
--17
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="citation">(Siewert, Schillinger, and Schmidt <a href="#ref-siewert2004a" role="doc-biblioref">2004</a>)</span>
-</td>
-<td style="text-align:left;">
-<em>Megaderma lyra</em>
-</td>
-<td style="text-align:left;">
-6
-</td>
-<td style="text-align:left;">
-Forward
-</td>
-<td style="text-align:left;">
--23
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="citation">(Siewert, Schillinger, and Schmidt <a href="#ref-siewert2004a" role="doc-biblioref">2004</a>)</span>
-</td>
-<td style="text-align:left;">
-<em>Megaderma lyra</em>
-</td>
-<td style="text-align:left;">
-12
-</td>
-<td style="text-align:left;">
-Forward
-</td>
-<td style="text-align:left;">
--29
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="citation">(Siewert, Schillinger, and Schmidt <a href="#ref-siewert2004a" role="doc-biblioref">2004</a>)</span>
-</td>
-<td style="text-align:left;">
-<em>Megaderma lyra</em>
-</td>
-<td style="text-align:left;">
-24
-</td>
-<td style="text-align:left;">
-Forward
-</td>
-<td style="text-align:left;">
--34
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-<span class="citation">(Sümer, Denzinger, and Schnitzler <a href="#ref-suemer2009a" role="doc-biblioref">2009</a>)</span>
-</td>
-<td style="text-align:left;">
-<em>Eptesicus fuscus</em>
-</td>
-<td style="text-align:left;">
--0.65
-</td>
-<td style="text-align:left;">
-Backward
-</td>
-<td style="text-align:left;">
--22.3
-</td>
-</tr>
-</tbody>
-</table>
+
 <div style="page-break-after: always;"></div>
 
 <div style="page-break-after: always;"></div>
@@ -760,10 +648,7 @@ Backward
 <p>Wisniewska, D. M. 2015. “Range-Dependent Flexibility in the Acoustic Field of View of Echolocating Porpoises (Phocoena Phocoena.” <em>eLife</em> 2015 (4).</p>
 </div>
 <div id="ref-yost2007a">
-<p>Yost, W. A. 2007a. <em>Fundamentals of Hearing: An Introduction</em>. London: Academic Press.</p>
-</div>
-<div id="ref-w2007a">
-<p>Yost, W. 2007b. <em>Fundamentals of Hearing: An Introduction</em>. London: Academic Press.</p>
+<p>Yost, W. A. 2007. <em>Fundamentals of Hearing: An Introduction</em>. London: Academic Press.</p>
 </div>
 <div id="ref-yovel-a">
 <p>Yovel, Y., M. L. Melcon, M. O. Franz, A. Denzinger, and H. U. Schnitzler. 2009. “The Voice of Bats :How Greater Mouse-Eared Bats Recognize Individuals Based on Their Echolocation Calls.” <em>PLOS Comput. Biol</em> 54: 1000400.</p>

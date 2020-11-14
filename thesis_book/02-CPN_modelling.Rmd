@@ -198,7 +198,7 @@ heading angle for each individual. Each individual called into the direction of 
 Quantifying the received levels of echoes and secondary echoes requires
 knowledge of the target strength of a bat when emitter and receiver are at the same and at different locations. Here, we measured monostatic and bistatic target strengths [@richards2010a] of a flying stuffed *Myotis myotis* bat. Monostatic target strengths refer to the situation where the emitter and receiver are at the same location, i.e.,they are the same bat (this is the ‘classical’ target strength usually considered in echolocation research). Bistatic target strength refers to a situation where the emitter and receiver are at different locations, i.e., the receiving bat hears the echo of a call that was emitted by another bat, i.e. a secondary echo. 
 
-In the simulations, all incoming and outgoing sounds at the bat are between abs(0-180)°. Sounds with 0° angle are along the heading direction of the focal bat. Sounds arriving/reflecting on the left have negative angles (0° $\geq \theta \geq$-180°), and those on the right have positive angles (0° > $\\theta$ >180°).
+In the simulations, all incoming and outgoing sounds at the bat are between abs(0-180)°. Sounds with 0° angle are along the heading direction of the focal bat. Sounds arriving/reflecting on the left have negative angles (0° $\geq \theta \geq$-180°), and those on the right have positive angles (0° > $\theta$ >180°).
 
 **Methods**: We ensonified a stuffed *Myotis myotis* with outstretched wings, which was suspended from the ceiling at \textasciitilde1 m height and placed on a rotating base, which could be rotated in 45° steps. A speaker (electrostatic Polaroid, custom built) and microphone (CM16/CMPA, Avisoft Bioacoustics, Glienicke, Germany) were placed at a 1 m radial distance to the center of the bat (Figure \ref{cpn_figS4}). The speaker emitted linear frequency modulated sweeps between 96-20 kHz, with durations of 170 $\mu$s, 1 ms and 2 ms at 92 dB rms SPL re 20 μPa at 1 m. The speaker was driven by a custom-built amplifier with input from a soundcard (Player 216H, Avisoft Bioacoustics, 1 MHz sampling rate). The microphone signal was recorded simultaneously with an attenuated version of the speaker signal on a multichannel soundcard (USG 416H, Avisoft Bioacoustics, 500 kHz sampling rate). The microphone had a noise floor of 24 dB rms SPL re 20 μPa. All echoes were recorded at $\geq$ 22dB signal-to-noise ratio. The experiment was performed in the middle of a large empty room (\textasciitilde4x4x2 m) to temporally separate bat echoes from background echoes.
 
@@ -352,16 +352,17 @@ library(magrittr)
 ```
 
 ```{r maskingtable, echo=FALSE}
-species <- c('*Megaderma lyra*','*Megaderma lyra*','*Megaderma lyra*','*Megaderma lyra*', '*Eptesicus fuscus*')
-pub <- c('[@siewert2004a]','[@siewert2004a]','[@siewert2004a]','[@siewert2004a]','[@suemer2009a]')
-timedelay <- c(3,6,12,24,-0.65)
+species <- c('\\textit{Megaderma lyra}','\\textit{Megaderma lyra}','\\textit{Megaderma lyra}','\\textit{Megaderma lyra}', '\\textit{Eptesicus fuscus}')
+pub <- c('Siewert et al. 2004','Siewert et al. 2004','Siewert et al. 2004','Siewert et al. 2004','Sümer et al. 2009')
+timedelay <- c("3","6","12","24","-0.65")
 masking.condition <- c('Forward','Forward','Forward','Forward','Backward')
-echomaskerspl <- c(-17,-23,-29,-34,-22.3)
+echomaskerspl <- c("-17","-23","-29","-34","-22.3")
 tabledata <- data.frame(cbind(pub,species,timedelay,masking.condition,echomaskerspl))
-names(tabledata)<- c('Publication', 'Species', 'Time delay (ms)', 'Masking condition', 'Echo-masker SPL (dB)')
-knitr::kable(tabledata, 
-             caption=" Target-detection studies in echolocating bats used to extract echo-masker SPL ratio for our model. The time delay is the time between the edge of a masker and the target echo. A positive time delay indicates forward masking (masker arrives before the target), a negative time delay indicates backward masking (masker arrives after the target).")%>%kable_styling(full_width = T)
+colnames<- c('Publication', 'Species', 'Time delay (ms)', 'Masking condition', 'Echo-masker SPL (dB)')
 
+
+kbl(tabledata, col.names= colnames,
+    caption="Target-detection studies in echolocating bats used to extract echo-masker SPL ratio for our model. The time delay is the time between the edge of a masker and the target echo. A positive time delay indicates forward masking (masker arrives before the target), a negative time delay indicates backward masking (masker arrives after the target).",  format='latex',booktabs=T,escape=F, align='c') %>% column_spec(1:5, width="2.5cm")
 ```
 
 
@@ -371,23 +372,33 @@ knitr::kable(tabledata,
 \newpage
 
 
-\begin{landscape}
-\begin{table}[]
-\centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lllcccccc@{}}
-\toprule
-Parameter & Value tested & Reference value & \multicolumn{1}{l}{Odds Ratio - 2.5 CI} & \multicolumn{1}{l}{Odds Ratio - 97.5 CI} & \multicolumn{1}{l}{Log Odds Ratio} & \multicolumn{1}{l}{Log Odds Ratio SEM} & \multicolumn{1}{l}{Z (log odds ratio estimate)} & \multicolumn{1}{l}{P ($>|z|$)} \\ \midrule
-Intercept &              &                 & 0.31                                    & 0.35                                     & -1.11                              & 0.027                                  & -40.51                                          & 0.0                            \\
-Intercept &              &                 & 0.31                                    & 0.35                                     & -1.11                              & 0.027                                  & -40.51                                          & 0.0                            \\
-Intercept &              &                 & 0.31                                    & 0.35                                     & -1.11                              & 0.027                                  & -40.51                                          & 0.0                            \\
-Intercept &              &                 & 0.31                                    & 0.35                                     & -1.11                              & 0.027                                  & -40.51                                          & 0.0                            \\ \bottomrule
-\end{tabular}%
-}
-\caption{TO BE FIXXXXXXXEDDDDD GAAAAAH Results of the logistic regression to quantify the effect of different parameter values on the odds ratio to detect at least one neighbor. Odds ratio values $>$1 indicate a higher probability of neighbor detection, while odds ratios $<$1 indicate a lower probability of neighbor detection.}
-\label{cpn_table2}
-\end{table}
-\end{landscape}
+
+```{r regressionresults, echo=FALSE}
+options(knitr.kable.NA = '')
+d.colnames <- c("Parameter", "Value tested", "Reference value", "Odds Ratio", "Odds Ratio - 2.5 CI",  "Odds Ratio - 97.5 CI", "Log Odds Ratio","Log Odds Ratio SEM", "Z (log odds ratio estimate)", "P >|z|")
+
+d.rownames <- c("Intercept", "Heading variation ($^{\\circ}$)", "Acoustic shadowing", "Interpulse interval (ms)", NA,NA,NA,NA, "Minimum interbat distance (m)", "Sound duration (ms)", "Source level (dB SPL re 20 $\\mu$ Pa at 1m)", NA, NA, NA, "Atmospheric attenuation (dB/m)")
+
+values <- data.frame(rbind(c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c("$\\pm$90", "$\\pm$", "1.32", "1.28", "1.36", "0.28", "0.015", "18.35", "0.0"),
+							c("Yes", "No", "0.75", "0.73", "0.78", "-0.28", "0.015", "18.63","0.0"),
+							c("25","100","0.001","0.0009","0.001", "-6.84","0.073","-93.52",
+							"0.0"),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
+							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0))
+                     )
+data<- cbind(d.rownames, values)
+kbl(data, col.names=d.colnames,  caption="TO BE FIXXXXXXXEDDDDD GAAAAAH Results of the logistic regression to quantify the effect of different parameter values on the odds ratio to detect at least one neighbor. Odds ratio values >1 indicate a higher probability of neighbor detection, while odds ratios <1 indicate a lower probability of neighbor detection.", format="latex", booktabs=T, escape=F, align='c')%>% column_spec(2:9, width=".75cm")
+```
 
 
 \newpage

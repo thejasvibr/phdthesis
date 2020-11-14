@@ -118,7 +118,7 @@
 
 \title{Beleyur-Thesis}
 \author{Thejasvi Beleyur}
-\date{\(2020-11-12\)}
+\date{\(2020-11-13\)}
 
 \begin{document}
 \maketitle
@@ -431,13 +431,13 @@ Here, we present the details of how we parametrized our model of the sonar cockt
 \hypertarget{temporal-masking-envelope}{%
 \subsubsection{\texorpdfstring{Temporal masking envelope \label{cpn_tempmasking}}{Temporal masking envelope }}\label{temporal-masking-envelope}}
 
-We derived the echo-to-masker sound pressure level (SPL) ratios for forward, backward and simultaneous masking from two empirical target-detection studies in echolocating bats (Table S1). We only chose studies where the target and masker were co-located along the same direction. Both studies presented the ratio between the echo and masker SPL at target detection for various delays between
+We derived the echo-to-masker sound pressure level (SPL) ratios for forward, backward and simultaneous masking from two empirical target-detection studies in echolocating bats (Table \ref{tab:maskingtable}). We only chose studies where the target and masker were co-located along the same direction. Both studies presented the ratio between the echo and masker SPL at target detection for various delays between
 echo and masker arrival time. We linearly interpolated (in a piecewise fashion) the echo-to-masker SPL ratios between each of the time delays measured in the studies to obtain the full temporal masking envelope ranging from -0.65 and +24 ms delay of the target echo relative to the masker edge (Figure \ref{cpn_figS1}).
 
 \hypertarget{spatial-unmasking-function}{%
 \subsubsection{\texorpdfstring{Spatial unmasking function \label{cpn_spatiunmasking}}{Spatial unmasking function }}\label{spatial-unmasking-function}}
 
-Sümer et al.~(2009) performed a backward masking study to address spatial unmasking in the bat Eptesicus fuscus. In a two-alternative forced-choice paradigm, they increased the angular separation between a target object and a masker object while also varying the level of the target object's echo (by varying the size of the target object and thus the target object's target strength).
+Sümer et al.~(2009) performed a backward masking study to address spatial unmasking in the bat \emph{Eptesicus fuscus}. In a two-alternative forced-choice paradigm, they increased the angular separation between a target object and a masker object while also varying the level of the target object's echo (by varying the size of the target object and thus its target strength).
 
 We define the spatial unmasking function as the echo-to-masker SPL ratio at just-noticeable echo detection as a function of angular separation. To obtain the echo-to-masker level ratios, we subtracted the target object's target strengths from the masker object's target strength. We normalized the spatial unmasking function to the co-localised echo-masker case (i.e., when both echo and masker arrive from the same direction). This describes the reduction in echo-to-masker ratio required for echo detection as a function of angular separation between target and masker,compared to the co-localized case. We digitized the data points from Figure \ref{cpn_fig4}B of Sümer et al.~(2009) by hand with WebPlotDigitiser \citep{rohatgi2015a} to obtain the target's target strength as a function of angular separation. Masker target strength was given by Sümer et al.~(2009) as -14.5 dB. We then calculated the target-masker SPL ratios and interpolated them with a quadratic polynomial fit (Figure \ref{cpn_figS2}). The interpolated data was then further upsampled to 0.47° intervals. As Sümer et al.~(2009) only measured angular separations up to 23°. We conservatively used the echo-masker SPL ratio at 23° also for all larger angular separations.
 
@@ -461,7 +461,7 @@ Ultrasound in air is heavily attenuated by atmospheric attenuation, even over sh
 Sound pressure level reduces with increasing distance from the source, called
 geometric attenuation. For all sounds in our model (target echoes, masking calls
 and secondary echoes), we implemented spherical geometric spreading, i.e.,
-uniform spreading of sound in all directions\citep{speaks1996a}.
+uniform spreading of sound in all directions \citep{speaks1996a}.
 
 \hypertarget{group-geometry}{%
 \subsubsection{\texorpdfstring{Group geometry \label{cpn_groupgeom}}{Group geometry }}\label{group-geometry}}
@@ -483,9 +483,9 @@ heading angle for each individual. Each individual called into the direction of 
 Quantifying the received levels of echoes and secondary echoes requires
 knowledge of the target strength of a bat when emitter and receiver are at the same and at different locations. Here, we measured monostatic and bistatic target strengths \citep{richards2010a} of a flying stuffed \emph{Myotis myotis} bat. Monostatic target strengths refer to the situation where the emitter and receiver are at the same location, i.e.,they are the same bat (this is the `classical' target strength usually considered in echolocation research). Bistatic target strength refers to a situation where the emitter and receiver are at different locations, i.e., the receiving bat hears the echo of a call that was emitted by another bat, i.e.~a secondary echo.
 
-In the simulations, all incoming and outgoing sounds at the bat are between abs(0-180)°. Sounds with 0° angle are along the heading direction of the focal bat. Sounds arriving/reflecting on the left have negative angles (0° \(\geq \theta \geq\)-180°), and those on the right have positive angles (0° \$\leq \theta \leq\$180°).
+In the simulations, all incoming and outgoing sounds at the bat are between abs(0-180)°. Sounds with 0° angle are along the heading direction of the focal bat. Sounds arriving/reflecting on the left have negative angles (0° \(\geq \theta \geq\)-180°), and those on the right have positive angles (0° \textgreater{} \(\theta\) \textgreater180°).
 
-\textbf{Methods}: We ensonified a stuffed \emph{Myotis myotis} with outstretched wings, which was suspended from the ceiling at \textasciitilde1 m height and placed on a rotating base, which could be rotated in 45° steps. A speaker (electrostatic Polaroid, custom built) and microphone (CM16/CMPA, Avisoft Bioacoustics, Glienicke, Germany) were placed at a 1 m radial distance to the center of the bat (Figure \ref{cpn_figS4}). The speaker emitted linear frequency modulated sweeps between 96-20 kHz, with durations of 170 μs, 1 ms and 2 ms at 92 dB rms SPL re 20 μPa at 1 m. The speaker was driven by a custom-built amplifier with input from a soundcard (Player 216H, Avisoft Bioacoustics, 1 MHz sampling rate). The microphone signal was recorded simultaneously with an attenuated version of the speaker signal on a multichannel soundcard (USG 416H, Avisoft Bioacoustics, 500 kHz sampling rate). The microphone had a noise floor of 24 dB rms SPL re 20 μPa. All echoes were recorded at \(\geq\) 22dB signal-to-noise ratio. The experiment was performed in the middle of a large empty room (\textasciitilde4x4x2 m) to temporally separate bat echoes from background echoes.
+\textbf{Methods}: We ensonified a stuffed \emph{Myotis myotis} with outstretched wings, which was suspended from the ceiling at \textasciitilde1 m height and placed on a rotating base, which could be rotated in 45° steps. A speaker (electrostatic Polaroid, custom built) and microphone (CM16/CMPA, Avisoft Bioacoustics, Glienicke, Germany) were placed at a 1 m radial distance to the center of the bat (Figure \ref{cpn_figS4}). The speaker emitted linear frequency modulated sweeps between 96-20 kHz, with durations of 170 \(\mu\)s, 1 ms and 2 ms at 92 dB rms SPL re 20 μPa at 1 m. The speaker was driven by a custom-built amplifier with input from a soundcard (Player 216H, Avisoft Bioacoustics, 1 MHz sampling rate). The microphone signal was recorded simultaneously with an attenuated version of the speaker signal on a multichannel soundcard (USG 416H, Avisoft Bioacoustics, 500 kHz sampling rate). The microphone had a noise floor of 24 dB rms SPL re 20 μPa. All echoes were recorded at \(\geq\) 22dB signal-to-noise ratio. The experiment was performed in the middle of a large empty room (\textasciitilde4x4x2 m) to temporally separate bat echoes from background echoes.
 
 We ensonified the bat from front (0°) to back (180°) in steps of 45°. We assumed
 that the bat was symmetrical and thus did not ensonify angles from 180-360°. The
@@ -503,7 +503,7 @@ The integrated target strength \citep{j1985a} of the recordings were calculated 
 As multiple bats fly together in a group, the bats themselves will block all sounds travelling between an emitter and a receiver. Essentially, the bats themselves act as obstacles that cause acoustic shadowing, reducing the received sound pressure level at the focal bat. In a large group, multiple bats may shadow a sound as it moves from the emitter and to the receiver. We quantified acoustic shadowing in a series of playback experiments that varied the inter-bat spacing (0.5 and 1.0 m) and the number of bats (1 -- 6) in a line.
 
 \textbf{Methods:} A microphone (CM16/CMPA, Avisoft Bioacoustics) and speaker
-(Polaroid, custom-built) were placed at a fixed distance of 9.9 m apart, facing each other. We hung 1 to 6 ``model bats'' made of foam with paper wings at 0.5 or 1.0 m distance to each other from a string running above the speaker to the microphone. The designed model bat showed acoustic shadowing similar to that of the stuffed \emph{Myotis myotis} used in the target strength measurements described in 1.8.
+(Polaroid, custom-built) were placed at a fixed distance of 9.9 m apart, facing each other. We hung 1 to 6 ``model bats'' made of foam with paper wings at 0.5 or 1.0 m distance to each other from a string running above the speaker to the microphone. The designed model bat showed acoustic shadowing similar to that of the stuffed \emph{Myotis myotis} used in the target strength measurements described in \ref{cpn_targetstrength}.
 
 The speaker was placed as far as possible from the microphone to calculate
 acoustic shadowing without the effects of speaker directionality. The speaker
@@ -538,7 +538,7 @@ characteristics and sound physics.
 All echoes, calls and secondary echoes were considered to be equal in duration,
 amplitude envelope, and frequency composition. Frequency composition was not
 explicitly specified, which is a conservative modelling choice that maximizes
-masking potential \citep{w2007a} and makes our model generalizable to multiple bat species. All sounds were treated as having a constant amplitude envelope (i.e., no amplitude modulations), but they differed in the sound pressure level received by the focal bat.
+masking potential \citep{yost2007a} and makes our model generalizable to multiple bat species. All sounds were treated as having a constant amplitude envelope (i.e., no amplitude modulations), but they differed in the sound pressure level received by the focal bat.
 
 \hypertarget{model-initialization}{%
 \subsubsection{Model initialization}\label{model-initialization}}
@@ -575,7 +575,7 @@ arrival direction was determined based on the position of each neighboring bat.
 \subsubsection{Masker call properties}\label{masker-call-properties}}
 
 Masker calls arrived at random time points with uniform probability within the
-interpulse interval (Figure \ref{cpn_figS5}B), based on the observed lack of call synchronization in groups of Miniopterus fuliginosus \citep{hase2018a}. Call directionality was based on the directionality function in Giuggioli et al., 2015, who fit a cosine based function to describe the overall call directionality of \emph{Myotis daubentonii} echolocating in the field. We set the asymmetry parameter A to 7.0. We calculated the angle of call emission towards the focal bat for each conspecific bat based on its angular position (heading) and distance. We then calculated the effective source level into the direction of the focal bat by reducing the call's on-axis source level (Table \ref{tab:modelscenarios} in main text) according to the call directionality function and the focal bat's relative position to the conspecific (Figure \ref{cpn_figS3}). This reduced level was the final received level of the conspecific masker call. If acoustic shadowing and atmospheric attenuation were included in a simulation run, the received level was reduced based on the number of bats in the path and the overall distance travelled by the call.
+interpulse interval (Figure \ref{cpn_figS5}B), based on the observed lack of call synchronization in groups of \emph{Miniopterus fuliginosus} \citep{hase2018a}. Call directionality was based on the directionality function in Giuggioli et al., 2015, who fit a cosine based function to describe the overall call directionality of \emph{Myotis daubentonii} echolocating in the field. We set the asymmetry parameter A to 7.0. We calculated the angle of call emission towards the focal bat for each conspecific bat based on its angular position (heading) and distance. We then calculated the effective source level into the direction of the focal bat by reducing the call's on-axis source level (Table \ref{tab:modelscenarios} in main text) according to the call directionality function and the focal bat's relative position to the conspecific (Figure \ref{cpn_figS3}). This reduced level was the final received level of the conspecific masker call. If acoustic shadowing and atmospheric attenuation were included in a simulation run, the received level was reduced based on the number of bats in the path and the overall distance travelled by the call.
 
 \hypertarget{secondary-echo-properties}{%
 \subsubsection{Secondary echo properties}\label{secondary-echo-properties}}
@@ -651,87 +651,53 @@ Pseudo-code of the steps in a simulation run to determine the detected neighbors
 
 \newpage
 
-\label{tab:maskingtable} Target-detection studies in echolocating bats used to extract echo-masker SPL ratio for our model. The time delay is the time between the edge of a masker and the target echo. A positive time delay indicates forward masking (masker arrives before the target), a negative time delay indicates backward masking (masker arrives after the target).
+\begin{table}
 
-Publication
-
-Species
-
-Time delay (ms)
-
-Masking condition
-
-Echo-masker SPL (dB)
-
-\citep{siewert2004a}
-
-\emph{Megaderma lyra}
-
-3
-
-Forward
-
--17
-
-\citep{siewert2004a}
-
-\emph{Megaderma lyra}
-
-6
-
-Forward
-
--23
-
-\citep{siewert2004a}
-
-\emph{Megaderma lyra}
-
-12
-
-Forward
-
--29
-
-\citep{siewert2004a}
-
-\emph{Megaderma lyra}
-
-24
-
-Forward
-
--34
-
-\citep{suemer2009a}
-
-\emph{Eptesicus fuscus}
-
--0.65
-
-Backward
-
--22.3
+\caption{\label{tab:maskingtable}Target-detection studies in echolocating bats used to extract echo-masker SPL ratio for our model. The time delay is the time between the edge of a masker and the target echo. A positive time delay indicates forward masking (masker arrives before the target), a negative time delay indicates backward masking (masker arrives after the target).}
+\centering
+\begin{tabular}[t]{>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}}
+\toprule
+Publication & Species & Time delay (ms) & Masking condition & Echo-masker SPL (dB)\\
+\midrule
+Siewert et al. 2004 & \textit{Megaderma lyra} & 3 & Forward & -17\\
+Siewert et al. 2004 & \textit{Megaderma lyra} & 6 & Forward & -23\\
+Siewert et al. 2004 & \textit{Megaderma lyra} & 12 & Forward & -29\\
+Siewert et al. 2004 & \textit{Megaderma lyra} & 24 & Forward & -34\\
+Sümer et al. 2009 & \textit{Eptesicus fuscus} & -0.65 & Backward & -22.3\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \newpage
 
-\begin{landscape}
-\begin{table}[]
+\begin{table}
+
+\caption{\label{tab:regressionresults}TO BE FIXXXXXXXEDDDDD GAAAAAH Results of the logistic regression to quantify the effect of different parameter values on the odds ratio to detect at least one neighbor. Odds ratio values >1 indicate a higher probability of neighbor detection, while odds ratios <1 indicate a lower probability of neighbor detection.}
 \centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lllcccccc@{}}
+\begin{tabular}[t]{c>{\centering\arraybackslash}p{.75cm}>{\centering\arraybackslash}p{.75cm}>{\centering\arraybackslash}p{.75cm}>{\centering\arraybackslash}p{.75cm}>{\centering\arraybackslash}p{.75cm}>{\centering\arraybackslash}p{.75cm}>{\centering\arraybackslash}p{.75cm}>{\centering\arraybackslash}p{.75cm}c}
 \toprule
-Parameter & Value tested & Reference value & \multicolumn{1}{l}{Odds Ratio - 2.5 CI} & \multicolumn{1}{l}{Odds Ratio - 97.5 CI} & \multicolumn{1}{l}{Log Odds Ratio} & \multicolumn{1}{l}{Log Odds Ratio SEM} & \multicolumn{1}{l}{Z (log odds ratio estimate)} & \multicolumn{1}{l}{P ($>|z|$)} \\ \midrule
-Intercept &              &                 & 0.31                                    & 0.35                                     & -1.11                              & 0.027                                  & -40.51                                          & 0.0                            \\
-Intercept &              &                 & 0.31                                    & 0.35                                     & -1.11                              & 0.027                                  & -40.51                                          & 0.0                            \\
-Intercept &              &                 & 0.31                                    & 0.35                                     & -1.11                              & 0.027                                  & -40.51                                          & 0.0                            \\
-Intercept &              &                 & 0.31                                    & 0.35                                     & -1.11                              & 0.027                                  & -40.51                                          & 0.0                            \\ \bottomrule
-\end{tabular}%
-}
-\caption{TO BE FIXXXXXXXEDDDDD GAAAAAH Results of the logistic regression to quantify the effect of different parameter values on the odds ratio to detect at least one neighbor. Odds ratio values $>$1 indicate a higher probability of neighbor detection, while odds ratios $<$1 indicate a lower probability of neighbor detection.}
-\label{cpn_table2}
+Parameter & Value tested & Reference value & Odds Ratio & Odds Ratio - 2.5 CI & Odds Ratio - 97.5 CI & Log Odds Ratio & Log Odds Ratio SEM & Z (log odds ratio estimate) & P >|z|\\
+\midrule
+Intercept &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & \vphantom{6} 0\\
+Heading variation ($^{\circ}$) & $\pm$90 & $\pm$ & 1.32 & 1.28 & 1.36 & 0.28 & 0.015 & 18.35 & 0.0\\
+Acoustic shadowing & Yes & No & 0.75 & 0.73 & 0.78 & -0.28 & 0.015 & 18.63 & 0.0\\
+Interpulse interval (ms) & 25 & 100 & 0.001 & 0.0009 & 0.001 & -6.84 & 0.073 & -93.52 & 0.0\\
+ &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & \vphantom{5} 0\\
+\addlinespace
+ &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & \vphantom{4} 0\\
+ &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & \vphantom{3} 0\\
+ &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & \vphantom{2} 0\\
+Minimum interbat distance (m) &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & \vphantom{1} 0\\
+Sound duration (ms) &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & 0\\
+\addlinespace
+Source level (dB SPL re 20 $\mu$ Pa at 1m) &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & 0\\
+ &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & 0\\
+ &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & 0\\
+ &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & 0\\
+Atmospheric attenuation (dB/m) &  &  & 0.32 & 0.31 & 0.35 & -1.11 & 0.027 & -40.51 & 0\\
+\bottomrule
+\end{tabular}
 \end{table}
-\end{landscape}
 
 \newpage
 
@@ -1104,7 +1070,7 @@ While experiments and analytical modelling may be the definitive way to determin
 \hypertarget{statement-of-need}{%
 \section{Statement of need}\label{statement-of-need}}
 
-Generating simulated audio for a set of source sounds, positions and a given array configuration is a relatively simple task. However, to this my knowledge, there are no publicly available, tested and documented packages for this task published to date. Codebases that are publicly available have the advantage of being used by a larger user-base and can thus benefit from bug discoveries much faster than in-house or individually written one-time use scripts. \texttt{tacost} provides a robust and well-documented software workflow \citep{Taschuk2016} with user and developer friendly documentation \href{https://tacost.readthedocs.io/en/latest/}{hosted online}. \texttt{tacost} contributes to the Python scientific ecosystem in the hope of promoting the growth of acoustics and bioacoustic research in open-source languages like Python. In particular, \texttt{tacost} will help researchers working in the field of acoustics and bio-acoustics \citep{deframond2020} plan and examine the behaviour of their acoustic tracking systems.
+Generating simulated audio for a set of source sounds, positions and a given array configuration is a relatively simple task. However, to my knowledge, there are no publicly available, tested and documented packages for this task published to date. Codebases that are publicly available have the advantage of being used by a larger user-base and can thus benefit from bug discoveries much faster than in-house or individually written one-time use scripts. \texttt{tacost} provides a robust and well-documented software workflow \citep{Taschuk2016} with user and developer friendly documentation \href{https://tacost.readthedocs.io/en/latest/}{hosted online}. \texttt{tacost} contributes to the Python scientific ecosystem in the hope of promoting the growth of acoustics and bioacoustic research in open-source languages like Python. In particular, \texttt{tacost} will help researchers working in the field of acoustics and bio-acoustics \citep{deframond2020} plan and examine the behaviour of their acoustic tracking systems.
 
 \hypertarget{design}{%
 \section{Design}\label{design}}
