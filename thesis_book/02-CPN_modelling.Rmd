@@ -371,42 +371,43 @@ kbl(tabledata, col.names= colnames,
 
 \newpage
 
+\begin{landscape}
 
 
 ```{r regressionresults, echo=FALSE}
 options(knitr.kable.NA = '')
 d.colnames <- c("Parameter", "Value tested", "Reference value", "Odds Ratio", "Odds Ratio - 2.5 CI",  "Odds Ratio - 97.5 CI", "Log Odds Ratio","Log Odds Ratio SEM", "Z (log odds ratio estimate)", "P >|z|")
 
-d.rownames <- c("Intercept", "Heading variation ($^{\\circ}$)", "Acoustic shadowing", "Interpulse interval (ms)", NA,NA,NA,NA, "Minimum interbat distance (m)", "Sound duration (ms)", "Source level (dB SPL re 20 $\\mu$ Pa at 1m)", NA, NA, NA, "Atmospheric attenuation (dB/m)")
+d.rownames <- c("Intercept", "Heading variation ($^{\\circ}$)", "Acoustic shadowing", "Interpulse interval (ms)", NA,NA,NA, "Minimum interbat distance (m)", "Sound duration (ms)", "Source level (dB SPL re 20 $\\mu$Pa at 1m)", NA, NA,NA,  "Atmospheric attenuation (dB/m)", NA)
 
-values <- data.frame(rbind(c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c("$\\pm$90", "$\\pm$", "1.32", "1.28", "1.36", "0.28", "0.015", "18.35", "0.0"),
-							c("Yes", "No", "0.75", "0.73", "0.78", "-0.28", "0.015", "18.63","0.0"),
-							c("25","100","0.001","0.0009","0.001", "-6.84","0.073","-93.52",
-							"0.0"),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0),
-							c(NA, NA, 0.32, 0.31, 0.35, -1.11, 0.027, -40.51, 0.0))
+values <- data.frame(rbind( c(NA,   NA, 0.32,  0.31,    0.35,  -1.11, 0.027, -40.51, 0.0),
+							c("$\\pm$90", "$\\pm$10", "1.32", "1.28", "1.36", "0.28", "0.015", "18.35", "0.0"),
+							c("Yes", "No", "0.75", "0.73", "0.78", "-0.28", "0.015", "-18.63","0.0"),
+							c(25,  100, 0.001 , 0.0009,   0.001, -6.84, 0.073, -93.52, 0.0),
+							c(50,  100, 0.048, 0.046,   0.050, -3.04, 0.023, -134.14, 0.0),
+							c(200, 100, 14.60, 13.995,  15.228, 2.68, 0.022, 124.46, 0.0),
+							c(300, 100, 74.68, 70.497,  79.122, 4.31, 0.029, 146.49, 0.0),
+							c(1.0, 0.5, 0.31,  0.301,   0.321, -1.17, 0.016, -72.83, 0.0),
+							c(1.0, 2.5, 34.66, 33.172,  36.206, 3.55, 0.022, 158.83, 0.0),
+							c(94,  100, 0.99,  0.941,   1.034, -0.01, 0.024, -0.57, 0.57),
+							c(106, 100, 1.01,  0.966,   1.061,  0.01, 0.024,  0.52, 0.60),
+							c(112, 100, 1.01,  0.966,   1.061,  0.01, 0.024,  0.50, 0.62),
+							c(120, 100, 0.98,  0.938,   1.030, -0.02, 0.024,  0.73, 0.47),
+							c(0.0  ,-1.0,  1.05,  1.010,   1.086,  0.05, 0.019,  2.48, 0.01),
+							c(-2.0 ,-1.0,  1.01,  0.970,   1.042,  0.01, 0.018,  0.27, 0.78))
                      )
 data<- cbind(d.rownames, values)
-kbl(data, col.names=d.colnames,  caption="TO BE FIXXXXXXXEDDDDD GAAAAAH Results of the logistic regression to quantify the effect of different parameter values on the odds ratio to detect at least one neighbor. Odds ratio values >1 indicate a higher probability of neighbor detection, while odds ratios <1 indicate a lower probability of neighbor detection.", format="latex", booktabs=T, escape=F, align='c')%>% column_spec(2:9, width=".75cm")
+kbl(data, col.names=d.colnames,  caption="Results of the logistic regression to quantify the effect of different parameter values on the odds ratio to detect at least one neighbor. Odds ratio values >1 indicate a higher probability of neighbor detection, while odds ratios <1 indicate a lower probability of neighbor detection.", format="latex", booktabs=T, escape=F, align='c')%>% column_spec(2:9, width="1cm")
 ```
 
+\end{landscape}
 
 \newpage
 
 \begin{figure}
 \includegraphics[]{original_papers/CPN_figures/Figures_SI/Figure_S1.png}
 \centering
-\caption{ The 'temporal masking envelope' used to simulate temporal masking. The envelope represents the lower echo-to-masker ratios at which a bat can detect echoes for various echo-masker delays. The envelope is the equivalent of the lowest signal-to-noise ratios at which echoes can be detected over different time delays. The envelope is centered on the position of the echo, and has a long forward masking section (at times prior to the echo), and a short backward masking section (at times after the echo). The simultaneous masking region is equal to the length of the echo itself. If the echo-to-masker ratio profile is above the temporal masking envelope for most of its duration (i.e., the echo-to-masker SPL ratio was higher than required for echo detection), we considered an echo to be heard. If the echo-to-masker ratio profile is below the envelope for more than 25$\%$ of the echo's duration, the echo was considered not heard. Here the temporal masking envelope is shown for a 2.5 ms echo. Data and sources used to construct the temporal masking envelope are given in Table \@ref(tab:maskingtable).}
+\caption{ The 'temporal masking envelope' used to simulate temporal masking. The envelope represents the lower echo-to-masker ratios at which a bat can detect echoes for various echo-masker delays. The envelope is the equivalent of the lowest signal-to-noise ratios at which echoes can be detected over different time delays. The envelope is centered on the position of the echo, and has a long forward masking section (at times prior to the echo), and a short backward masking section (at times after the echo). The simultaneous masking region is equal to the length of the echo itself. If the echo-to-masker ratio profile is above the temporal masking envelope for most of its duration (i.e., the echo-to-masker SPL ratio was higher than required for echo detection), we considered an echo to be heard. If the echo-to-masker ratio profile is below the envelope for more than 25$\%$ of the echo's duration, the echo was considered not heard. Here the temporal masking envelope is shown for a 2.5 ms echo. Data and sources used to construct the temporal masking envelope are given in Table 2.2}
 \label{cpn_figS1}
 \end{figure}
 
@@ -416,7 +417,7 @@ kbl(data, col.names=d.colnames,  caption="TO BE FIXXXXXXXEDDDDD GAAAAAH Results 
 
 
 \begin{figure}
-\includegraphics[]{original_papers/CPN_figures/Figures_SI/Figure_S2.png}
+\includegraphics[]{original_papers/CPN_figures/Figures_SI/Figure_S2_2panel_exptldata_on_top.png}
 \centering
 \caption{The ‘spatial unmasking function’ describes the reduction in echo-to-masker SPL ratio at echo detection as a function of angular separation between echo and masker. A) The original data set of \cite{suemer2009a} (blue dot) and our digitized and
 interpolated dataset (red line). The error between the data and our interpolation is less than 2 dB. B) The final spatial unmasking function as used in our simulations was derived from the interpolated fit in A), which was normalised to the echo-to-masker ratio at zero degrees angular separation. This final spatial unmasking function describes the reduction in required echo-to-masker SPL ratio relative to the co-localized case: when echo and masker are co-localized, the reduction is 0 dB, while the reduction becomes greater with increasing angular separation.}
