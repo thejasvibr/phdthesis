@@ -38,8 +38,7 @@ and experimental characterisations are often time-intensive. In contrast, simula
 localisation error with the tristar60, a commonly used array system. In Example 2, I show how `tacost` can be used to estimate the expected localisation error in a multi-microphone array with a novel and field-friendly geometry.
 
 ### Localisation accuracy of the tristar60 system
-The tristar60 array is a commonly used array geometry [@aubauer1996acoustical;@Holderied20032293;@Hugel2017;@Lewanzik2018] with 4 microphones in a plane on an inverted T array. Three peripheral microphones are placed 120$^{\circ}$ to
-each other at 60 cm radial distance from the central mic on the inverted T-array. 
+The tristar60 array is a commonly used array geometry [@aubauer1996acoustical;@Holderied20032293;@Hugel2017;@Lewanzik2018] with 4 microphones in a plane on an inverted T array. Three peripheral microphones are placed 120$^{\circ}$ to each other at 60 cm radial distance from the central mic on the inverted T-array. 
 
 A series of emission points spanning the upper right quadrant of the array were simulated. The emitted sound was set to a linear sweep. The output WAV files from `tacost` were run through the TOADSuite package [@holger_toadsuite_manual;@toadsuite_peterstilz], a software package that localises sounds using the time-of-arrival-differences across channels. Figure \ref{tacostfig1} shows the localisation accuracy map 
 for the tristar60 microphone array. It can be seen (Figure \ref{tacostfig1}) that localisation error increases with increasing radial distance from the central microphone, and remains <7$\%$ of the radial distance. 
