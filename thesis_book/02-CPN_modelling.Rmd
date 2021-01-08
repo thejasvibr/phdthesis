@@ -1,4 +1,4 @@
-# Modeling active sensing in groups of bats reveals echo detection even in large groups 
+# Modeling active sensing in groups of bats reveals echo detection even in large groups {#cpnchapter}
 \chaptermark{Modelling the cocktail-party nightmare}
 
 This chapter was published as a peer-reviewed paper in the Proceedings of the National Academy of Sciences of the United States of America: 
