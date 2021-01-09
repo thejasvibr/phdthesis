@@ -4,7 +4,7 @@
 
 This chapter was published as a preprint on *biorXiv*:
 
-*Beleyur, T. (2020). ```tacost```: Testing and simulating the performance of acoustic tracking systems. bioRxiv.*
+*Beleyur, T. (2020). ```tacost```: Testing and simulating the performance of acoustic tracking systems. bioRxiv 2020.06.22.165308; doi: https://doi.org/10.1101/2020.06.22.165308 *
 
 \newpage
 

@@ -4,7 +4,7 @@ author: "Thejasvi Beleyur"
 date: "$`r Sys.Date()`$"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: ["beleyur-goerlitz-2020-refs.bib", "tacost-references.bib","cotdoa-filtered.bib","intro-discussion-refs.bib"]
+bibliography: ["beleyur-goerlitz-2020-refs.bib", "tacost-references.bib","cotdoa-filtered.bib","intro-discussion-refs.bib","itsfm-references.bib"]
 biblio-style: apalike
 link-citations: true
 description: "A thesis" 
@@ -77,6 +77,8 @@ Bulla! I know not who I am*
 # General Introduction 
 
 *Alternate start*: Sensory systems are malleable and evolve to accomodate the behaviours that are being selected for?? eg. how all sensory systems in social animals are somehow adapted to support the behaviours they output eg. social communication calls, collective movements, lekking etc. 
+
+* Group living adds to
 
 Group-living in animals has evolved multiple times across the animal kingdom. Individuals living in groups reap the benefits of this strategy, while also suffering its disadvantages [@Krebs??]. Animals in groups experience improved foraging, predator evasion, offspring survivals, to name a few advantages. However, the disadvantages also include, among others, increased resource competition among individuals and spread of disease [@Krebs??]. Group living animals also often show special adaptations for group-living itself, in terms of their morphology (eg. soldier, worker and alate ants, deer antlers []), behaviour (swarming and schooling in birds, mammals and fish []) and communication strategies (alarm calls in meerkats and marmots, human speech []) [???]. 
 

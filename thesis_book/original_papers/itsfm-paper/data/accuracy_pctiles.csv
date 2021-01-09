@@ -1,0 +1,7 @@
+Region type,method,0
+cf_duration,pkpct,[0.8994  1.05945]
+cf_duration,pwvd,[0.9392  1.02185]
+downfm_duration,pkpct,[0.648 1.348]
+downfm_duration,pwvd,[0.88675 1.208  ]
+upfm_duration,pkpct,[0.624 1.3  ]
+upfm_duration,pwvd,[0.918  1.2416]
