@@ -33,54 +33,70 @@ English  English English English English English English English English English
 Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutschDeutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutsch
 
 \newpage 
+ \
+ \
+ \
+ \
+ \
+ \
 
-from : https://allpoetry.com/Bulla-Ki-Jana-Main-Kaun#tr_8612259
+*Bulla! I know not who I am,*
 
 *Bulla! I know not who I am*
 
-*Nor am I union, nor grief,
-Nor am I intrinsic in the pure/impure,
-Nor am I of water, nor of land.,
-Nor am I fire nor air.*
+...
 
-*Bulla! I known now who I am*
+*Nor am I the believer in the mosque,*
 
-from : https://southasianhomeland.wordpress.com/2017/09/24/bulla-ki-jaana-main-kaun-bulla-i-know-not-who-i-am/
-by Fatima Sonyia Jamal
+*Nor am I in the rituals of the infidel,*
 
-*Bulla! I know not who I am
-Bulla! I know not who I am
+*Nor am I the pure in the impure,*
+
+*Nor am I inherent in the Vedas*
 
 ...
 
-Nor am I of the water nor of the land
-Nor am I fire nor air
-Bulla! I know not who I am 
-..
+*Nor am I of the water nor of the land,*
 
-Nor did I name myself
-Beginning or end I know just the self
-Do not acknowledge duality
-There's none wiser than I 
+*Nor am I fire nor air,*
 
-Who is this Bulla Shah?
+*Bulla! I know not who I am,*
 
-Bulla! I know not who I am 
-Bulla! I know not who I am*
+*Nor am I Arabic nor from Lahore,*
+
+...
+
+*Nor did I name myself,*
+
+*Beginning or end I know just the self,*
+
+*Do not acknowledge duality,*
+
+*There's none wiser than I*\
+
+
+
+*Who is this Bulla Shah?*\
+
+*Bulla! I know not who I am,*
+
+*Bulla! I know not who I am*
+
+ - Bulla Shah, Sufi mystic and poet ^[I interpret this poem as an apt expression of the simultaneous pleasure, confusion and contentment gained from inter-disciplinary research]. Translation by @bullashahtransl.
 
 *Echolocation is still a topic that resists neat classification into any conventional category of science. It ramifies into widely different scientific disciplines including ethology, mammalogy, physiology, psychology, acoustics, nd the mathematical theory of signal detectionl. The results of new investigations have reemphasized the necessity of a broad biological perspective for any serious appreciation of echolocation.*
 
-- Donald Griffin, Listening in the Dark
+ - Donald Griffin, Listening in the Dark
 
 \newpage
 
-# General Introduction 
-
-*Alternate start*: Sensory systems are malleable and evolve to accomodate the behaviours that are being selected for?? eg. how all sensory systems in social animals are somehow adapted to support the behaviours they output eg. social communication calls, collective movements, lekking etc. 
-
 * Group living adds to
+# General Introduction 
+Animal sensory systems and behaviours evolve in response to a host of selection pressures such as predators, food and the environment [@EndlerREF]. Moths with ultrasonic hearing are able to evade echolocating bats, that have in turn developed echolocation strategies that evade moth hearing [@REFS]. The physical environment (eg. light, heat, humidity) also plays a strong role in selecting sensory systems. Cave fish inhabiting dark cave systems repeatedly evolve a loss of vision [@jeffery2001cavefish], while ABCDEFGHIJKLMON. The social environment, consisting of other conspecifics and interactions with them, is also of great importance in the life-cycle of most sexually reproducing animals. Even classically solitary animals such as tigers and spiders will (or seek to) encounter mates over the course of their life time. Sexual selection moulds behaviours and sensory systems as seen in territorial displays and female sensory drives in a wide variety of taxa [@REF] as epitomised by the dance and colourful patterns of the male peacock spider [@REF]. 
 
-Group-living in animals has evolved multiple times across the animal kingdom. Individuals living in groups reap the benefits of this strategy, while also suffering its disadvantages [@Krebs??]. Animals in groups experience improved foraging, predator evasion, offspring survivals, to name a few advantages. However, the disadvantages also include, among others, increased resource competition among individuals and spread of disease [@Krebs??]. Group living animals also often show special adaptations for group-living itself, in terms of their morphology (eg. soldier, worker and alate ants, deer antlers []), behaviour (swarming and schooling in birds, mammals and fish []) and communication strategies (alarm calls in meerkats and marmots, human speech []) [???]. 
+The social environment of animals in long-term social groups (eusocial insects and mammals) or short-term groups (eg. lekks, maternal colonies) is particularly filled with a continuous stream of multi-modal stimuli and presents a host of challenges that individual sensory systems and behaviours have evolved with. 
+
+Group formation in animals (temporary or long-term,) has evolved multiple times across the animal kingdom. Individuals living in groups reap the benefits of this strategy, while also suffering its disadvantages [@Krebs??]. Animals in groups experience improved foraging, predator evasion, offspring survivals, to name a few advantages. However, the disadvantages also include, among others, increased resource competition among individuals and spread of disease [@Krebs??]. Group living animals also often show special adaptations for group-living itself, in terms of their morphology (eg. soldier, worker and alate ants, deer antlers []), behaviour (swarming and schooling in birds, mammals and fish []) and communication strategies (alarm calls in meerkats and marmots, human speech []) - all of which are a result of the challenges of group-living or . 
 
 The fluidity with which individuals in a murmuration of starlings or school of fish move belie rapid and complex underlying sensorimotor loops behind such group events. These collective behaviours can be replicated in computational agent-based models with simple behavioural heuristics based on the relative proximity and position of each agent's neighbours [@reynolds1987a;@couzin2002a]. The 'sensorimotor loop' or behavioural heuristics in these models mimics what animals in a group are likely to be doing [@herbert2016understanding], and broadly consists of the following cycle: 1) the individual assessing the relative position and movement direction of its neighbours, 2) using a decision criterion to integrate information on the neighbour positions and movements and 3) moving in a direction using the integrated information. 
 
@@ -117,7 +133,7 @@ The psychoacoustic techniques and approaches used in humans have served a strong
 * Spatial unmasking
 * 
 
-
+### 
 
 ### Treading trodden paths with new technology 
 How the study of group echolocation has always fascinated scientists but the technology (hardware and software) has not always been very accesible till now. Now is a GoldenZeit. 
@@ -132,6 +148,7 @@ Uploading all my data, documenting code and publishing code as packages with pub
 1. Analogies to RADAR: one might think a negative signal-to-noise ratio is not possible. But published data clearly shows this - and also, that when there is a
 
 ## Thesis outline 
+In this thesis I will investigate the sensory  challenge faced by active sensing animals using a combination of experimental and theoretical methods. Through modelling I will reveal and quantify the sensory challenge FM echolocating bats face in groups of various sizes. I will then present the results of an observational study detailing the echolocation strategies of CF-FM bats in the presence of conspecifics, followed by a novel experimental dataset and workflow to study groups of echolocating bats in the wild. I will end with a series of methodologically driven reports that will significantly reduce the effort needed to perform acoustic tracking, help users simulate the expected performance of their arrays and ease the computational reproduciblity of echolocation call analysis. 
 
 ```{r echo=FALSE}
 #CPN chapter
