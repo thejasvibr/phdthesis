@@ -1,2 +1,22 @@
 # General Discussion
-The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.
+
+## Active sensing : a tricky and yet manageable situation. 
+* The 'cocktail party nightmare' may be apt for how we perceive it, but for bats the term may  perhaps be a bit hyperbolic.
+* All models are wrong, but some are useful - while I would alter this statement to say that all biological models are caricatures, and some of them are closer to the complex network of processes in play. 
+* So many simplifications I've done in the conceptual framework itself - there is scope for a more systematic experiments to actually recreate the 'auditroy masking function of bats', and also estimate spatial unmasking in more species. Does the ability of a species to detect echoes in noise depend on the typical group size it lives in over the course of its life --- or is the ability to detect echoes just a by-product of noise rejection that individuals need to echolocate to orient in complex environments (echo-echo masking, call-echo masking, etc.)
+* Bats do collide into each other, but it's not like they suffer major consequences??
+
+
+## *Ushichka* as a model dataset for group active sensing 
+* 
+* Developing the methodology and investing in the equipment is not an easy task. eg. how I see Ushichka as an astronomy-type dataset where large multi-disciplinary collaborations can be built around it. 
+
+* Implications of group echolocation on collective behaviour 
+
+## Lowering the technical barriers to study group echolocation 
+* measurement-free, array-free acoustic tracking setups. The more scaleable your mic array is - the better you can track echolocating bats. 
+* package to estimate and simulate the acoustic tracking performance  pre-hoc or post-hoc
+* package to 
+* What we need is 
+
+## Sensory systems 

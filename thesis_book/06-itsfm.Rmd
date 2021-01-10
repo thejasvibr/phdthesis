@@ -5,7 +5,7 @@
 
 This chapter was published as a preprint on *biorXiv*:
 
-*Beleyur, T. (2020). ```itsfm```, an open-source package to reliably segment and measure sounds by frequency modulation bioRxiv. INSERT DOI HERE!!!!*
+*Beleyur, T. (2020). ```itsfm```, an open-source package to reliably segment and measure sounds by frequency modulation bioRxiv 2021.01.09.426033; doi: https://doi.org/10.1101/2021.01.09.426033 *
 
 \newpage 
 

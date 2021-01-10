@@ -126,7 +126,7 @@
 
 \title{Theoretical and empirical investigation of echolocation in bat groups}
 \author{Thejasvi Beleyur}
-\date{\(2021-01-09\)}
+\date{\(2021-01-10\)}
 
 \begin{document}
 \maketitle
@@ -217,41 +217,28 @@ Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutsch Deutsch D
 \hypertarget{general-introduction}{%
 \chapter{General Introduction}\label{general-introduction}}
 
-\emph{Alternate start}: Sensory systems are malleable and evolve to accomodate the behaviours that are being selected for?? eg. how all sensory systems in social animals are somehow adapted to support the behaviours they output eg. social communication calls, collective movements, lekking etc.
+Animal sensory systems and behaviours evolve in response to a host of selection pressures such as predators, food and the environment \citep{EndlerREF}. Moths with ultrasonic hearing are able to evade echolocating bats, that have in turn developed echolocation strategies that evade moth hearing \citep{REFS}. The physical environment (eg. light, heat, humidity) also plays a strong role in selecting sensory systems. Cave fish inhabiting dark cave systems repeatedly evolve a loss of vision \citep{jeffery2001cavefish}, while ABCDEFGHIJKLMON. The social environment, consisting of other conspecifics and interactions with them, is also of great importance in the life-cycle of most sexually reproducing animals. Even classically solitary animals such as tigers and spiders will (or seek to) encounter mates over the course of their life time. Sexual selection moulds behaviours and sensory systems as seen in territorial displays and female sensory drives in a wide variety of taxa \citep{REF} as epitomised by the dance and colourful patterns of the male peacock spider \citep{REF}.
 
-\begin{itemize}
-\tightlist
-\item
-  Group living adds to
-\end{itemize}
+The social environment of animals in long-term social groups (eusocial insects and mammals) or short-term groups (eg. lekks, maternal colonies) is particularly filled with a continuous stream of multi-modal stimuli and presents a host of challenges that individual sensory systems and behaviours have evolved with. To illustrate this point, we only need to look at ourselves as a species. The sensory challenge of conducting a conversation with a person in the middle of a gathering lies in trying to listen to what the person opposite is saying, and in trying to make ourselves heard. This problem has been termed the `cocktail party problem' \citep{cherry1953a} and our own sensory systems and behaviours show a variety of responses to such situations. As `emitters' of speech we talk louder in the presence of background noise (the Lombard effect @). As `receivers' there are a host of auditory and attentional processes that come into play. Our pinnae provide directional cues to allowing us to hone into sounds coming from the relevant direction \citep{yost2007a} while the auditory centers in the brain are able to selectively choose the best speech signals (with the higher signal-to-noise ratio) from either cochlea \citep{brungart2012better}. Many other taxa such as birds, frogs and crickets face very similar cocktail-party like issues \citep{bee2008a, brumm2005a}, and show a diversity of strategies to solve the challenges of dealing with emitting and detecting signals that overlap in time and are very similar spectrally. As emitters, animals may attempt to avoid signal overlap wherever possible, for instance in certain species of frogs and crickets, pairs of males may alternate their calls to reduce temporal overlap \citep{bee2008a, hartbauer2016rhythm}, while in other species males synchronise their calls to increase the conspicuosness of the emitted signal and attract females over a longer distance range \citep{greenfield2015signal}. As receivers, animals in groups need to be able to identify and separate signal sources and move in response to them. In certain vertebrates such as penguins, bats and seals, young are raised in large maternal colonies. Mothers leave their young ones in these colonies as they go to forage and return afterwards. A common strategy seen for mother-young reunion is the presence of individual-specific contact calls (and the ability to detect the inter-individual variation) in either the mother or the pup \citep{bradbury1998principles}. The task of detecting a pup's or mother's call in the midst of a few hundreds to thousand other individuals' calls is no trivial task, and mistakes do occur: 17\% of observed mother-pup pairs in a Mexican free-tailed bat (\emph{Tadarida brasiliensis}) colony \citep{mccracken1984communal} were found to be unrelated genetically.
 
-Group-living in animals has evolved multiple times across the animal kingdom. Individuals living in groups reap the benefits of this strategy, while also suffering its disadvantages \citep[?]{Krebs}. Animals in groups experience improved foraging, predator evasion, offspring survivals, to name a few advantages. However, the disadvantages also include, among others, increased resource competition among individuals and spread of disease \citep[?]{Krebs}. Group living animals also often show special adaptations for group-living itself, in terms of their morphology (eg. soldier, worker and alate ants, deer antlers {[}{]}), behaviour (swarming and schooling in birds, mammals and fish {[}{]}) and communication strategies (alarm calls in meerkats and marmots, human speech {[}{]}) {[}???{]}.
+Animal sensory systems are more than static `receivers' or `emitters', but exist in a dynamic interaction with the outside world through sensorimotor loops that form the basis of behaviours such as walking, running, flight \citep[@@@][]{REEEEFFF}. Individuals in groups must also deal with the consequences of having conspecifics around even in simple tasks such as movement and path-planning. In contrast to moving in surroundings with stationary objects and predictable trajectories, moving among conspecifics implies anticipating and updating one's own direction of movement constantly. The apparent ease with which individuals in a murmuration of starlings or school of fish move belies the complex underlying sensorimotor loops that drive the movement of each individual in the group. These collective behaviours can be replicated in computational agent-based models with abstract and simple behavioural heuristics based on the relative proximity and position of each agent's neighbours \citep{reynolds1987a, couzin2002a}. The behavioural heuristics in these models mimics what animals in a group are likely to be doing \citep{herbert2016understanding}, and broadly consists of the following cycle: 1) the individual assessing the relative position and movement direction of its neighbours, 2) using a decision criterion to integrate information on the neighbour positions and movements and 3) moving in a direction using the integrated information.
 
-The fluidity with which individuals in a murmuration of starlings or school of fish move belie rapid and complex underlying sensorimotor loops behind such group events. These collective behaviours can be replicated in computational agent-based models with simple behavioural heuristics based on the relative proximity and position of each agent's neighbours \citep{reynolds1987a, couzin2002a}. The `sensorimotor loop' or behavioural heuristics in these models mimics what animals in a group are likely to be doing \citep{herbert2016understanding}, and broadly consists of the following cycle: 1) the individual assessing the relative position and movement direction of its neighbours, 2) using a decision criterion to integrate information on the neighbour positions and movements and 3) moving in a direction using the integrated information.
+A key step in the initiation and maintenance of any collective behaviour is neighbour detection through the sensory modalities available to the animal. Many of the collective movements studied experimentally to date have been in visually dominant animals \citep{pita2016collective} such as birds, fish, mammals and flies. The fact that each animal acts as an independent receiver of light, and does not affect the amount of light received by others majorly (aside from light obstruction due to body opacity) means that visually driven collective behaviour can scale well with group size. Given sufficient ambient light, individuals in all sizes of groups (small to large) are expected to independently be able to detect their neighbour's and thus show co-ordinated movement. This expectation is supported by experimental observations of thousand strong starling flocks \citep{ballerini2008a}, schools with ten-hundreds of fish \citep{tunstrom2013collective}, or even humans as we aggregate in small to very large groups \citep{moussaid2011simple, dyer2009leadership}. Concrete support for the use of visual cues, and their role in modulating individual decisions in group movement is provided by studies that reconstruct individual sensory \emph{umwelts} \citep{turner2002encoding, strandburg2013visual, belden2019vision}. In contrast to simple models that assume all neighbours in a fixed sensory volume can be detected \citep{reynolds1987a, couzin2002a}, sensory reconstruction approaches include the details of neighbour positions and visual acuity \citep{strandburg2013visual, belden2019vision}, and thus allow a detailed analysis of individual sensory inputs and motor outputs.
 
-A key step in the initiation and maintenance of any collective behaviour is neighbour detection through the sensory modalities available to the animal. Many of the collective movements studied experimentally to date have been in visually dominant animals \citep{pita2016collective} such as birds, fish schools, mammals and flies. Vision is a passive sensory modality, in that the animal is merely a `receiver' of light. The fact that each animal acts as a receiver, and does not affect the amount of light received by others majorly (eg. light obstruction due their body opacity) means that visually driven collective behaviour can scale well with group size. Given sufficient ambient light, individuals in all sizes of groups (small to large) are expected to independently be able to detect their neighbour's and thus show co-ordinated movement. This expectation is supported by experimental observations of thousand strong starling flocks \citep{ballerini2008a}, schools with ten-hundreds of fish \citep{tunstrom2013collective}, or even humans as we aggregate in small to very large groups \citep{moussaid2011simple, dyer2009leadership}. Concrete support for the use of visual cues, and their role in modulating individual decisions in group movement is provided by studies that reconstruct individual sensory \emph{umwelts} \citep{turner2002encoding, strandburg2013visual, belden2019vision}. In contrast to simple models that assume all neighbours in a fixed sensory volume can be detected \citep{reynolds1987a, couzin2002a}, sensory reconstruction approaches include the details of neighbour positions and visual acuity \citep{strandburg2013visual, belden2019vision}, and thus allow a detailed analysis of individual sensory inputs and motor outputs. What about collective motion driven by other sensory modalities where sensing is not independent and is actually expected to be impeded in larger groups?
+\hypertarget{active-sensing-in-groups-a-tricky-proposition}{%
+\section{Active sensing in groups : a tricky proposition}\label{active-sensing-in-groups-a-tricky-proposition}}
 
-\hypertarget{the-noise-in-active-sensing-groups}{%
-\section{The `noise' in active sensing groups}\label{the-noise-in-active-sensing-groups}}
+Broadly classified, sensory systems are of two types: passive and active. Passive sensing systems such as vision and olfaction are receivers that `take in' stimuli from the environment. Active sensing animals such as bats, cetaceans, cave swiftlets and weakly electric fish(sensu strictu \citet{nelson2006a}) emit pulses of energy and perceive the environment through modulations of this pulse. In this respect, active sensing differs from passive sensing as animals generate their own stimuli to sense the world around them. The fact that animals must constantly emit pulses of energy to detect their surroundings raises cocktail-part like problems for individuals in groups. Electric fish detect objects through fluctuations they cause in the electric field along their body \citep{REGGGG}. When multiple electric fish are in close proximity, they will mutually disrupt each other's ability to detect objects due to the similarity in the emitted electric field properties of individuals \citep{nelson2006a}. This mutual disruption has been termed `jamming', inspired by the technical term used in RADAR. Jamming is a common phenomenon expected in all active sensing animals irrespective of the type of energy that forms the probe (sound, electric field, etc.).
 
-\hypertarget{bat-echolocation}{%
-\section{Bat echolocation}\label{bat-echolocation}}
+Jamming in
 
-\hypertarget{listening-in-the-chorus-from-humans-to-animals}{%
-\subsection{Listening in the chorus: from humans to animals}\label{listening-in-the-chorus-from-humans-to-animals}}
+\hypertarget{the-nascent-field-of-group-echolocation}{%
+\section{The nascent field of group echolocation}\label{the-nascent-field-of-group-echolocation}}
 
-Particularly from a sensory perspective, being part of a group brings about its own set of challenges.
-Animals have to deal with the task of sorting out noise from signal all the time - bird choruses {[}species can be trained to dteect single species in a chorus{]}, frogs {[}Bee{]}, cricket chorusses{[}Balakrishinan{]}, and finally even humans.
+\hypertarget{science-technology-loops-in-echolocation}{%
+\section{Science-technology loops in echolocation}\label{science-technology-loops-in-echolocation}}
 
-The psychoacoustic techniques and approaches used in humans have served a strong basis for many investigations in the field of animal acoustics/communication {[}BeeMicheyl2008{]}. eg. spatial unmasking, detecting signals at `negative SNRs' and acoustic streaming have all been shown in animals in fact. Many of the behaviourally relevant animal contexts studied to date have been in behaviours that the animal perhaps has a period of a few seconds or minutes to execute. The long time scale perhaps allows the individual to `process' and consider the most relevant signal in the midst of the incoming cacophony. What happens however, when the process of signal
-
-\begin{itemize}
-\tightlist
-\item
-  There are all kinds of adaptations in the animal kingdom.
-\item
-  Training/experience is known to improve performance
-\end{itemize}
+The very discovery of echolocation could only happen because a biologist and a physicist used the then newly developed ultrasonic sensor and pointed it at bats. Without stressing too much on the disciplinary labels of the researchers themselves, it remains that studying echolocation has meant using technological tools to make this alien sensory modality studiable to us humans.
 
 \hypertarget{active-sensing-animals-and-listening-in-the-noise}{%
 \subsection{Active sensing animals and listening in the noise}\label{active-sensing-animals-and-listening-in-the-noise}}
@@ -317,6 +304,8 @@ Uploading all my data, documenting code and publishing code as packages with pub
 
 \hypertarget{thesis-outline}{%
 \section{Thesis outline}\label{thesis-outline}}
+
+In this thesis I will investigate the sensory challenge faced by active sensing animals using a combination of experimental and theoretical methods. Through modelling I will reveal and quantify the sensory challenge FM echolocating bats face in groups of various sizes. I will then present the results of an observational study detailing the echolocation strategies of CF-FM bats in the presence of conspecifics, followed by a novel experimental dataset and workflow to study groups of echolocating bats in the wild. I will end with a series of methodologically driven reports that will significantly reduce the effort needed to perform acoustic tracking, help users simulate the expected performance of their arrays and ease the computational reproduciblity of echolocation call analysis.
 
 Echolocation is expected to become increasingly infeasible with growing group sizes due to masking. In response to masking in the form of artificial playbacks and conspecific calls, bats show a variety of changes to their echolocation behaviour. While many experimental studies have reported the changes bats show as `emitters' of sound, very little focus had been given to date on bats as `receivers'. Computational work modelling group echolocation has been restricted to models that are qualitatively by the biology of echolocation. In chapter \ref{cpnchapter} I present an experimentally parameterised computational model that estimates the sensory inputs a bat may receive in terms of the number of echoes detected over a range of group sizes. I formulated a conceptual framework to estimate echo detection in the presence of noise by combining published literature on the bat auditory system and echolocation.
 
@@ -1242,7 +1231,7 @@ I would like to thank Léna de Framond for generating the acoustic localisation 
 
 This chapter was published as a preprint on \emph{biorXiv}:
 
-\emph{Beleyur, T. (2020). \texttt{itsfm}, an open-source package to reliably segment and measure sounds by frequency modulation bioRxiv. INSERT DOI HERE!!!!}
+\emph{Beleyur, T. (2020). \texttt{itsfm}, an open-source package to reliably segment and measure sounds by frequency modulation bioRxiv 2021.01.09.426033; doi: \url{https://doi.org/10.1101/2021.01.09.426033} }
 
 \newpage
 
@@ -1573,15 +1562,20 @@ And finally, I would not be here without all the bats flying through the night. 
 \hypertarget{author-contributions}{%
 \chapter{Author contributions}\label{author-contributions}}
 
-Chapter 2:
+Summary, General introduction and Discussion : written by Thejasvi Beleyur.
+Zusammenfassung written by ZZASDFASDFASDFZZASDFASDFASDFZZASDFASDFASDFZZASDFASDFASDFZZASDFASDFASDFZZASDFASDFASDF
 
-Chapter 3:
+Chapter 2: Thejasvi Beleyur (TB) and Holger R Goerlitz (HRG) conceived the study. TB formulated the computational model, wrote the code, analysed data and presented the results. TB wrote the first draft, and HRG provided input for later drafts.
 
-Chapter 4:
+Chapter 3: TB and Neetash Mysuru Rajagoplachari (NMR) conceived the study and carried out field data collection. NMR and Aditya Krishna formulated and annotated bat flights in video data. TB wrote the code to synchronise audio-video data, analysed audio, performed statistical analysis, and prepared figures. TB and NMR wrote the first draft, and HRG provided input for later drafts.
 
-Chapter 5:
+Chapter 4: TB designed and executed field data collection and wrote code to control the recording system. HRG conceived and designed the recording system. TB wrote the first draft with observations and figures, HRG provided input for later drafts.
 
-Chapter 6:
+Chapter 5: TB initiated the inter-disciplinary collaboration, carried out field data collection and wrote code to control the recording system. HRG conceived and designed the recording system. TB and HRG wrote the section describing data collection in the Orlova Chuka cave system. All other authors (Kenneth Batstone, Gabrielle Flood, Viktor Larsson, Magnus Oskarsson, Kalle Åström) were involved in the writing of other paper sections, analysis and presentation of results.
+
+Chapter 6: TB wrote the code, analysed data, presented results and wrote the manuscript.
+
+Chapter 7: TB wrote the code, analysed data, presented results and wrote the manuscript.
 
   \bibliography{beleyur-goerlitz-2020-refs.bib,tacost-references.bib,cotdoa-filtered.bib,intro-discussion-refs.bib,itsfm-references.bib}
 
