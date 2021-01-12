@@ -105,15 +105,34 @@ A key step in the initiation and maintenance of any collective behaviour is neig
 
 
 ## Active sensing in groups : a tricky proposition
-Broadly classified, sensory systems are of two types: passive and active. Passive sensing systems such as vision and olfaction are receivers that 'take in' stimuli from the environment. Active sensing animals such as bats, cetaceans, cave swiftlets and weakly electric fish(sensu strictu @nelson2006a) emit pulses of energy and perceive the environment through modulations of this pulse. In this respect, active sensing differs from passive sensing as animals generate their own stimuli to sense the world around them. The fact that animals must constantly emit pulses of energy to detect their surroundings raises cocktail-party like problems for individuals in groups. Electric fish detect objects through fluctuations they cause in the electric field along their body [@REGGGG]. When multiple electric fish are in close proximity, they will mutually disrupt each other's ability to detect objects due to the similarity in the emitted electric field properties of individuals [@nelson2006a]. This mutual disruption has been termed 'jamming', inspired by the technical term used in RADAR. Jamming is a common phenomenon expected in all active sensing animals irrespective of the type of energy that forms the probe (sound, electric field, etc.).
+Broadly classified, sensory systems are of two types: passive and active. Passive sensing systems such as vision and olfaction are receivers that 'take in' stimuli from the environment. Active sensing animals such as bats, cetaceans, cave swiftlets and weakly electric fish(sensu strictu @nelson2006a) emit pulses of energy and perceive the environment through modulations of this pulse. In this respect, active sensing differs from passive sensing as animals generate their own stimuli to sense the world around them. The fact that animals must constantly emit pulses of energy to detect their surroundings raises cocktail-party like problems for individuals in groups. Electric fish detect objects through fluctuations they cause in the electric field along their body [@heiligenberg2012principles]. When multiple electric fish are in close proximity, they will mutually disrupt each other's ability to detect objects due to the similarity in the emitted electric field properties of individuals [@nelson2006a]. This mutual disruption has been termed 'jamming', inspired by the technical term used in RADAR. Jamming is a common phenomenon expected in all active sensing animals irrespective of the type of energy that forms the probe (sound, electric field, etc.).
 
-In the face of jamming from other active sensing conspecifics or experimental treatments, individuals show 'jamming-avoidance responses' [@bullock1972jamming]. @bullock1972jamming, while working in electric fish that emit 'wave-type' electric signals. Wave-type electric fish continuously emit electric discharges at an individual-specific frequency [@heiligenberg2012principles]. When faced with an experimental signal that is close to their own emitted frequency, wave-type fish  shift their discharge frequency to prevent spectral overlap and deterioration in electrolocation. Another group of electric fish, the 'pulse' type fish, emit short electric discharges at intervals. Pulse type electric fish resort to increasing their discharge rate, or adjusting discharges to avoid overlap when faced with interfering experimental pulses [@heiligenberg2012principles]. Studies of jamming avoidance in electric fish have helped form the basis of group active sensing, but have remained to my knowledge primarily focused on individual-level responses to experimental treatments, studies with multiple electric fish in the field are recently on the rise [@henninger2020tracking]. Another important aspect that may  minimise the overall extent of jamming in weakly electric fish is the limited spatial range of their electrolocation [@nelson2006a].
+In the face of jamming from other active sensing conspecifics or experimental treatments, individuals show 'jamming-avoidance responses' [@watanabe1963change;@bullock1972jamming]. Jamming avoidance response were coined and first reported in weakly electric fish (Gymnotiformes,Mormyridae families). Weakly electric fish 'electrolocate' by emitting electric discharges and detecting the modulations that objects cause to the emitted electric field [@heiligenberg2012principles]. There are two broad types of weakly electric fish: wave-type and pulse-type. Wave-type electric fish continuously emit electric discharges at an individual-specific frequency. When faced with an experimental signal that is close to their own emitted frequency, wave-type fish  shift their discharge frequency to prevent spectral overlap and thus deterioration in electrolocation. The 'pulse' type electric fish emit short electric discharges at intervals. Pulse type electric fish resort to increasing their discharge rate, or adjusting discharges to avoid overlap with interfering experimental pulses [@heiligenberg2012principles]. Studies of jamming avoidance in electric fish have helped form the first glimpses into how active sensing animals deal with jamming. Early studies have primarily focused on individual-level responses to experimental treatments [@heiligenberg2012principles], with recent studies starting simultaneously studying multiple freely swimming electric fish in the laboratory and field are recently on the rise [@arnegard2005electric;@tan2005electrosensory;@donati2016investigation;@henninger2020tracking]. One factor that may alleviate jamming in weakly electric fish is that their electric fields are fairly localised, with individual electrolocation mostly effective till about one body-length [@nelson2006a], and individuals may detect each other's fields at most only a few body lengths away [@knudsen1975spatial].
 
-Echolocating bats emit loud ultrasonic calls and detect objects by listening for the echoes reflected by them [@griffingalambos1941]. 
+What about active sensing animals whose energy probes are much less localised, and thus more susceptible to jamming in groups? Echolocating bats emit ultrasonic calls and detect their surroundings by listening for the echoes reflected off objects around them [@griffingalambos1941]. Using the auditory cues in the returning echo such as arrival delay, intensity, and spectral content, bats can detect fine details about the shape, size and texture of obstacles and prey items [@Simmons2014]. The problem of jamming in groups of bats is qualitatively different than in weakly electric fish as the calls and echoes are sound emissions. Sound travels at a speed of around 330m/s (or roughly about 30cm/ms) unlike electric fields that propagate nearly instantaneously at the speed of light. This 
 
-### Low and high duty-cycle echolocation 
+### Echolocation in individual bats
+Even though echolocation (much like electrolocation) is somewhat unrelatable to most of us humans^[apart from the human echolocators amongst us], the morphological and physiological basis of hearing in bats is centred around a standard mammalian auditory *bauplan* consisting of a pinna, three ossicles, eardrum, and a cochlea [@neuweiler2000biology]. Bat hearing thresholds match those of humans at around 20$\mu$Pa sound pressure level (SPL) [@Nachtigall2014;@w2007a], and they exhibit many of the same auditory phenomena we do such as spatial unmasking
+* hearing capabilities : hearing thresholds, hearing directionality, spatial unmasking
+* call behaviours : 
 
-## The nascent field of group echolocation 
+* low duty cycle and high duty-cycle bats
+
+Many species of echolocating bats can be trained to perform psychophysical discrimination tasks, and this has revealed a great depth of knowledge about the similarities and differences
+
+Similar to the two types of electric fish, there are two broad types of echolocating bats : low-duty cycle
+
+
+### Active sensing in bats and in noise
+, an ability to listen to echoes over noise.
+1. Griffin's
+1. Echolocating bats emit loud calls and listen for echoes --
+1. The returning echoes serve as packets of information that the bat uses to gain insights about its surroundings. The time delay, echo level, interference and spectral properties and other blah blah tell the bat more about the objects. 
+1. Echolocation might work based on a type of efference copy based mechanism. 
+1. 
+
+
+## The study of group echolocationL
 * grand history. starting with spallanzi, moving onto the first 'proof' by Griffin and etc - the focus has always been on how individual bats managed to do stuff. 
 * The question of how bats detect echoes in the midst of noise is however not very new. Griffin and the crazy noise room experiment with 50/80? speakers spread all around the room. 
 *
@@ -124,16 +143,18 @@ Echolocating bats emit loud ultrasonic calls and detect objects by listening for
 * CF-FM bats remain understudied due to the difficulty in analysing long overlapping sounds 
 * Given that they have lower sensory inputs - how do they manage to show coordinated behaviours in huge groups???
 
-## Science-technology loops in echolocation
-The very discovery of echolocation could only happen because a biologist and a physicist used the then newly developed ultrasonic sensor and pointed it at bats. Without stressing too much on the disciplinary labels of the researchers themselves, it remains that studying echolocation has meant using technological tools to make this alien sensory modality studiable to us humans. 
+## Technology to the rescue in the study of echolocation
+The very discovery of echolocation could only happen because a curious biologist (Donald Griffin) joined a physicist (ZZZZZZZZZZZZZZZZ Pierce) who had developed an ultrasound detector, and pointed it at the inaudible vocalisations of bats [@REFFF]. Without stressing too much on the disciplinary labels of the researchers themselves, the moral of the story is that studying echolocation has always meant closely working with technology and forging inter-disciplinary collaborations. Thankfully technology has moved leaps and bounds since the days of Griffin in the 1950's. Reading an account of Griffin's field work [@griffin1958a] makes one grateful for the multi-functionality of laptops and smartphones. Griffin had to carry oscilloscope, diesel generator, cameras, film rolls, analog tapes and flash lamps to record a few minutes of data in the field. In contrast I've had to carry laptop, digital soundcards and thermal cameras for fieldwork, all of which weigh far less and with the great advantage of being able to record much much more data. 
 
-### Active sensing in bats and in noise
-1. Echolocating bats emit loud calls and listen for echoes --
-1. The returning echoes serve as packets of information that the bat uses to gain insights about its surroundings. The time delay, echo level, interference and spectral properties and other blah blah tell the bat more about the objects. 
-1. Echolocation might work based on a type of efference copy based mechanism. 
-1. 
+Some of the challenges still remain the same from Griffin's time onward.  Acoustic tracking of bat calls was first achieved by @aubauer1994dreidimensionale, who used a 4-microphone array. Microphones were placed on a frame, and the time-delays of call arrival between channels were used to triangulate the bat's call position. Since Aubauer's time, multi-microphone arrays have been used to track bats in the lab and field  [@KOBLITZJENSBARBA;@MOSSGHOSE;@SIMMONS;]. Acoustic tracking relies on a knowledge of microphone positions, which is achieved by fixing mic positions on frames. The very array-frames that provide stable positions to the microphones are cumbersome especially in the context of fieldwork. Large multi-mic frames need to be carried, assembled, and aligned each time before recordings begin. Animals may inspect these conspicuous objects, instead of showing their regular echolocation behaviour. There is a strong need for methods that free the researcher from the shackles of classically defined microphone arrays based around simple geometric shapes and configurations on a metal or wooden frame. 
 
-### Focus on open and reproducible science 
+Aside from the 'hardware' issues of placing and managing microphone arrays, certain issues also have also remained the same in the analysis of echolocation data. Automating parameter extraction from echolocation calls is the most scalable and objective method at hand. Manual measurements using spectrogram visualisations of sound for instance can lead to experimenter bias and non-reproducible results [@BRUMMZOLLINGER]. Echolocation researchers have indeed caught up with the digital revolution, 
+
+### Open methods and technology lead to reliable results
+Scientific and technical knowledge only lives on when it is transferred within and across generations of people openly. An open sharing of raw data, code and software accelerates the growth of a research field, while 
+
+* 
+
 Uploading all my data, documenting code and publishing code as packages with publicly available tutorials are part of my attempts to share the science I do as much as possible. 
 
 ## Thesis outline 

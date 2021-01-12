@@ -13,6 +13,12 @@
 
 * Implications of group echolocation on collective behaviour 
 
+## Cross-species observations - are key to pick up common sensory/evolutionary constraints
+* To parametrise models we need multi bat-species training expts. Each species is unique and we need to know how their receiver and emitter characteristics help them deal with
+masking 
+* To actually study different species in the wild is also important. eg. It may turn out that certain bats that are very solitary, can still echolocate well in noise because they are evolved to echolocate in reverberant/closed-space settings?
+* Can reference @stamper2010 (read it a bit more though)
+
 ## Lowering the technical barriers to study group echolocation 
 * measurement-free, array-free acoustic tracking setups. The more scaleable your mic array is - the better you can track echolocating bats. 
 * package to estimate and simulate the acoustic tracking performance  pre-hoc or post-hoc

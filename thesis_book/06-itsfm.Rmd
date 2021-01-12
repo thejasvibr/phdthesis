@@ -14,7 +14,7 @@ This chapter was published as a preprint on *biorXiv*:
 library(knitr)
 #library(kableExtra)
 #library(magrittr)
-library(flextable)
+#library(flextable)
 #knitr::opts_chunk$set(fig.pos = 'H')
 ```
 
