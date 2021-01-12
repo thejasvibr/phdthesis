@@ -79,51 +79,37 @@ The ```itsfm``` package also comes bundled with a series of field recordings of 
 
 To test the accuracy of the segmentation methods implemented in the ```itsfm``` package, I generated a set of synthetic CF-FM calls with known segment durations and spectral properties. Synthetic calls were generated based on calls broadly based on the structure of rhinolophid and hipposiderid call parameters using the package's inbuilt ```make_cffm_call``` function. A set of 324 synthetic calls were made through a combination of parameters in Table \@ref(tab:synthtable). Each synthetic call consisted of an iFM, CF and tFM component (naming as per [@tian1997echolocation]), and is Tukey windowed without any padded silent samples or background noise. All synthetic calls were generated at a sampling rate of 250kHz. 
 
-```{r synthtable, echo=FALSE, tab.cap="\\label{tab:synthtable} Parameter values used to generate synthetic CF-FM calls. The parameters broadly reflect the call shape of a rhinolophid/hipposiderid CF-FM bat calls. iFM and tFM regions were generated from the same FM parameter set. 9 CF x 6 iFM  x 6 tFM combinations = 324 calls"}
 
-set_flextable_defaults(fonts_ignore=TRUE)
-cf.durations <- c(5,10,15)
-cf.peakfreq <- c(40, 60, 90)
-fm.durations <- c(1, 2, NA)
-fm.bw <- c(5, 10, 20)
+|Parameter name         | Values   |
+|-----------------------|----------|
+|CF duration (ms)       |5, 10, 15 |
+|CF peak frequency (kHz)|40, 60, 90|
+|i/tFM duration (ms)    |1,2       |
+|i/tFM bandwidth (kHz)  | 5,10,20  |
 
-tabledata <- as.matrix(rbind(cf.durations, cf.peakfreq, fm.durations, fm.bw))
-tabledata <- as.data.frame(tabledata)
+Table: (\#tab:synthtable) Parameter values used to generate synthetic CF-FM calls. The parameters broadly reflect the call shape of a rhinolophid/hipposiderid CF-FM bat calls. iFM and tFM regions were generated from the same FM parameter set. 9 CF x 6 iFM  x 6 tFM combinations = 324 calls
 
-tabledata$parameter <- c("CF duration (ms)","CF peak frequency (kHz)","i/t FM duration (ms)","i/t FM bandwidth (kHz)")
-tabledata <- tabledata[,c(4,1,2,3)]
-paramtable <- flextable(tabledata)
-paramtable <- set_header_labels(paramtable, V1= '', 
-    V2 = 'Parameter values', V3='',parameter='Parameter name'
-    )
-paramtable
-```
+
 
 The synthetic calls were segmented according to method-specific parameters that were optimised based on trial-and-error on a smaller representative batch. The parameter values used for both segmentations are shown in Table \@ref(tab:segparams).
 
-```{r segparams, echo=FALSE, tab.cap="\\label{tab:segparams}Segmentation method specific parameters used to analyse the synthetic data."}
-pwvd.param.names <- c('Window size (samples)','FM rate threshold (kHz/ms)','Accelaration threshold (kHz/ms2)','Extrapolation window(s)')
-pwvd.values <- c('125','2','10','75x10e-6')
-peakpctg.param.names <- c('','peak percentage','double pass',NA)
-peakpctg.value <- c(125, 0.99, 'True', NA)
+Table: (\#tab:segparams) Segmentation method specific parameters used to analyse the synthetic data.
 
-segparams <- as.data.frame(rbind(pwvd.param.names, pwvd.values, peakpctg.param.names, peakpctg.value))
-#segparams <- as.data.frame(rbind(pwvd.values, peakpctg.param.names, peakpctg.value))
-segparams$method <- c("pwvd","","peak_percentage","")
-segparams <- segparams[,c(5,1,2,3,4)]
-#segparams <- c("pwvd","","peak_percentage"," ")
++-------------------------+---------------------+--------------------------+-------------------------------------+-----------------------+
+|Method                   |Parameters           |                          |                                     |                       |
++=========================+=====================+==========================+=====================================+=======================+
+|   pwvd                  |                     |                          |                                     |                       |
+|                         |Window size (samples)|FM rate threshold (kHz/ms)|Accelaration threshold (kHz/ms$^{2}$)|Extrapolation window(s)|
+|                         |                     |                          |                                     |                       |
+|                         |     125             |       2                  |   10                                |  75x $10^{-6}$        |
++-------------------------+---------------------+--------------------------+-------------------------------------+-----------------------+
+|   peak percentage       |                     |                          |                                     |                       |
+|                         |Window size (samples)|Peak percentage           |Double pass                          |                       |
+|                         |                     |                          |                                     |                       |
+|                         |     125             |          0.99            |       True                          |                       |
++-------------------------+---------------------+--------------------------+-------------------------------------+-----------------------+
 
-#opts <- options(knitr.kable.NA = "")
-#kable(segparams, col.names = c('', '', '',''), digits=c(5,5,5,5), format.args = list(scientific = TRUE),
-#             caption="Parameter values used to generate synthetic CF-FM calls. The parameters broadly reflect the call shape of a #rhinolophid/hipposiderid CFFM bat calls. iFM and tFM regions were generated from the same FM parameter set. 324 calls = 9 CF combintations x 6 iFM #combinations x 6 tFM combinations.") %>% kable_styling(latex_options =c("striped","scale_down"))
 
-ft.segparams <- flextable(segparams)
-ft.segparams <- set_header_labels(ft.segparams, V1= '', 
-    V2 = '', V3='',V4='',method='Method'
-    )
-ft.segparams
-
-```
 
 The accuracy of segmentation was determined by comparing the duration of the obtained call components and the original values used to make the synthesied calls. The accuracy of other parameters eg. CF peak frequency, FM bandwidth was not assessed. It follows directly that if the call components have been poorly segmented, any measurements made from the underlying audio will also be unrepresentative of the actual call parameters. Some calls appeared to have more than three components due to false positive CF/FM identifications, and were not included in the accuracy calculations. 
 
@@ -140,19 +126,47 @@ One percent of all ```pwvd``` segmented calls and six percent of all ```peak_per
 include_graphics('original_papers/itsfm-paper/figures/pwvd-pkpct-comparison.png')
 ```
 
-```{r accuracypctiles, echo=FALSE, tab.cap="\\label{tab:accuracypctiles} Summary statistics describing the performance of the two segmentation methods on the synthetised test data set.  The pwvd method performs better than the peak-percentage method over the tested parameter space and for all call components (iFM,tFM and CF)."}
+```{r accuracypctiles, echo=FALSE}
 
 d <- read.csv("original_papers/itsfm-paper/data/accuracy_pctiles.csv")
 d$region.type <- c("CF","CF ","tFM","tFM ","iFM","iFM ")
+d$method <- c("peak percentage", "pwvd","peak percentage ", "pwvd","peak percentage", "pwvd")
+d$X0 <- as.character(d$X0)
 
-d$method <- c("peak_percentage", "pwvd","peak_percentage ", "pwvd","peak_percentage", "pwvd")
+remove.brackets <- function(in.str){
+  round1<- gsub('[',"",in.str,fixed=TRUE)
+  round2<- gsub(']',"",round1,fixed=TRUE)
+  round2
+  }
+remove.brackets.and.split.by.space <- function(input.string){
+                      split.words <- strsplit(input.string, " +")
+                      first  <- remove.brackets(split.words[[1]][1])
+                      second <- remove.brackets(split.words[[1]][2])
+                      c(first, second)
+                                     }
 
-d <- d[,c(4,1,2,3)]
-paramtable <- autofit(flextable(d))
-paramtable <- set_header_labels(paramtable, region.type='Call component', method='Segmentation method', X0='Segmentation accuracy: 95%ile range')
-paramtable
+d$lower <- NA 
+for (each in seq(length(d$X0))){ d$lower[each]<-remove.brackets.and.split.by.space(d$X0[each])[1]}
+d$lower <- round(as.numeric(d$lower),2)
+d$higher <- NA 
+for (each in seq(length(d$X0))){ d$higher[each]<-remove.brackets.and.split.by.space(d$X0[each])[2]}
+d$higher <- round(as.numeric(d$higher),2)
 
 ```
+
+
+|  Call component | Segmentation method   | Segmentation accuracy ($\frac{measure\:duration}{original\:duration}$)                |
+|                 |                       |  : 95$\%$ile range                                                                    |    
+|-----------------|-----------------------|---------------------------------------------------------------------------------------|
+|CF               | peak percentage       |  `r d$lower[1]`-`r d$higher[1]`                                                       |
+|CF               |    pwvd               |  `r d$lower[2]`-`r d$higher[2]`                                                       |
+|tFM              |peak percentage        |  `r d$lower[3]`-`r d$higher[3]`                                                       |
+|tFM              |    pwvd               |  `r d$lower[4]`-`r d$higher[4]`                                                       |
+|iFM              |peak percentage        |  `r d$lower[5]`-`r d$higher[5]`                                                       |
+|iFM              |    pwvd               |  `r d$lower[6]`-`r d$higher[6]`                                                       |
+
+Table: (\#tab:accuracypctiles) Summary statistics describing the performance of the two segmentation methods on the synthetised test data set.  The pwvd method performs better than the peak-percentage method over the tested parameter space and for all call components (iFM,tFM and CF). The relative segmentation 
+
 
 ## Discussion
 

@@ -20,3 +20,11 @@
 * What we need is 
 
 ## Sensory systems 
+
+* What other animal systems could be studied using the modelling and experimental approaches described here: cave swiftlets, lingual-echolocating bats, cetaceans. 
+* As pointed out by [@nelson2006a] In some sense lingual-echolocating bats + cetaceans may not suffer from overlaps as such because the calls are so short -- but given how short the sounds are - maybe they suffer more from informational masking?? 
+* Informational masking - or 'attentional processes' are another very important part of the whole process that hasn't been answered before. Auditory masking has mainly been studied in terms of 'energetic masking' in echol. bats. Controlled playback studies looking into informational masking still need to be there (eg. as Lutz pointed out - moth clicks are not v 'loud', but may be  good starting point?). 
+
+## Inverse problems all the way
+
+

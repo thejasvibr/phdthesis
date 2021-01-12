@@ -82,6 +82,11 @@
 \usepackage{algpseudocode}
 \usepackage{epstopdf}
 
+% for the acknowledgements and ushichka chapter
+\usepackage[utf8]{inputenc}
+\usepackage[bulgarian]{babel}
+\babelprovide[import]{kannada}
+
 \def\x{{\mathbf x}}
 \def\L{{\cal L}}
 \def\lone{{$l^1$}}
@@ -113,20 +118,26 @@
 \def\etal{\emph{et al.\ }}
 \def\Win{W_{\text{in}}}
 \def\Wout{W_{\text{out}}}
-\usepackage{fontspec}
-\usepackage{multirow}
-\usepackage{multicol}
-\usepackage{colortbl}
-\usepackage{hhline}
+\usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
-\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{Theoretical and empirical investigation of echolocation in bat groups}
 \author{Thejasvi Beleyur}
-\date{\(2021-01-10\)}
+\date{\(2021-01-12\)}
 
 \begin{document}
 \maketitle
@@ -204,7 +215,7 @@ Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch Deutsch DeutschDeutsch Deutsch D
   Bulla Shah, Sufi mystic and poet \footnote{I interpret this poem as an apt expression of the simultaneous pleasure, confusion and contentment gained from inter-disciplinary research}. Translation by \citet{bullashahtransl}.
 \end{itemize}
 
-\emph{Echolocation is still a topic that resists neat classification into any conventional category of science. It ramifies into widely different scientific disciplines including ethology, mammalogy, physiology, psychology, acoustics, nd the mathematical theory of signal detectionl. The results of new investigations have reemphasized the necessity of a broad biological perspective for any serious appreciation of echolocation.}
+\emph{Echolocation is still a topic that resists neat classification into any conventional category of science. It ramifies into widely different scientific disciplines including ethology, mammalogy, physiology, psychology, acoustics, and the mathematical theory of signal detectionl. The results of new investigations have reemphasized the necessity of a broad biological perspective for any serious appreciation of echolocation.}
 
 \begin{itemize}
 \tightlist
@@ -228,30 +239,40 @@ A key step in the initiation and maintenance of any collective behaviour is neig
 \hypertarget{active-sensing-in-groups-a-tricky-proposition}{%
 \section{Active sensing in groups : a tricky proposition}\label{active-sensing-in-groups-a-tricky-proposition}}
 
-Broadly classified, sensory systems are of two types: passive and active. Passive sensing systems such as vision and olfaction are receivers that `take in' stimuli from the environment. Active sensing animals such as bats, cetaceans, cave swiftlets and weakly electric fish(sensu strictu \citet{nelson2006a}) emit pulses of energy and perceive the environment through modulations of this pulse. In this respect, active sensing differs from passive sensing as animals generate their own stimuli to sense the world around them. The fact that animals must constantly emit pulses of energy to detect their surroundings raises cocktail-part like problems for individuals in groups. Electric fish detect objects through fluctuations they cause in the electric field along their body \citep{REGGGG}. When multiple electric fish are in close proximity, they will mutually disrupt each other's ability to detect objects due to the similarity in the emitted electric field properties of individuals \citep{nelson2006a}. This mutual disruption has been termed `jamming', inspired by the technical term used in RADAR. Jamming is a common phenomenon expected in all active sensing animals irrespective of the type of energy that forms the probe (sound, electric field, etc.).
+Broadly classified, sensory systems are of two types: passive and active. Passive sensing systems such as vision and olfaction are receivers that `take in' stimuli from the environment. Active sensing animals such as bats, cetaceans, cave swiftlets and weakly electric fish(sensu strictu \citet{nelson2006a}) emit pulses of energy and perceive the environment through modulations of this pulse. In this respect, active sensing differs from passive sensing as animals generate their own stimuli to sense the world around them. The fact that animals must constantly emit pulses of energy to detect their surroundings raises cocktail-party like problems for individuals in groups. Electric fish detect objects through fluctuations they cause in the electric field along their body \citep{REGGGG}. When multiple electric fish are in close proximity, they will mutually disrupt each other's ability to detect objects due to the similarity in the emitted electric field properties of individuals \citep{nelson2006a}. This mutual disruption has been termed `jamming', inspired by the technical term used in RADAR. Jamming is a common phenomenon expected in all active sensing animals irrespective of the type of energy that forms the probe (sound, electric field, etc.).
 
-Jamming in
+In the face of jamming from other active sensing conspecifics or experimental treatments, individuals show `jamming-avoidance responses' \citep{bullock1972jamming}. \citet{bullock1972jamming}, while working in electric fish that emit `wave-type' electric signals. Wave-type electric fish continuously emit electric discharges at an individual-specific frequency \citep{heiligenberg2012principles}. When faced with an experimental signal that is close to their own emitted frequency, wave-type fish shift their discharge frequency to prevent spectral overlap and deterioration in electrolocation. Another group of electric fish, the `pulse' type fish, emit short electric discharges at intervals. Pulse type electric fish resort to increasing their discharge rate, or adjusting discharges to avoid overlap when faced with interfering experimental pulses \citep{heiligenberg2012principles}. Studies of jamming avoidance in electric fish have helped form the basis of group active sensing, but have remained to my knowledge primarily focused on individual-level responses to experimental treatments, studies with multiple electric fish in the field are recently on the rise \citep{henninger2020tracking}. Another important aspect that may minimise the overall extent of jamming in weakly electric fish is the limited spatial range of their electrolocation \citep{nelson2006a}.
+
+Echolocating bats emit loud ultrasonic calls and detect objects by listening for the echoes reflected by them.
+
+\hypertarget{low-and-high-duty-cycle-echolocation}{%
+\subsection{Low and high duty-cycle echolocation}\label{low-and-high-duty-cycle-echolocation}}
 
 \hypertarget{the-nascent-field-of-group-echolocation}{%
 \section{The nascent field of group echolocation}\label{the-nascent-field-of-group-echolocation}}
+
+\begin{itemize}
+\item
+  grand history. starting with spallanzi, moving onto the first `proof' by Griffin and etc - the focus has always been on how individual bats managed to do stuff.
+\item
+  The question of how bats detect echoes in the midst of noise is however not very new. Griffin and the crazy noise room experiment with 50/80? speakers spread all around the room.
+\item
+\item
+  much like electric fish - two types of bats, the low-duty-cycle FM bats like the pulse type, and the high-duty cycle CF-FM bats
+\item
+  Mostly studies on low duty-cycle FM bats, Both of these species show different responses to
+\item
+  Questions of why they do what they do are open
+\item
+  CF-FM bats remain understudied due to the difficulty in analysing long overlapping sounds
+\item
+  Given that they have lower sensory inputs - how do they manage to show coordinated behaviours in huge groups???
+\end{itemize}
 
 \hypertarget{science-technology-loops-in-echolocation}{%
 \section{Science-technology loops in echolocation}\label{science-technology-loops-in-echolocation}}
 
 The very discovery of echolocation could only happen because a biologist and a physicist used the then newly developed ultrasonic sensor and pointed it at bats. Without stressing too much on the disciplinary labels of the researchers themselves, it remains that studying echolocation has meant using technological tools to make this alien sensory modality studiable to us humans.
-
-\hypertarget{active-sensing-animals-and-listening-in-the-noise}{%
-\subsection{Active sensing animals and listening in the noise}\label{active-sensing-animals-and-listening-in-the-noise}}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Active sensing animals emit energy and blah blah blah.
-\item
-  Discerning the correct type of signal from the bakcground is important but most of these other animals use the cues for decisions that are made over somewhat longer time scales eg. a few seconds to a few minutes.
-\item
-  But active sensing animals need to manage in the \emph{now}, and show a variety of adaptations in response. Electric fish, dolphins, bats. eg. JAR in electric fish, calling louder in bats, dolphins etc. The rapidness of the adaptation indicates how vital it is for the animals??
-\end{enumerate}
 
 \hypertarget{active-sensing-in-bats-and-in-noise}{%
 \subsection{Active sensing in bats and in noise}\label{active-sensing-in-bats-and-in-noise}}
@@ -267,58 +288,27 @@ The very discovery of echolocation could only happen because a biologist and a p
 \item
 \end{enumerate}
 
-\hypertarget{sensory-adaptations-for-listening-in-the-noise}{%
-\subsection{Sensory adaptations for listening in the `noise'}\label{sensory-adaptations-for-listening-in-the-noise}}
-
-\begin{itemize}
-\item
-  Spatial unmasking
-\item
-\end{itemize}
-
-\hypertarget{section}{%
-\subsection{}\label{section}}
-
-\hypertarget{treading-trodden-paths-with-new-technology}{%
-\subsection{Treading trodden paths with new technology}\label{treading-trodden-paths-with-new-technology}}
-
-How the study of group echolocation has always fascinated scientists but the technology (hardware and software) has not always been very accesible till now. Now is a GoldenZeit.
-
 \hypertarget{focus-on-open-and-reproducible-science}{%
 \subsection{Focus on open and reproducible science}\label{focus-on-open-and-reproducible-science}}
 
 Uploading all my data, documenting code and publishing code as packages with publicly available tutorials are part of my attempts to share the science I do as much as possible.
 
-\hypertarget{group-echolocation-as-a-serious-sensory-challenge}{%
-\subsection{Group echolocation as a `serious' sensory challenge}\label{group-echolocation-as-a-serious-sensory-challenge}}
-
-\hypertarget{implications-of-group-echolocation-on-collective-behaviour}{%
-\subsection{Implications of group echolocation on collective behaviour}\label{implications-of-group-echolocation-on-collective-behaviour}}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Analogies to RADAR: one might think a negative signal-to-noise ratio is not possible. But published data clearly shows this - and also, that when there is a
-\end{enumerate}
-
 \hypertarget{thesis-outline}{%
 \section{Thesis outline}\label{thesis-outline}}
 
-In this thesis I will investigate the sensory challenge faced by active sensing animals using a combination of experimental and theoretical methods. Through modelling I will reveal and quantify the sensory challenge FM echolocating bats face in groups of various sizes. I will then present the results of an observational study detailing the echolocation strategies of CF-FM bats in the presence of conspecifics, followed by a novel experimental dataset and workflow to study groups of echolocating bats in the wild. I will end with a series of methodologically driven reports that will significantly reduce the effort needed to perform acoustic tracking, help users simulate the expected performance of their arrays and ease the computational reproduciblity of echolocation call analysis.
+In this thesis I will investigate the sensory challenge faced by active sensing animals in groups using a combination of experimental and theoretical methods. Through modelling I will reveal and quantify the sensory challenge FM echolocating bats face in groups of various sizes. I will then present the results of an observational study detailing the echolocation strategies of CF-FM bats in the presence of conspecifics, followed by a novel experimental dataset and workflow to study groups of echolocating bats in the wild. I will end with a series of methodologically driven reports that will significantly reduce the effort needed to perform acoustic tracking at scale, help users simulate the expected performance of their arrays and ease the computational reproduciblity of echolocation call analysis.
 
-Echolocation is expected to become increasingly infeasible with growing group sizes due to masking. In response to masking in the form of artificial playbacks and conspecific calls, bats show a variety of changes to their echolocation behaviour. While many experimental studies have reported the changes bats show as `emitters' of sound, very little focus had been given to date on bats as `receivers'. Computational work modelling group echolocation has been restricted to models that are qualitatively by the biology of echolocation. In chapter \ref{cpnchapter} I present an experimentally parameterised computational model that estimates the sensory inputs a bat may receive in terms of the number of echoes detected over a range of group sizes. I formulated a conceptual framework to estimate echo detection in the presence of noise by combining published literature on the bat auditory system and echolocation.
+Echolocation is expected to become increasingly infeasible with growing group sizes due to masking. In response to masking in the form of artificial playbacks and conspecific calls, bats show a variety of changes to their echolocation behaviour. While many experimental studies have reported the changes bats show as `emitters' of sound, very little focus had been given to date on bats as `receivers'. Computational work modelling group echolocation has been restricted to models that are qualitatively based on echolocation, with minimal biological details. In chapter \ref{cpnchapter} I present an experimentally parameterised computational model that estimates the sensory inputs a bat may receive as it echolocates in a group. The sensory inputs are quantified in terms of the number of echoes detected. Each detected echo corresponds to the detection of one neighbour in the group. I formulate a conceptual framework to estimate echo/neighbour detection in the presence of masking sounds. By quantifying echo detection from small to large groups, I find that even in group sizes of 200 bats, individuals may still be detecting one neighbour every few calls. When alone, a bat detects echoes reflecting off all objects in its surroundings. In contrast to echolocating when alone, bats in groups thus face a much lower `update rate' in groups. Despite this lowered sensory update rate, I argue that the detection of occasional echoes may provide the sensory basis for the impressive feats of collective behaviour bats show in roosting sites, mating swarms and emergences.
 
-In Chapter 3 (Horseshoebat), I present bow bow bow . A little bit about CF bats, and how they are more likely to face overlaps than FM bats at least temporally.
+In Chapter 3 takes us into our first experimental study looking at echolocation in groups of horseshoe bats.
 
 In Chapter 4 (Uschichka), I do kat kat kat kat. From the time of Griffin \& Galambos, who were the first to use the newly invented ultrasonic microphone to record ultrasound calls - the field of echolocation has always been a field that has `resisted'
 
-In Chapter 5 (SFS),
-1. About the SFS methodology : Multi-microphone arrays have been an important and indispensable tool in the study of echolocation in the laboratory ever since the work of {[}Aubauer XXXX{]}. Working with microphone arrays in the field however comes with a series of challenges. Handling multi-microphone arrays in the field can be logistically and physically straining: the long cables involved must be brought to order each time, the arrays themselves can be bulky and must be assembled on site each time, and in certain configurations the positions of each microphone may need to be measured each time the array is setup. While rewarding in terms of the data it generates, the process of setting up a microphone array can be strenuous especially when it comes to taking positional measurements of microphone positions. The use of TotalStation type surveying systems that provide direct XYZ measurements are not common in the field (they are themselves another piece of bulky equipment), and instead it is more common to measure inter-microphone distances with a tape measure or laser range finders. Having measured the inter-microphone distances in an array, the final XYZ positions of each microphone can be reconstructed. In my search for a method that \ldots\ldots.an academic `Christmas present'.
+Chapter 5 describes a methodology to automatic estimate microphone positions in an acoustic array. Multi-microphone arrays have been an important and indispensable tool in the study of echolocation in the laboratory ever since the work of \citet{aubauer1994dreidimensionale}. Working with microphone arrays in the field however comes with a series of challenges. Handling multi-microphone arrays in the field can be logistically and physically straining: the long cables involved must be brought to order each time, the array frames themselves can be bulky and must be assembled on site each time. The frames themselves are often conspicuous and invite artifactual inspection behaviours from the animals themselves. In certain configurations the positions of each microphone may need to be measured each time the array is setup. While rewarding in terms of the data it generates, the process of setting up a microphone array can be strenuous especially when it comes to taking positional measurements. The use of TotalStation surveying systems that provide direct XYZ measurements are not common in the field (they are themselves another piece of bulky equipment). In contrast to acoustic arrays, camera arrays are much easier to setup and calibrate. Field-friendly protocols like \citet{Theriault2014} mean the field biologist may freely place the cameras, record animal activity and then perform calibrations by moving a common object in front of the cameras. While looking for camera-type calibration workflows, I found the work of \citet{zhayida2016automatic} with their `Structure-From-Sound' method. \citet{zhayida2016automatic} were able to automatically infer microphone positions using only the common sounds recorded across channels as input. I was able to initiate a collaboration with Prof.~Åström (Uni. Lund) and convey my enthusiasm for their method when applied to our arrays in the field. This chapter with Prof.~Åström and colleagues shows the viability of automatic microphone position estimation in field conditions, using recordings I had made in the Orlova Chuka cave system. This chapter is but a beginning to the development of field-friendly workflows in acoustic tracking. The `Structure-From-Sound' method used in this chapter and \citet{zhayida2016automatic} promise to significantly reduce the barrier to multi-microphone acoustic tracking for bioacousticians. For one it may completely eliminate the need to place microphones in specific geometries on conspicuous bulky frames and secondly, there will be no more need to perform tedious measurements before or after recordings. Being able to handle a larger number of microphones, the bioacoustician is now free to generate even higher resolution measurements of animal sounds. The ease and anticipatory joy of such an effortless acoustic tracking workflow can only be described by the words of a senior colleague\footnote{here's to the encouragement of Lasse Jakobsen} who said knowing there were such methods in development was a `Christmas gift' in itself.
 
-In Chapter 6 (tacost),
+In Chapter 6 I present the \texttt{tacost} software package to aid the design and analysis of acoustic tracking systems. The accuracy of acoustic tracking is affected by multiple parameters: array geometry, source sound position, signal-to-noise ratios and the analytical approaches used to process and calculate source sound position itself. Experimental verifications of tracking systems is time and labour intensive, while mathematical analysis of array configurations are by their nature restricted to specific array geometries. Simulated audio data presents a quick and simple method to estimating the real-world performance of acoustic tracking systems either before or after experiments. \texttt{tacost} generates multi-channel audio data according to user-specified array geometry, source sound and source positions. \texttt{tacost} can be used to plan array geometry to optimise tracking accuracy before experiments, or post-hoc to estimate the maximal accuracy of the tracking system used. I detail the use of \texttt{tacost} to estimate patterns in tracking accuracy across space with two types of experimentally used array systems, the planar `tristar' array with microphones placed regularly on a frame, and an array configuration used in Chapter 4 \& 5 with freely-placed microphones spread around a volume. While \texttt{tacost} does not itself perform any acoustic tracking, it serves as a useful tool to estimate baseline performance for bioacousticians working with acoustic tracking. The package is written in the non-proprietary Python language, and released with an open-source license. To ease its use, the package also has detailed online and offline documentation
 
-In Chapter 7 (itsfm)
+In Chapter 7, I present the \texttt{itsfm} software package originally written to perform the systematic and reproducible analysis of echolocation calls detailed in Chapter 3. CF-FM calls appear like staple-pins when viewed on a spectrogram. The `rising' and `declining' portions form the frequency-modulated (FM) parts, while the flat portion, forms the constant-frequency (CF) portion. The two call portions serve different sensory functions, and can be altered independently. To date, studies have adopted a variety of automated and manual methods to segment and then quantify the alterations in the CF and FM call portions. Manual methods of call segmentation are not reproducible and suscept to experimenter bias, while the automated software based methods remain custom scripts whose implementation is briefly detailed in the publications themselves. Publicly available implementations are important for the scrutiny and comparison of published methods. Purely description based implementations can show important differences from original implementations. Additionally, none of the software based methods include assessments of segmentation accuracy. \texttt{itsfm} implements a commonly described method (that I call the \emph{peak-percentage} method) to segment CF-FM calls, and introduces a new and more reliable method (the \emph{pwvd} method) to segment CF-FM calls. I also create a synthetic dataset of CF-FM calls, and compare the performance of the \emph{peak-percentage} and \emph{pwvd} algorithms in their segmentation accuracy. Results show that the \emph{pwvd} method is overall superior to the \emph{peak-percentage} method, and is thus the recommended algorithm to use for segmenting CF-FM calls. The \emph{pwvd} method, unlike the \emph{peak-percentage} method, is also potentially applicable to vocalisations of any kind as it does not rely on a specific spectro-temporal shape assumption. The \texttt{itsfm} package is written in the non-proprietary Python language, and released with an open-source license. To ease its use and encourage the further development of the package, detailed online and offline documentation has been made available.
 
 \hypertarget{cpnchapter}{%
 \chapter{Modeling active sensing in groups of bats reveals echo detection even in large groups}\label{cpnchapter}}
@@ -874,8 +864,8 @@ In this paper we study the problem of estimating receiver and sender positions f
 
 \newpage
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
 
 The problem of estimating receiver-sender node positions from measured arrival times of radio or sound signals is a key issue in different applications such as microphone array calibration, radio antenna array calibration, mapping and positioning. This field is well researched but in this paper we will focus on the anchor-free sensor network calibration both in terms of time-of-arrival measurements (TOA) and time-difference-of-arrival measurements (TDOA).
 For time-of-arrival the planar case of three receivers and three senders (3R/3S) was solved in \cite{stewenius-phd-2005}.
@@ -1152,8 +1142,8 @@ This chapter was published as a preprint on \emph{biorXiv}:
 
 \newpage
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
 
 Acoustic tracking is a common method used to study vocalising animals such as birds, bats and cetaceans \citep{suzuki2017harkbird, aubauer1996acoustical, mohl2000sperm, Hugel2017, Holderied20032293, rhinehart2020a, blumstein2011a}.
 Using acoustic tracking, biologists can detect the position of the animal and track it through space as it moves over time. The localisation accuracy of an acoustic tracking system depends on a variety of factors. There are \emph{internal} factors such as microphone array geometry, signal processing routines, and the mathematical formulations used to localise sounds (time-of-arrival, time-of-arrival-difference, angle-of-arrival, power-steering). The \emph{external} factors include aspects related to the actual signal itself, ie. signal-to-noise ratio, and spectro-temporal properties of the emitted sound (noise, linear/hyperbolic sweep) \citep{Wahlberg1999}.
@@ -1218,8 +1208,8 @@ the euclidean distance between the predicted and simulated point. The localisati
 \texttt{tacost} as it stands is currently written to implement a first-order assessment of a tracking system's accuracy. The package has been primarily written keeping acoustic signals propagating through air where the velocity of sound is assumed to be constant. It may also be used to test tracking in radar or underwater sonar systems, contingent on how uniform the medium of wave propagation is over the distances being studied. As of version 0.1.0
 ,straight line propagation of signals are simulated, without spherical spreading or atmospheric absorption implemented. Future releases may include such propagation losses. Another important aspect affecting all tracking systems is the directionality of the sensors (microphones) and emitted signals (animal vocalisations, calibration speakers). A common problem in acoustic tracking with bats and cetaceans is not being able to track animals because their echolocation calls can be very directional \citep{Matsuta2013, Surlykke2012, Koblitz2016}. Implementing sensor and source sound directionality will help assessing how many microphones might be required to successfully track animals in their surroundings, and which array geometries are best able to do so.
 
-\hypertarget{acknowledgements}{%
-\section{Acknowledgements}\label{acknowledgements}}
+\hypertarget{acknowledgements-2}{%
+\section{Acknowledgements}\label{acknowledgements-2}}
 
 This work was supported by a doctoral fellowship from the German Academic Exchange Service (DAAD) and the International Max Planck Research School for Organismal Biology.
 I would like to thank Léna de Framond for generating the acoustic localisation output, Holger R Goerlitz for helpful comments on this manuscript and discussions on the topic of tracking, and the IT team atthe Max-Planck Institute for Ornithology for their support.
@@ -1235,6 +1225,17 @@ This chapter was published as a preprint on \emph{biorXiv}:
 
 \newpage
 
+\begin{verbatim}
+## 
+## Attaching package: 'flextable'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:kableExtra':
+## 
+##     as_image, footnote
+\end{verbatim}
+
 \hypertarget{abstractitsfm}{%
 \section*{Abstract}\label{abstractitsfm}}
 \addcontentsline{toc}{section}{Abstract}
@@ -1243,8 +1244,8 @@ Analysing animal vocalisations in detail provides insights into the biomechanics
 
 \newpage
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
 
 Vocalisations are a window into the sensory, behavioural and biomechanical states of an animal \citep{green1979analysis, metzner2016ultrasound}. Echolocating bats present a unique model system where vocalisations play a fundamental role in the animal's sensorimotor decisions. Echolocating bats emit loud calls and listen for returning echoes to detect objects around them \citep{griffin1958listening}. Bats are known to flexibly alter various aspects of their calls to optimise echo detection, and thus their own sensory input. For instance, bats flying in the open emit long calls with a narrow bandwidth, and switch to short high-bandwidth sweeps as they are about attack an insect prey \citep{fenton2013questions}.
 
@@ -1309,124 +1310,113 @@ The \texttt{itsfm} package also comes bundled with a series of field recordings 
 
 To test the accuracy of the segmentation methods implemented in the \texttt{itsfm} package, I generated a set of synthetic CF-FM calls with known segment durations and spectral properties. Synthetic calls were generated based on calls broadly based on the structure of rhinolophid and hipposiderid call parameters using the package's inbuilt \texttt{make\_cffm\_call} function. A set of 324 synthetic calls were made through a combination of parameters in Table \ref{tab:synthtable}. Each synthetic call consisted of an iFM, CF and tFM component (naming as per \citep{tian1997echolocation}), and is Tukey windowed without any padded silent samples or background noise. All synthetic calls were generated at a sampling rate of 250kHz.
 
-\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\setlength{\tabcolsep}{8pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-\begin{table}
-
-\centering
-
-\begin{longtable}{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
-
-\caption{\label{tab:synthtable} Parameter values used to generate synthetic CF-FM calls. The parameters broadly reflect the call shape of a rhinolophid/hipposiderid CF-FM bat calls. iFM and tFM regions were generated from the same FM parameter set. 9 CF x 6 iFM  x 6 tFM combinations = 324 calls}\label{tab:synthtable}\\
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Parameter name}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Parameter values}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-4}
-
+\begin{longtable}[]{@{}ll@{}}
+\caption{\label{tab:synthtable} Parameter values used to generate synthetic CF-FM calls. The parameters broadly reflect the call shape of a rhinolophid/hipposiderid CF-FM bat calls. iFM and tFM regions were generated from the same FM parameter set. 9 CF x 6 iFM x 6 tFM combinations = 324 calls}\tabularnewline
+\toprule
+Parameter name & Values\tabularnewline
+\midrule
 \endfirsthead
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Parameter name}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Parameter values}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-4}\endhead
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{CF duration (ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{5}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{10}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{15}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{CF peak frequency (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{40}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{60}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{90}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{i/t FM duration (ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{1}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{2}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{i/t FM bandwidth (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{5}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{10}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{20}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-4}
-
+\toprule
+Parameter name & Values\tabularnewline
+\midrule
+\endhead
+CF duration (ms) & 5, 10, 15\tabularnewline
+CF peak frequency (kHz) & 40, 60, 90\tabularnewline
+i/tFM duration (ms) & 1,2\tabularnewline
+i/tFM bandwidth (kHz) & 5,10,20\tabularnewline
+\bottomrule
 \end{longtable}
-
-\end{table}
 
 The synthetic calls were segmented according to method-specific parameters that were optimised based on trial-and-error on a smaller representative batch. The parameter values used for both segmentations are shown in Table \ref{tab:segparams}.
 
-\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\setlength{\tabcolsep}{8pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-\begin{table}
-
-\centering
-
-\begin{longtable}{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
-
-\caption{\label{tab:segparams}Segmentation method specific parameters used to analyse the synthetic data.}\label{tab:segparams}\\
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Method}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-5}
-
+\begin{longtable}[]{@{}lllll@{}}
+\caption{\label{tab:segparams} Segmentation method specific parameters used to analyse the synthetic data.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.16\columnwidth}\raggedright
+Method\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+Parameters\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.24\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
 \endfirsthead
+\toprule
+\begin{minipage}[b]{0.16\columnwidth}\raggedright
+Method\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\raggedright
+Parameters\strut
+\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.24\columnwidth}\raggedright
+\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.16\columnwidth}\raggedright
+pwvd\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+Window size (samples)
 
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
+\begin{verbatim}
+ 125
+\end{verbatim}
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+FM rate threshold (kHz/ms)
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Method}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} \\
+\begin{verbatim}
+   2
+\end{verbatim}
+\strut
+\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\raggedright
+Accelaration threshold (kHz/ms\(^{2}\))
 
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-5}\endhead
+10\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+Extrapolation window(s)
 
+75x \(10^{-6}\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.16\columnwidth}\raggedright
+peak percentage\strut
+\end{minipage} & \begin{minipage}[t]{0.14\columnwidth}\raggedright
+Window size (samples)
 
+\begin{verbatim}
+ 125
+\end{verbatim}
+\strut
+\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright
+Peak percentage
 
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{pwvd}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Window size (samples)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{FM rate threshold (kHz/ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Accelaration threshold (kHz/ms2)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Extrapolation window(s)}}} \\
+\begin{verbatim}
+      0.99
+\end{verbatim}
+\strut
+\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\raggedright
+Double pass
 
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{125}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{2}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{10}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{75x10e-6}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{peak\_percentage}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{peak percentage}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{double pass}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{125}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{0.99}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{True}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-5}
-
+\begin{verbatim}
+   True
+\end{verbatim}
+\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright
+\strut
+\end{minipage}\tabularnewline
+\bottomrule
 \end{longtable}
-
-\end{table}
 
 The accuracy of segmentation was determined by comparing the duration of the obtained call components and the original values used to make the synthesied calls. The accuracy of other parameters eg. CF peak frequency, FM bandwidth was not assessed. It follows directly that if the call components have been poorly segmented, any measurements made from the underlying audio will also be unrepresentative of the actual call parameters. Some calls appeared to have more than three components due to false positive CF/FM identifications, and were not included in the accuracy calculations.
 
-\hypertarget{results}{%
-\subsection{Results}\label{results}}
+\hypertarget{results-1}{%
+\subsection{Results}\label{results-1}}
 
 The \texttt{pwvd} method correctly identified 99\% of all calls (322/324) as having only 3 components. The \texttt{peak\_percentage} method correctly identified 94\% of all calls as having 3 components (306/324). Both segmentation methods achieved a satisfactory performance. The \texttt{pwvd} method was superior in its segmentation accuracy to the \texttt{peak\_percentage} method across all the parameter combinations and call components tested (Table \ref{fig:performance}, \ref{tab:accuracypctiles}).
 
@@ -1438,76 +1428,21 @@ One percent of all \texttt{pwvd} segmented calls and six percent of all \texttt{
 \includegraphics[width=1\linewidth]{original_papers/itsfm-paper/figures/pwvd-pkpct-comparison} \caption{\label{fig:performance} Accuracy of call component segmentation of the synthetic test data set shown with raw data overlaid on violinplots. The accuracy is calculated as the measured call component duration by the original duration. Blue violinplots: accuracy of the pwvd method, orange violinplots: accuracy of the peak-percentage method. The pwvd method is superior to the peak-percentage method in its segmentation performance across call components.}\label{fig:performance}
 \end{figure}
 
-\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
+~Call component \textbar{} Segmentation method \textbar{} Segmentation accuracy (\(\frac{measure\:duration}{original\:duration}\)) \textbar{}\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\textbar{} \textbar{} : 95\(\%\)ile range \textbar{}
 
-\setlength{\tabcolsep}{8pt}
+\textbar-----------------\textbar-----------------------\textbar---------------------------------------------------------------------------------------\textbar{}
+\textbar CF \textbar{} peak percentage \textbar{} 0.9-1.06 \textbar{}
+\textbar CF \textbar{} pwvd \textbar{} 0.94-1.02 \textbar{}
+\textbar tFM \textbar peak percentage \textbar{} 0.65-1.35 \textbar{}
+\textbar tFM \textbar{} pwvd \textbar{} 0.89-1.21 \textbar{}
+\textbar iFM \textbar peak percentage \textbar{} 0.62-1.3 \textbar{}
+\textbar iFM \textbar{} pwvd \textbar{} 0.92-1.24 \textbar{}
 
-\renewcommand*{\arraystretch}{1.5}
+Table: \label{tab:accuracypctiles} Summary statistics describing the performance of the two segmentation methods on the synthetised test data set. The pwvd method performs better than the peak-percentage method over the tested parameter space and for all call components (iFM,tFM and CF). The relative segmentation
 
-\begin{table}
-
-\centering
-
-\begin{longtable}{|p{0.97in}|p{1.38in}|p{1.43in}|p{1.40in}}
-
-\caption{\label{tab:accuracypctiles} Summary statistics describing the performance of the two segmentation methods on the synthetised test data set.  The pwvd method performs better than the peak-percentage method over the tested parameter space and for all call components (iFM,tFM and CF).}\label{tab:accuracypctiles}\\
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.97in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Call component}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.38in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Region.type}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.43in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Segmentation method}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.4in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Segmentation accuracy: 95\%ile range}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-4}
-
-\endfirsthead
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.97in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Call component}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.38in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Region.type}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.43in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Segmentation method}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.4in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{Segmentation accuracy: 95\%ile range}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-4}\endhead
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.97in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{CF}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.38in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{cf\_duration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.43in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{peak\_percentage}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.4in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{[0.8994  1.05945]}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.97in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{CF }}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.38in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{cf\_duration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.43in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{pwvd}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.4in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{[0.9392  1.02185]}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.97in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{tFM}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.38in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{downfm\_duration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.43in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{peak\_percentage }}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.4in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{[0.648 1.348]}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.97in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{tFM }}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.38in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{downfm\_duration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.43in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{pwvd}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.4in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{[0.88675 1.208  ]}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.97in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{iFM}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.38in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{upfm\_duration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.43in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{peak\_percentage}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.4in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{[0.624 1.3  ]}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.97in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{iFM }}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.38in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{upfm\_duration}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.43in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{pwvd}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.4in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{[0.918  1.2416]}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-4}
-
-\end{longtable}
-
-\end{table}
-
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\hypertarget{discussion-1}{%
+\section{Discussion}\label{discussion-1}}
 
 Software based automation in acoustic analysis is an important step in ensuring reproducible results, which in turns spurs the growth of the research field \citep{mcfee2018open, bakervincent2019}. The \texttt{itsfm} package written in the Python \citep{van1995python} language is an open-sourced method which may be used in the analysis of animal vocalisations such as CF-FM bat calls, and other vocalisations. The \texttt{itsfm} package has already been successfully used to segment and measure call parameters in an upcoming publication on group echolocation in CF-FM bats \citep{hbcpaper}. The package introduces a new method the `pwvd' method to segment CF and FM components based directly on the rate of frequency modulation. The `pwvd' method also performs consistently better than the `peak-percentage' method, and is thus the recommended segmentation method to use, at least for sounds that resemble CF-FM calls.
 
@@ -1523,41 +1458,103 @@ The use of \texttt{itsfm} in the analysis of other types of vocalisations still 
 
 The \texttt{itsfm} package can be installed from the Python package index (PyPi) with the command \texttt{pip\ install\ itsfm}. The latest versions of the package and drafts of this paper are accessible at \url{https://github.com/thejasvibr/itsfm}. Online documentation with detailed examples and troubleshooting guides can be accessed at \url{https://itsfm.readthedocs.io}
 
-\hypertarget{acknowledgements}{%
-\section{Acknowledgements}\label{acknowledgements}}
+\hypertarget{acknowledgements-3}{%
+\section{Acknowledgements}\label{acknowledgements-3}}
 
 I would like to thank Diana Schoeppler for sharing know-how on analysing CF-FM calls and Neetash MR for helpful discussions. This work was funded by the DAAD and the IMPRS for Organismal Biology. I'd like to thank the following people for contributing to the call recording library Aditya Krishna, Aiqing Lin, Gloria Gessinger, Klaus-Gerhard Heller, Laura Stidsholt and Neetash MR.
 
 \hypertarget{general-discussion}{%
 \chapter{General Discussion}\label{general-discussion}}
 
-The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.The part where things get concluded.
+\hypertarget{active-sensing-a-tricky-and-yet-manageable-situation.}{%
+\section{Active sensing : a tricky and yet manageable situation.}\label{active-sensing-a-tricky-and-yet-manageable-situation.}}
 
-\hypertarget{acknowledgements}{%
-\chapter{Acknowledgements}\label{acknowledgements}}
+\begin{itemize}
+\tightlist
+\item
+  The `cocktail party nightmare' may be apt for how we perceive it, but for bats the term may perhaps be a bit hyperbolic.
+\item
+  All models are wrong, but some are useful - while I would alter this statement to say that all biological models are caricatures, and some of them are closer to the complex network of processes in play.
+\item
+  So many simplifications I've done in the conceptual framework itself - there is scope for a more systematic experiments to actually recreate the `auditroy masking function of bats', and also estimate spatial unmasking in more species. Does the ability of a species to detect echoes in noise depend on the typical group size it lives in over the course of its life --- or is the ability to detect echoes just a by-product of noise rejection that individuals need to echolocate to orient in complex environments (echo-echo masking, call-echo masking, etc.)
+\item
+  Bats do collide into each other, but it's not like they suffer major consequences??
+\end{itemize}
 
-\emph{``There was a bat bat bat bat bat bat bat bat bat bat bat,
+\hypertarget{ushichka-as-a-model-dataset-for-group-active-sensing}{%
+\section{\texorpdfstring{\emph{Ushichka} as a model dataset for group active sensing}{Ushichka as a model dataset for group active sensing}}\label{ushichka-as-a-model-dataset-for-group-active-sensing}}
+
+\begin{itemize}
+\item
+\item
+  Developing the methodology and investing in the equipment is not an easy task. eg. how I see Ushichka as an astronomy-type dataset where large multi-disciplinary collaborations can be built around it.
+\item
+  Implications of group echolocation on collective behaviour
+\end{itemize}
+
+\hypertarget{lowering-the-technical-barriers-to-study-group-echolocation}{%
+\section{Lowering the technical barriers to study group echolocation}\label{lowering-the-technical-barriers-to-study-group-echolocation}}
+
+\begin{itemize}
+\tightlist
+\item
+  measurement-free, array-free acoustic tracking setups. The more scaleable your mic array is - the better you can track echolocating bats.
+\item
+  package to estimate and simulate the acoustic tracking performance pre-hoc or post-hoc
+\item
+  package to
+\item
+  What we need is
+\end{itemize}
+
+\hypertarget{sensory-systems}{%
+\section{Sensory systems}\label{sensory-systems}}
+
+\begin{itemize}
+\tightlist
+\item
+  What other animal systems could be studied using the modelling and experimental approaches described here: cave swiftlets, lingual-echolocating bats, cetaceans.
+\item
+  As pointed out by \citep{nelson2006a} In some sense lingual-echolocating bats + cetaceans may not suffer from overlaps as such because the calls are so short -- but given how short the sounds are - maybe they suffer more from informational masking??
+\item
+  Informational masking - or `attentional processes' are another very important part of the whole process that hasn't been answered before. Auditory masking has mainly been studied in terms of `energetic masking' in echol. bats. Controlled playback studies looking into informational masking still need to be there (eg. as Lutz pointed out - moth clicks are not v `loud', but may be good starting point?).
+\end{itemize}
+
+\hypertarget{inverse-problems-all-the-way}{%
+\section{Inverse problems all the way}\label{inverse-problems-all-the-way}}
+
+\hypertarget{acknowledgements-4}{%
+\chapter{Acknowledgements}\label{acknowledgements-4}}
+
+\emph{``An alle erschienenen und unerschienenen Erscheinungen
 \newline
-There was a wizard wizard wizard wizard wizard wizard wizard wizard wizard,
-\newline 
-There was a guy guy guy guy guy guy guy guy guy guy guy,
+Menschen, Tiere, Meinungen, Gefühle, Fraktale
 \newline
-They worked by a lake with many swans
+Zikaden, Mutanten, Schamanen, Fackelträger
 \newline
-Studying bats from dusk to dawn\ldots.''}
-- \emph{There was a bat bat bat bat bat bat bat bat bat bat bat}, Thejasvi Beleyur, performed 2019 MPIO Open Doors Science daything???
+Geistreisende und mikroenzyklopen-jagende Weichorganismen
+\newline
+Es ist an der Zeit einen Kreis zu bilden''}\footnote{To all manifested and unmanifested manifestations, humans, animals, opinions, feelings, fractals, cicadas, mutants, shamans, torchbearers, spirit-travelling and micro-encyclopic hunting molluscs, it is about time to form a circle.}
+\newline
+- Käptn Peng \& Die Tentakel von Delphi, Der Anfang ist nah (The beginning is nigh)
 
-IMPRS for Organismal Biology
-Neetash for playing the multiple roles of friend, colleague and wife over the past few years.
-All current and past members of the Acoustic and Functional Ecology group for a great working environment. Office mates Daniel and Theresa.
+And what a journey it has been, this Phd'fying for the past five plus years. Sitting in front of the screen right now, I never really realised how much I've relied on all the amazing people and things around me to make it this far. Let's begin, starting from the office outwards in an ever growing radius from where I sit right now.
 
-Apurva-Sindhu, Deepu-Ravi - my family in Germany for creating a home away from home over the past many years with their hospitality, food and love!!
+To my office-mates: Daniel who taught me the value of a nice silent office and the joy of handling bats, Theresa - your willingness to help and chat about all things science and random, and for introducing me to Kaeptn Peng. Danke Danke. To all other former and current AFEG and associated members down the corridor (Aiqing, Erin, Klemen, Lena, Leo, Stefan, Laura, Toni, Neetash, Verena + both Claires) thank you all for forming a great and supportive and enthu environment to come to work every day. A big shout-out to Toni for making the whole 2018 field season possible at all! Holger, it has been awesome working with you - and I owe you for teaching me the value of good presentation and rigour in science!
 
-My parents, for constantly supporting all my weird ideas of becoming, at various points, a vet, a `zoologist' (even before I actually knew what the word meant), a musician, and now this! I am definitely nowhere close to where I started, but am quite happy with whatever my current profession is called!
+Haus 11, the out-house where all the cool people are, here's to all of you current and former Haus 11'ers for the random corridor conversations and barbecue evenings! Without the Narada/Hermes/Loki messenger-like figures (who roam across many worlds and are bearers of all kinds of knowledge) Nicole Drenkard and Diana Werner, many things would not have been possible logistically and administratively - here's a big thanks to both of you. Joerg at the Pfore : quatsch'ing with you has always been a joy every time I came to pick up chocolate or a parcel. The Max-Planck Institute for Ornithology, my place of work, I thank for having the best work-place conditions (and location) and support systems I have ever experienced. I always looked forward to arriving at work. From the people around the instit now to all things and beings around: the peaceful snow outside my window, the lake, the beautiful cycle-path to the institute, and the occasional deer eating away peacefully - I am in some way thankful to these experiences and many more that have directly or indirectly come to this point in time and space.
 
-Reni for providing an oasis to retreat from work and and Dieter for being the amazing conversationalist and story-teller he is. Their amazing company.
+To my more distantly located colleagues in my graduate school, the IMPRS for Organismal Biology and all of you at the Ghetto - I thank you all for forming a supportive net to share the joy and vent the frustrations of a life in science. Special thanks to the grad school coordinators Maeggi Hieber-Ruiz, Fransisca Rosa Mende and Corinna Loes for readily providing support whenever asked for.
 
-And finally, I would not be here without all the bats flying through the night. All the bats that hung around as I fumbled with cables with numb hands on cold autumn nights, as I learnt to patiently deal with (hundreds of?) metres of tangled cable every night, and set up equipment hoping they'd land up. When they did it was always a pleasure to watch and hear them. So here's to all you hovercraft Daubis, hyper pipistrelles and gliding Mouse-eared bats, none of this would have been possible without all of you!
+Neetash, for simultaneously playing the multiple roles of colleague, friend and wife over the past few years - I can not say enough, and perhaps words will not do justice! I can only be thankful that you have been by my side through the ups and downs as I tried to phd my way through to this point. Reni, for providing an oasis to retreat from work while Qwirkl-ing away, and Dieter for being the amazing conversationalist and story-teller he is.
+
+My extended family in Germany: Apurva-Sindhu, Deepu-Ravi. My gratitude to you for creating a home away from home and a second base-camp over the past many years with their hospitality, food and love! Parts of this thesis literally wouldn't be written without all encouragement that came from giving me the space and time to write away in your homes along with all spiritual nourishment from the hot cups of chai and bonda-bajji's that came with it.
+
+Amma-Appa, for constantly supporting all my weird ideas of becoming, at various points, a vet and/or a `zoologist' (even before I actually knew what the word meant), etc! Praj - for being my go-to person in times of joy and confusion for work and life related matters. I am here only because of the unquestioning `I-have-your-back' attitude you all have shown at each decision point that has come till now.
+
+And finally, I would not be here without all the bats flying through the night and in the caves far far away in Bulgaria. All the bats that hung around as I fumbled with cables with numb hands on cold autumn nights, as I learnt to patiently deal with (hundreds of?) metres of tangled cable every night, and set up equipment hoping they'd land up. When they did it was always a pleasure to watch and hear them. So here's to all you hovercraft Daubis, hyper pipistrelles and gliding Mouse-eared bats, none of this would have been possible without all of you - and this is looking to spend more years to come understanding you weird creatures!
+
+To everyone and everything mentioned above, and especially to all those who I have not specifically mentioned - I convey my gratitude: thank you, Danke, \foreignlanguage{bulgarian}{Благодаря}, \foreignlanguage{kannada}{ಧನ್ಯವಾದಗಳು}.
 
 \hypertarget{author-contributions}{%
 \chapter{Author contributions}\label{author-contributions}}
