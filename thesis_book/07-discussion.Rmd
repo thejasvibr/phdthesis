@@ -11,26 +11,40 @@
 * 
 * Developing the methodology and investing in the equipment is not an easy task. eg. how I see Ushichka as an astronomy-type dataset where large multi-disciplinary collaborations can be built around it. 
 
+* Limited interactions model of [@BODEE] -- here they show the appearance of an anisotropy in individual formation - which wasn't found when another model of sensing (zone-based) was implemented. As we know now *T. brasiliensis* has a uniform neighbour distribution in the azimuth and elevation - this might actually be explained by the fact that it's an emergence behaviour - which is visually driven. Studies inside dark cave sites where bats must rely solely on echolocation will be better to test which behavioural heuristics  animals are follwing (and thus which computational model best describes their behaviour). 
+
 * Implications of group echolocation on collective behaviour 
 
 ## Cross-species observations - are key to pick up common sensory/evolutionary constraints
 * To parametrise models we need multi bat-species training expts. Each species is unique and we need to know how their receiver and emitter characteristics help them deal with
 masking 
-* To actually study different species in the wild is also important. eg. It may turn out that certain bats that are very solitary, can still echolocate well in noise because they are evolved to echolocate in reverberant/closed-space settings?
+* To actually study different species in the wild is also important.  eg. It may turn out that certain bats that are very solitary, can still echolocate well in noise because they are evolved to echolocate in reverberant/closed-space settings? 
 * Can reference @stamper2010 (read it a bit more though)
 
 ## Lowering the technical barriers to study group echolocation 
 * measurement-free, array-free acoustic tracking setups. The more scaleable your mic array is - the better you can track echolocating bats. 
-* package to estimate and simulate the acoustic tracking performance  pre-hoc or post-hoc
-* package to 
-* What we need is 
+* package to estimate and simulate the acoustic tracking performance  pre-hoc or post-hoc. Inspired by easyCam packages - which help users estimate the accuracy of 3d tracking for camera arrays. 
 
-## Sensory systems 
+* Where are the next steps in field studies -- wireless microphones connected to a central soundcard, or better yet, using multiple independently running soundcards which are then later synchronised. Using independent soundcards to perform tracking has been technically tricky, as acoustic tracking requires good estimates of TDOAs. Recent work has been generating exciting methods that could take us  there [@burgess2012node;@burgess2013minimal].
+
+## The future of group active sensing research 
+
+### Parametrising group active sensing in other model systems
+The shifting focus of active sensing research from single animals to multi animal groups is understandable as communities of researchers work on developing the increasingly sophisticated technologies required. As with bat echolocation, so it has also been with electric fish. Oilbirds, swiftlets, certain fruit bats and other odontocete echolocators also come to mind. While odontocetes and some fruit bats (so far *Rousettus aegyptiacus* and *R. leschenaulti*) emit very short 'clicks' about tens to hundreds of microseconds long. The probability of an echo being jammed is proportional to the duration of the calls being emitted in a group [@BELEYUR], and in this sense, click-based echolocators are unlikely to suffer problems detecting echoes because of call-echo (or click-echo in this case) overlaps. Short click-based echolocators are still however likely to suffer from all the other related issues that a vertebrate auditory bauplan brings, for example forward and backward masking [@Nachtigall2014], and even perhaps informational masking. Oilbirds and swiflets also emit clicks, but these clicks are much closer in duration to bat echolocation calls, ranging from a one to tens of milliseconds [@brinklov2013echolocation] - making them much more likely to suffer the same kinds of call-echo overlaps that bats do in groups. How click based echolocators manage to recognise their own echoes from the echoes of others is an interesting question that I think is particularly worth pursuing in the future. One strategy echolocating bats may use to recognise their own echoes is the presence of unique vocal signatures or 'voices' [@YOVEL;@MASTERS] in their echolocation calls. Clicks are indeed defined by the apparent absence of spectro-temporal structure [@pye1980echolocation], and their impulse-like structure (much like the clapping of the hand, or a hammer hitting a surface), and given their generally short durrations are so are somewhat unlikely to carry individual-specific signatures. Of course, the absence of a 'voice' in click-based echolocation doesn't preclude the use the other mechanisms that may be common to all echolocators to filter out 'ranging noise', such as temporal gating (using echoes that arrive within an expected time window) or using directional cues to filter out off-target echoes arriving from behind or the sides. 
+
+As receivers, all groups of active sensing echolocators known to date (birds and mammals) are likely to face the common problem of masking. Evidence for the occurence of masking is old, but systematic tests in the context of echolocation have only been done in laryngeal-echolocating bats and odontocetes [@Nachtigall2014]. Even in these two well studied groups, only a few species have been studied [*E. fuscus*,*M. lyra*].  Most discussions of masking in echolocation have typically been centred around one type of masking, *energetic* masking. Energetic masking is a physiologically driven phenomena where the intensity of louder sounds suppresses the detection of fainter sounds [@YOST]. Another, less discussed type of masking is *informational* masking. Informational masking occurs when signal detection is affected, despite the absence of energetic masking (no temporal or spectral overlap) [@YOST]. For instance, humans experience informational masking when trying to listen to a sentence with unrelated words in between [@TOCOMPLETE]. Unlike energetic masking that occurs primarily at the cochlear level, informational masking is thought to occur due to the interplay of attention and other higher-order phenomena [@TOCOMPLETE]. To my knowledge, there remain no studies of informational masking in echolocating animals - and this presents a yet unexplored facet of how the multitude of returning echoes are dealt with each time a bat emits a call, and especially when echolocating in a group.  Here, I see the scope for the next generation of multi-species phantom echo studies [eg. @SURLYKKe;@SIMMONS;] whose results can be directly used to construct 'masking functions' (sensu @BELEYURGOERLITZ2019). Echolocating bats vary in the continuum of group sizes that they live in [@ECOLOGYOFBATS], and this means the extent of masking that they are likely to experience from conspecifics will also vary. Does this typical group-size based masking have an effect on the actual ability of individuals to detect echoes in noise? It may also be that the robustness of echolocation to noise is more strongly affected by the environmental clutter and reverberance, rather than roosting group size per se.  Studying a wider variety of species will allow us to explore the ecological and evolutionary basis of masking tolerance. 
+
+As emitters, groups of echolocators have have a series of choices
+
+### Solving the inverse problem of group active sensing: the three-pronged approach 
+The study of biological problems i full of inverse problems [@TOCOMPLETE]. We observe a range of fascinating phenomena, but often are unable to (and perhaps will never be able to!) recreate them under controlled settings. In this respect, biological, geological and cosmological phenomena must 
+Technology, experiments and models 
+
+
 
 * What other animal systems could be studied using the modelling and experimental approaches described here: cave swiftlets, lingual-echolocating bats, cetaceans. 
 * As pointed out by [@nelson2006a] In some sense lingual-echolocating bats + cetaceans may not suffer from overlaps as such because the calls are so short -- but given how short the sounds are - maybe they suffer more from informational masking?? 
 * Informational masking - or 'attentional processes' are another very important part of the whole process that hasn't been answered before. Auditory masking has mainly been studied in terms of 'energetic masking' in echol. bats. Controlled playback studies looking into informational masking still need to be there (eg. as Lutz pointed out - moth clicks are not v 'loud', but may be  good starting point?). 
 
-## Inverse problems all the way
 
 

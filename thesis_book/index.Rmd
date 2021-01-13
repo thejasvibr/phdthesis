@@ -113,7 +113,7 @@ What about active sensing animals whose energy probes are much less localised, a
 
 ### Echolocation in individual bats
 Even though echolocation (much like electrolocation) is somewhat unrelatable to most of us humans^[apart from the human echolocators amongst us], the morphological and physiological basis of hearing in bats is centred around a standard mammalian auditory *bauplan* consisting of a pinna, three ossicles, eardrum, and a cochlea [@neuweiler2000biology]. Bat hearing thresholds match those of humans at around 20$\mu$Pa sound pressure level (SPL) [@Nachtigall2014;@w2007a], and they exhibit many of the same auditory phenomena we do such as spatial unmasking
-* hearing capabilities : hearing thresholds, hearing directionality, spatial unmasking
+* hearing capabilities : hearing thresholds, hearing directionality,  Masking - energetic and informational. forward and backward masking. Spatial unmasking,
 * call behaviours : 
 
 * low duty cycle and high duty-cycle bats
