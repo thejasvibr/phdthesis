@@ -5,6 +5,7 @@
 * Experimental data are scarce, and I even had to generate some measurements myself (eg. target strength and secondary echo measurements)
 * Bats do collide into each other, but it's not like they suffer major consequences??
 
+In HBC for isntance new methods were developed to analyse overlapping calls - and this hadn't been attempted before. Doing so, helped us re-afirm the lack of a CF shifting. 
 
 
 ## *Ushichka* as a model dataset for group active sensing 
