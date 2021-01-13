@@ -1,4 +1,4 @@
-# Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival
+# Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival {#sfscotdoa}
 \chaptermark{Self-calibration of time-difference-of-arrival}
 
 This chapter was published as a peer-reviewed paper in the conference proceedings of the International Conference on Acoustics, Speech, and Signal Processing: 

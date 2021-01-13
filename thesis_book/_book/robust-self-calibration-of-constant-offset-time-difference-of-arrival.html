@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -154,8 +155,10 @@
 <li class="chapter" data-level="8.2" data-path="general-discussion.html"><a href="general-discussion.html#ushichka-as-a-model-dataset-for-group-active-sensing"><i class="fa fa-check"></i><b>8.2</b> <em>Ushichka</em> as a model dataset for group active sensing</a></li>
 <li class="chapter" data-level="8.3" data-path="general-discussion.html"><a href="general-discussion.html#cross-species-observations---are-key-to-pick-up-common-sensoryevolutionary-constraints"><i class="fa fa-check"></i><b>8.3</b> Cross-species observations - are key to pick up common sensory/evolutionary constraints</a></li>
 <li class="chapter" data-level="8.4" data-path="general-discussion.html"><a href="general-discussion.html#lowering-the-technical-barriers-to-study-group-echolocation"><i class="fa fa-check"></i><b>8.4</b> Lowering the technical barriers to study group echolocation</a></li>
-<li class="chapter" data-level="8.5" data-path="general-discussion.html"><a href="general-discussion.html#sensory-systems"><i class="fa fa-check"></i><b>8.5</b> Sensory systems</a></li>
-<li class="chapter" data-level="8.6" data-path="general-discussion.html"><a href="general-discussion.html#inverse-problems-all-the-way"><i class="fa fa-check"></i><b>8.6</b> Inverse problems all the way</a></li>
+<li class="chapter" data-level="8.5" data-path="general-discussion.html"><a href="general-discussion.html#the-future-of-group-active-sensing-research"><i class="fa fa-check"></i><b>8.5</b> The future of group active sensing research</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="general-discussion.html"><a href="general-discussion.html#parametrising-group-active-sensing-in-other-model-systems"><i class="fa fa-check"></i><b>8.5.1</b> Parametrising group active sensing in other model systems</a></li>
+<li class="chapter" data-level="8.5.2" data-path="general-discussion.html"><a href="general-discussion.html#solving-the-inverse-problem-of-group-active-sensing-the-three-pronged-approach"><i class="fa fa-check"></i><b>8.5.2</b> Solving the inverse problem of group active sensing: the three-pronged approach</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="acknowledgements-4.html"><a href="acknowledgements-4.html"><i class="fa fa-check"></i><b>9</b> Acknowledgements</a></li>
 <li class="chapter" data-level="10" data-path="author-contributions.html"><a href="author-contributions.html"><i class="fa fa-check"></i><b>10</b> Author contributions</a></li>
@@ -299,7 +302,7 @@ where <span class="math inline">\(\begin{pmatrix}u_2 &amp; u_3 &amp; u_4 &amp; u
 <p>We propose the use of the fast minimal solver in an hypothesize and test framework to obtain (i) a initial estimate on the offset <span class="math inline">\(o\)</span> and (ii) an initial inlier set. The steps are described in Algorithm~</p>
 
 
-We use these minimal solvers with RANSAC as described in the previous section to find one or several initial estimates of the parameters <span class="math inline">\(\theta_2\)</span> for a subset of five receivers and <span class="math inline">\(k\)</span> senders. The solution is extended to additional rows and/or columns using robust techniques as described in . During this process it is useful to keep the errors down by occasionally refining the solutions using local optimization. This has shown to reduce failures, see e.g. ().
+We use these minimal solvers with RANSAC as described in the previous section to find one or several initial estimates of the parameters <span class="math inline">\(\theta_2\)</span> for a subset of five receivers and <span class="math inline">\(k\)</span> senders. The solution is extended to additional rows and/or columns using robust techniques as described in . During this process it is useful to keep the errors down by occasionally refining the solutions using local optimization. This has shown to reduce failures, see e.g. ().
 In the proposed estimation algorithm we postpone the upgrade from <span class="math inline">\(\theta_2\)</span> to <span class="math inline">\(\theta_1\)</span> until we have found a good solution involving a large portion of the receiver and sender positions.
 
 
