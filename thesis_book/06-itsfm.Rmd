@@ -1,4 +1,4 @@
-# ```itsfm```, an open-source package to reliably segment and measure sounds by frequency modulation {#itsfm}
+# ```itsfm```, an open-source package to reliably segment and measure sounds by frequency modulation {#itsfmchapter}
 
 \chaptermark{itsfm: segmenting sounds by frequency modulation}
 
