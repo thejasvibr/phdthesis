@@ -1,5 +1,5 @@
 # Robust Self-Calibration of Constant Offset Time-Difference-of-Arrival {#sfscotdoa}
-\chaptermark{Self-calibration of time-difference-of-arrival}
+\chaptermark{Microphone self-calibration}
 
 This chapter was published as a peer-reviewed paper in the conference proceedings of the International Conference on Acoustics, Speech, and Signal Processing: 
 
@@ -222,7 +222,7 @@ Once the office recordings were taken, an algorithm was used to find the chirps 
 
 Once the initial values have been estimated, it underwent $l^{2}$ optimization on the inlier set. The results of the estimated microphone positions after the optimization are shown in Figure \ref{f_454H}. 
 
-This produced an Euclidean distance error between each of the microphones calculated position and its ground truth position as 0.2016,0.0587,0.1444,0.1153,0.2017, 0.1326,0.1407, 0.1198,0.2041,0.2010,0.1908,0.2110) m.
+This produced an Euclidean distance error between each of the microphones calculated position and its ground truth position as (0.2016,0.0587,0.1444,0.1153,0.2017, 0.1326,0.1407, 0.1198,0.2041,0.2010,0.1908,0.2110) m.
 
 For graphical purposes, a Procrustes fitting was used on the microphone positions to spread the total error over all 12 microphones. In the Procrustes fitting only rotation and translation were allowed.
 
