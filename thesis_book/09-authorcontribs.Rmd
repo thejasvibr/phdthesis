@@ -1,8 +1,8 @@
 # Author contributions
-Summary,  General introduction and Discussion : written by Thejasvi Beleyur. 
-Zusammenfassung translated to German by Dr. Theresa Hügel.
+Summary,  General introduction and Discussion : written by Thejasvi Beleyur (TB). 
+Zusammenfassung translated to German by Theresa Hügel.
 
-Chapter 2: Thejasvi Beleyur (TB) and Holger R Goerlitz (HRG) conceived the study. TB formulated the computational model, wrote the code, analysed data and presented the results. TB wrote the first draft, and HRG provided input for later drafts. 
+Chapter 2: TB and Holger R Goerlitz (HRG) conceived the study. TB formulated the computational model, wrote the code, analysed data and presented the results. TB wrote the first draft, and HRG provided input for later drafts. 
 
 Chapter 3: TB and Neetash Mysuru Rajagoplachari (NMR) conceived the study and carried out field data collection. NMR and Aditya Krishna formulated and annotated bat flights in video data. TB wrote the code to synchronise audio-video data, analysed audio, performed statistical analysis, and prepared figures. TB and NMR wrote the first draft, and HRG provided input for later drafts. 
 

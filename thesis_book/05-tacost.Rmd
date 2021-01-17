@@ -1,5 +1,5 @@
 # ```tacost```: Testing and simulating the performance of acoustic tracking systems {#tacostchapter}
-\chaptermark{simulating performance of acoustic tracking}
+\chaptermark{Testing acoustic tracking accuracy}
 
 
 This chapter was published as a preprint on *biorXiv*:
