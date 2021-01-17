@@ -1,0 +1,7 @@
+,Parameter,Median difference,Permutation-test p,Median difference (2.5 %ile),Median difference (97.5 %ile),comparison
+0,Dominant frequency range (kHz),1.664999999999992,0.0,,,multi-single
+1,Received level (dB rms),,,-1.88,3.29,multi-single
+2,Terminal FM frequency (kHz),,,-4.15,1.71,multi-single
+3,Dominant frequency range (kHz),-0.05500000000000682,0.9504,,,multi-virtual multi
+4,Received level (dB rms),,,-2.23,2.89,multi-virtual multi
+5,Terminal FM frequency (kHz),,,-4.15,1.95,multi-virtual multi
