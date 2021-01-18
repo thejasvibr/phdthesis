@@ -1,7 +1,7 @@
 # module that compares bib files
 
 
-bibfiles = ['ushichka-refs.bib','intro-discussion-refs.bib']
+bibfiles = ['hbc-references.bib','intro-discussion-refs.bib']
 
 bibfile1 = bibfiles[0]
 bibfile2 = bibfiles[1]
