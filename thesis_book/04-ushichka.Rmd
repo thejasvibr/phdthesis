@@ -29,7 +29,7 @@ Previously, the challenges in echolocation fieldwork included bulky analog recor
 ##  Experimental methods
 
 ### Field site and study species 
-Recordings of wild echolocating bats were made in the Orlova Chuka cave system (Ruse, Bulgaria). Recordings were made of bat flight and echolocation in the chamber first encountered after the entry corridor (Figure \@ref(fig:cavesetup), \@ref(fig:cavesetup2)). Recordings were conducted in the recording volume (*w x l x h*~5x9x3 m$^{3}$) between 19th June to 19th August 2018 over the course of 14 recording sessions (Suplementary Information (SI): Table \@ref(tab:nightandplayback)). One recording session typically started around sunset and ended around sunrise the next day (See \@ref(recschedule)).
+Recordings of wild echolocating bats were made in the Orlova Chuka cave system (Ruse, Bulgaria). Recordings were made of bat flight and echolocation in the chamber first encountered after the entry corridor (Figure \@ref(fig:cavesetup), \@ref(fig:othercavesetup)). Recordings were conducted in the recording volume (*w x l x h*~5x9x3 m$^{3}$) between 19th June to 19th August 2018 over the course of 14 recording sessions (Suplementary Information (SI): Table \@ref(tab:nightandplayback)). One recording session typically started around sunset and ended around sunrise the next day (See \@ref(recschedule)).
 
 Orlova Chuka is known to host at least 9 species of bats [@Ivanova2005;@govtbatcount]. During the summer, resident  *Myotis myotis* and *Myotis blythii* females form the dominant bat population. These female bats arrive in spring and spend the summer in the cave system raising their young. Though rigorous mark-recapture data is missing, individual mothers are known to be consistent in returning to the cave system over multiple nights (pers. comm., Laura Stidsholt, Stefan Greif). Given the dominance of *Myotis myotis* and *Myotis blythii* (hereon referred to as *M. myotis/blythii*)  in the cave system, it can be fairly said that the *Ushichka* dataset consists mainly of these two species. The calls of *M. myotis* and *M. blythii* are indistinguishable (their morphology is also extremely similar too) [@dietz2016bats]. Due to the great similarity in their echolocation calls, they are treated as one group of bats.  The frequency ranges of *M. myotis/blythii* are lower than those of the other resident frequency modulating bats in the cave (eg. *M. daubentonii, M. capacinii, Miniopterus schreibersii*) and are very easily distinguishable from the rhinolophid bats (*Rhinolophus ferrumequinum, R.euryale, R. mehelyi*)[@dietz2016bats]. 
 
@@ -38,7 +38,8 @@ cavesetupimg = 'original_papers/ushichka-figures/ushichka_setup_DC6A5930_w.JPG'
 include_graphics(cavesetupimg)
 ```
 
-```{r cavesetup2, echo=FALSE, fig.cap='The *Ushichka* setup with the smaller Knowles SPU microphones on the wall referred to in Figure \\@ref(fig:cavesetup). In the picture is a *M. myotis/blythii* bat flying past the array. Photo by Stefan Greif.'}
+
+```{r othercavesetup, echo=FALSE, fig.cap='The *Ushichka* setup with the smaller Knowles SPU microphones on the wall referred to in Figure \\@ref(fig:cavesetup). In the picture is a *M. myotis/blythii* bat flying past the array. Photo by Stefan Greif.'}
 cavesetupimg2 = 'original_papers/ushichka-figures/DC6A6061.JPG'
 include_graphics(cavesetupimg2)
 ```
