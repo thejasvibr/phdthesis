@@ -11,9 +11,10 @@ description: "A thesis"
 output:
   bookdown::pdf_book:
     latex_engine: lualatex
-	papersize: a4paper
+	
     includes:
       in_header: preamble.tex
+geometry: a4paper
 always_allow_html: true
 ---
 ```{r, include=FALSE, echo=FALSE}
