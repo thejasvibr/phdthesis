@@ -11,7 +11,6 @@ description: "A thesis"
 output:
   bookdown::pdf_book:
     latex_engine: lualatex
-	
     includes:
       in_header: preamble.tex
 geometry: a4paper
