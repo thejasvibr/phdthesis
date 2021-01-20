@@ -3,7 +3,7 @@
 
 This chapter is a manuscript under preparation:
 
-*Neetash M. Rajagopalachari$^{*}$, Thejasvi Beleyur$^{*}$, Aditya Krishna, Holger R Goerlitz, (2021) High duty-cycle bats in the field do not alter echolocation calls when flying in groups*
+*Neetash Mysuru$^{*}$, Thejasvi Beleyur$^{*}$, Aditya Krishna, Holger R Goerlitz, (2021) High duty-cycle bats in the field do not alter echolocation calls when flying in groups*
 
 *$^{*}$: joint first authors*
 
@@ -166,8 +166,7 @@ We measured 13 acoustic parameters of the initial and terminal frequency-modulat
 
 Our ‘whole dataset’ results somewhat matched the results from the ‘clustered’ and ‘isolated’ subsets (SI \@ref(subsetsindcall)). Median CF duration differed by ~3ms in both isolated and clustered subsets, while iFM and tFM median durations differed by ~ 0.1ms.  The spectral parameters (CF peak frequency, tFM bandwidth, i/tFM lower frequency) differed in the magnitude of difference across the ‘clustered’ and ‘isolated’ subsets. If pseudo-replication was not a major concern, we expect the results of the isolated and clustered datasets to match. The observed deviations imply that pseudo-replication may have been a concern however. Before reaching this conclusion, it is important to consider the severe drop in sample size in the isolated data subset as a possible cause for the deviation in trends across parameters. In the isolated subset, $N_{multi}$ = 5 calls, in contrast to the much higher $N_{single}$=53. The severe drop in sample size in the ‘isolated’ data set and the different trends in the spectral parameters make it hard to conclude whether pseudo-replication has played a major role in the individual call analysis. 
 
-```{r alldataindcall, echo=FALSE, tab.cap="\\label{tab:alldataindcall} *Difference between multi and single bat call parameters. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.*"}
-library(flextable)
+```{r alldataindcall, echo=FALSE}
 indcall.analysis <- read.csv('original_papers/hbc-paper/combined_analysis/alldata_indcall_ci.csv')
 msmt.names <- c("CF duration (median ms)", "tFM duration (median ms)", "iFM duration (median ms)",
                 "CF peak frequency (range kHz)", "tFM lower frequency (median kHz)", "iFM lower frequency (median kHz)",
@@ -178,16 +177,33 @@ pvalues <- round(indcall.analysis$perm_pvalue,2)
 pvalues[1] <- round(indcall.analysis$perm_pvalue[1],3)
 meddiff <- round(indcall.analysis$difference,2)
 
-meddiff.table<- data.frame(cbind(msmt.names, meddiff, pvalues))
+meddiff.tb<- data.frame(cbind(msmt.names, meddiff, pvalues))
 colnames <- c("Measurement","Difference (Multi-Single)","Permutation test p-value")
-medditab <- flextable(meddiff.table)
-medditab <- set_header_labels(medditab, msmt.names= colnames[1], 
-    meddiff = colnames[2], pvalues= colnames[3]
-    )
-medditab <- autofit(medditab)
-medditab
+#medditab <- flextable(meddiff.table)
+#medditab <- set_header_labels(medditab, msmt.names= colnames[1], 
+#    meddiff = colnames[2], pvalues= colnames[3]
+#    )
+#medditab <- autofit(medditab)
+#medditab
 ```
 
+Table: (\#tab:alldataindcall) Difference between multi and single bat call parameters. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.
+
+|Measurement          |Difference (Multi-Single)|Permutation test p-value|
+|---------------------|-------------------------|------------------------|
+|`r msmt.names[1]`    | `r meddiff[1]`          | `r pvalues[1]`         |
+|`r msmt.names[2]`    | `r meddiff[2]`          | `r pvalues[2]`         |
+|`r msmt.names[3]`    | `r meddiff[3]`          | `r pvalues[3]`         |
+|`r msmt.names[4]`    | `r meddiff[4]`          | `r pvalues[4]`         |
+|`r msmt.names[5]`    | `r meddiff[5]`          | `r pvalues[5]`         |
+|`r msmt.names[6]`    | `r meddiff[6]`          | `r pvalues[6]`         |
+|`r msmt.names[7]`    | `r meddiff[7]`          | `r pvalues[7]`         |
+|`r msmt.names[8]`    | `r meddiff[8]`          | `r pvalues[8]`         |
+|`r msmt.names[9]`    | `r meddiff[9]`          | `r pvalues[9]`         |
+|`r msmt.names[10]`    | `r meddiff[10]`          | `r pvalues[10]`         |
+|`r msmt.names[11]`    | `r meddiff[11]`          | `r pvalues[11]`         |
+|`r msmt.names[12]`    | `r meddiff[12]`          | `r pvalues[12]`         |
+|`r msmt.names[13]`    | `r meddiff[13]`          | `r pvalues[13]`         |
 
 ### Windowed call analysis 
 
@@ -543,8 +559,7 @@ clustindcalls.n <- as.data.frame(table(clustindcalls$groupsize))
 
 All individual calls from annotations that are less than 1 minute away from adjacent annotations are included in this subset. $N_{single}$=`r clustindcalls.n[2,2]`,  $N_{multi}$=`r clustindcalls.n[1,2]`.
 
-```{r indcallclustered, echo=FALSE, tab.cap="\\label{tab:indcallclustered}*Difference between multi and single bat call parameters using the clustered data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.*"}
-library(flextable)
+```{r indcallclustered, echo=FALSE}
 indcall.analysis <- read.csv('original_papers/hbc-paper/combined_analysis/clustered_subset_clusteringbased_bootci.csv')
 msmt.names <- c("CF duration (median ms)", "tFM duration (median ms)", "iFM duration (median ms)",
                 "CF peak frequency (range kHz)", "tFM lower frequency (median kHz)", "iFM lower frequency (median kHz)",
@@ -558,13 +573,33 @@ meddiff[9] <- round(indcall.analysis$difference[9],3)
 
 meddiff.table<- data.frame(cbind(msmt.names, meddiff, pvalues))
 colnames <- c("Measurement","Difference (Multi-Single)","Permutation test p-value")
-medditab <- flextable(meddiff.table)
-medditab <- set_header_labels(medditab, msmt.names= colnames[1], 
-    meddiff = colnames[2], pvalues= colnames[3]
-    )
-medditab <- autofit(medditab)
-medditab
+#medditab <- flextable(meddiff.table)
+#medditab <- set_header_labels(medditab, msmt.names= colnames[1], 
+#    meddiff = colnames[2], pvalues= colnames[3]
+#    )
+#medditab <- autofit(medditab)
+#medditab
 ```
+
+Table: (\#tab:indcallclustered) Difference between multi and single bat call parameters using the clustered data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.
+
+|Measurement          |Difference (Multi-Single)|Permutation test p-value|
+|---------------------|-------------------------|------------------------|
+|`r msmt.names[1]`    | `r meddiff[1]`          | `r pvalues[1]`         |
+|`r msmt.names[2]`    | `r meddiff[2]`          | `r pvalues[2]`         |
+|`r msmt.names[3]`    | `r meddiff[3]`          | `r pvalues[3]`         |
+|`r msmt.names[4]`    | `r meddiff[4]`          | `r pvalues[4]`         |
+|`r msmt.names[5]`    | `r meddiff[5]`          | `r pvalues[5]`         |
+|`r msmt.names[6]`    | `r meddiff[6]`          | `r pvalues[6]`         |
+|`r msmt.names[7]`    | `r meddiff[7]`          | `r pvalues[7]`         |
+|`r msmt.names[8]`    | `r meddiff[8]`          | `r pvalues[8]`         |
+|`r msmt.names[9]`    | `r meddiff[9]`          | `r pvalues[9]`         |
+|`r msmt.names[10]`    | `r meddiff[10]`          | `r pvalues[10]`         |
+|`r msmt.names[11]`    | `r meddiff[11]`          | `r pvalues[11]`         |
+|`r msmt.names[12]`    | `r meddiff[12]`          | `r pvalues[12]`         |
+|`r msmt.names[13]`    | `r meddiff[13]`          | `r pvalues[13]`         |
+
+
 
 #### 'Isolated' data subset results 
 
@@ -577,7 +612,7 @@ All individual calls from annotations that are more than or equal to 1 minute aw
 
 The low sample size of the multi-bat calls must be kept in mind while interpreting the results in Table 2 cautiously.
 
-```{r isolatedindcall, echo=FALSE, tab.cap="\\label{tab:isolatedindcall}*Difference between multi and single bat call parameters using the isolated data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.*"}
+```{r isolatedindcall, echo=FALSE,out.width="100%", tab.cap="\\label{tab:isolatedindcall}*Difference between multi and single bat call parameters using the isolated data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.*"}
 indcall.analysis <- read.csv('original_papers/hbc-paper/combined_analysis/isolated_subset_clusteringbased_bootci.csv')
 
 pvalues <- round(indcall.analysis$perm_pvalue,2)
@@ -589,13 +624,32 @@ meddiff.table<- data.frame(cbind(msmt.names, meddiff, pvalues))
 meddiff.table$pvalues <- as.character(meddiff.table$pvalues)
 meddiff.table$pvalues[4] <- '<10e-4'
 colnames <- c("Measurement","Difference (Multi-Single)","Permutation test p-value")
-medditab <- flextable(meddiff.table)
-medditab <- set_header_labels(medditab, msmt.names= colnames[1], 
-    meddiff = colnames[2], pvalues= colnames[3]
-    )
-medditab <- autofit(medditab)
-medditab
+#medditab <- flextable(meddiff.table)
+#medditab <- set_header_labels(medditab, msmt.names= colnames[1], 
+#    meddiff = colnames[2], pvalues= colnames[3]
+#    )
+#medditab <- autofit(medditab)
+#medditab
 ```
+
+Table: (\#tab:isolatedindcall) Difference between multi and single bat call parameters using the isolated data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.
+
+|Measurement          |Difference (Multi-Single)|Permutation test p-value|
+|---------------------|-------------------------|------------------------|
+|`r msmt.names[1]`    | `r meddiff[1]`          | `r pvalues[1]`         |
+|`r msmt.names[2]`    | `r meddiff[2]`          | `r pvalues[2]`         |
+|`r msmt.names[3]`    | `r meddiff[3]`          | `r pvalues[3]`         |
+|`r msmt.names[4]`    | `r meddiff[4]`          | `r pvalues[4]`         |
+|`r msmt.names[5]`    | `r meddiff[5]`          | `r pvalues[5]`         |
+|`r msmt.names[6]`    | `r meddiff[6]`          | `r pvalues[6]`         |
+|`r msmt.names[7]`    | `r meddiff[7]`          | `r pvalues[7]`         |
+|`r msmt.names[8]`    | `r meddiff[8]`          | `r pvalues[8]`         |
+|`r msmt.names[9]`    | `r meddiff[9]`          | `r pvalues[9]`         |
+|`r msmt.names[10]`    | `r meddiff[10]`          | `r pvalues[10]`         |
+|`r msmt.names[11]`    | `r meddiff[11]`          | `r pvalues[11]`         |
+|`r msmt.names[12]`    | `r meddiff[12]`          | `r pvalues[12]`         |
+|`r msmt.names[13]`    | `r meddiff[13]`          | `r pvalues[13]`         |
+
 
 ### Temporal subsets: windowed call analysis {#subsetswincall}
 ```{r echo=FALSE}
@@ -625,14 +679,14 @@ nisol_multivirt <- get.window.samplesizes(domfreq_isol_multivirt)
 
 ####  Clustered subset results 
 ```{r capsetting, echo=FALSE}
-cap.nclust = paste("\\label{tab:clustered} *Difference in window parameters  in clustered annotations between single and multi-bat audio.*","$Nfiles_{single}$=",nclust_singlemulti[2,2],", $Nfiles_{multi}=$",nclust_singlemulti[1,2],", $Nfiles_{multi \\:virtual}=$",nclust_multivirt[2,2])
+cap.nclust = paste("Difference in window parameters  in clustered annotations between single and multi-bat audio.*","$Nfiles_{single}$=",nclust_singlemulti[2,2],", $Nfiles_{multi}=$",nclust_singlemulti[1,2],", $Nfiles_{multi \\:virtual}=$",nclust_multivirt[2,2])
 
 cap.nisol = paste("\\label{tab:isolated} *Difference in window parameters  in isolated annotations between single and multi-bat audio.*","$Nfiles_{single}$=",nisol_singlemulti[2,2],", $Nfiles_{multi}=$",nisol_singlemulti[1,2],", $Nfiles_{multi \\:virtual}=$",nisol_multivirt[2,2])
 
 ```
 
-```{r clustered, echo=FALSE, tab.cap=cap.nclust}
-library(flextable)
+
+```{r clustered, echo=FALSE}
 clusteredwindow.results <- read.csv('original_papers/hbc-paper/combined_analysis/clustered_window_summary.csv')
 clusteredwindow.results <- clusteredwindow.results[,-1]
 window.colnames <- c("Parameter",
@@ -642,17 +696,34 @@ window.colnames <- c("Parameter",
                      "Median difference (97.5%ile)",
                      "comparison")
 colnames(clusteredwindow.results)<- window.colnames
+cw.results <- clusteredwindow.results
 
 #singlemulti.wholewindow <- subset(clusteredwindow.results,comparison=='multi-single')
-ft.sm.ww <- flextable(clusteredwindow.results)
-ft.sm.ww <- autofit(ft.sm.ww)
+#ft.sm.ww <- flextable(clusteredwindow.results)
+#ft.sm.ww <- autofit(ft.sm.ww)
 
-ft.sm.ww
+#ft.sm.ww
+pvalue.multisingle <- cw.results[1,3]
+pvalue.multivirt <- cw.results[4,3]
 ```
+The median difference in dominant frequency range of multi-bat vs single-bat was : `r cw.results[1,2]` (*p*-value=`r if(pvalue.multisingle==0){'<10$^{-4}$'}else{pvalue.multisingle}` )
+The median difference in dominant frequency range of multi-bat vs virtual-multi-bat was : `r cw.results[4,2]` (*p*-value=`r if(pvalue.multivirt==0){'<10$^{-4}$'}else{pvalue.multivirt}` )
+
+
+Table: (\#tab:clustered) `r cap.nclust`
+
+|   Parameter   |$\Delta$median, 2.5-97.5$\%$ile|Comparison|
+|---------|----------------------------------|---------------------------|
+|`r cw.results[2,1]`|`r cw.results[2,4]`-`r cw.results[2,5]`|`r cw.results[2,6]`|
+|`r cw.results[3,1]`|`r cw.results[3,4]`-`r cw.results[3,5]`|`r cw.results[3,6]`|
+|`r cw.results[5,1]`|`r cw.results[5,4]`-`r cw.results[5,5]`|`r cw.results[5,6]`|
+|`r cw.results[6,1]`|`r cw.results[6,4]`-`r cw.results[6,5]`|`r cw.results[6,6]`|
+
+
 
 #### Isolated subset results 
 
-```{r isolated, echo=FALSE, tab.cap=cap.nisol}
+```{r isolated, echo=FALSE, out.width="100%",tab.cap=cap.nisol}
 isolatedwindow.results <- read.csv('original_papers/hbc-paper/combined_analysis/isolated_window_summary.csv')
 isolatedwindow.results <- isolatedwindow.results[,-1]
 window.colnames <- c("Parameter",
@@ -662,13 +733,24 @@ window.colnames <- c("Parameter",
                      "Median difference (97.5%ile)",
                      "comparison")
 colnames(isolatedwindow.results)<- window.colnames
+cw2.results <- isolatedwindow.results
 
-#singlemulti.wholewindow <- subset(isolatedwindow.results,comparison=='multi-single')
-ft.sm.ww <- flextable(isolatedwindow.results)
-ft.sm.ww <- autofit(ft.sm.ww)
-
-ft.sm.ww
+pvalue.multisingle <- cw2.results[1,3]
+pvalue.multivirt <- cw2.results[4,3]
 ```
+The median difference in dominant frequency range of multi-bat vs single-bat was : `r cw2.results[1,2]` (*p*-value=`r if(pvalue.multisingle==0){'<10$^{-4}$'}else{pvalue.multisingle}` )
+The median difference in dominant frequency range of multi-bat vs virtual-multi-bat was : `r cw2.results[4,2]` (*p*-value=`r if(pvalue.multivirt==0){'<10$^{-4}$'}else{pvalue.multivirt}` )
+
+Table: (\#tab:isolated) `r cap.nisol`
+
+|   Parameter   |$\Delta$median, 2.5-97.5$\%$ile|Comparison|
+|---------|----------------------------------|---------------------------|
+|`r cw2.results[2,1]`|`r cw2.results[2,4]`-`r cw2.results[2,5]`|`r cw2.results[2,6]`|
+|`r cw2.results[3,1]`|`r cw2.results[3,4]`-`r cw2.results[3,5]`|`r cw2.results[3,6]`|
+|`r cw2.results[5,1]`|`r cw2.results[5,4]`-`r cw2.results[5,5]`|`r cw2.results[5,6]`|
+|`r cw2.results[6,1]`|`r cw2.results[6,4]`-`r cw2.results[6,5]`|`r cw2.results[6,6]`|
+
+
 
 
 

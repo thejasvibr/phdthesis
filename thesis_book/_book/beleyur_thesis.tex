@@ -132,10 +132,6 @@
 \usepackage[normalem]{ulem}
 \usepackage{makecell}
 \usepackage{xcolor}
-\usepackage{fontspec}
-\usepackage{multicol}
-\usepackage{hhline}
-\usepackage{hyperref}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
@@ -297,7 +293,7 @@ Echolocating bats show a series of auditory adaptations common to other mammals.
 \hypertarget{emitter-receiver-characteristics}{%
 \subsection{Emitter-receiver characteristics}\label{emitter-receiver-characteristics}}
 
-The combination of call emission and echo reception properties results in the effective `sensory volume' \citep{nelson2006a} of a bat. Call intensity is highest in front of the bat, and drops with increasing angles to the side. Hearing directionality broadly follows the same pattern. The combined forward bias (see Figure @ref(fig:cpn\_figS3) in Chapter \ref{cpnchapter}) of both emission and reception systems means that the strongest echoes will arrive in the front, along with their detection being emphasised. The forward bias can also be thought of as a `de-cluttering' mechanism, which filters out potentially irrelevant echoes coming from non-target objects \citep{simmons2012biosonar}.
+The combination of call emission and echo reception properties results in the effective `sensory volume' \citep{nelson2006a} of a bat. Call intensity is highest in front of the bat, and drops with increasing angles to the side. Hearing directionality broadly follows the same pattern. The combined forward bias of both emission and reception systems means that the strongest echoes will arrive in the front, along with their detection being emphasised. The forward bias can also be thought of as a `de-cluttering' mechanism, which filters out potentially irrelevant echoes coming from non-target objects \citep{simmons2012biosonar}.
 
 Bats use their combined emission-reception properties to effectively deal with the sensory challenges faced when flying alone. Clutter is the term used to describe echoes from background objects that hinder target echo detection. Even when echolocating alone, intense echoes from clutter (trees, bushes, the ground) can mask the detection of fainter echoes. For instance, a bat attempting to capture an insect in front of a bush will face the problem of having to detect a faint insect echo that arrives just before a series of louder echoes from the bush. Bats synergestically combine the properties of their emission-reception characteristics with flight behaviours to optimise object detection under challenging conditions \citep{yovel2010optimal, taub2020segregating}. For instance, bats trained to land on a target placed in front of a wall approached the target from an angle \citep{taub2020segregating}. This situation closely mirrors the problem of detecting an insect echo in the face of masking clutter echoes. The angled target approach resulted in most of the call's beam energy being focussed on the target, with a stronger echo from the object and a weaker clutter echo.
 
@@ -319,7 +315,7 @@ Some of the challenges still remain the same ever since Griffin's time. Acoustic
 
 The positional accuracy of acoustic tracking is dependent on multiple factors such as array geometry, source sound type and source position. Mathematical derivations of accuracy are intensive and specific to a fixed geometry, as are manual calibration experiments. Estimating tracking accuracy with simulated audio, provides a reliable and fast compromise. Characterising tracking accuracy is important in the planning phase of an experiment, or post-data collection. However, to my knowledge, there are no publicly available tools that allow a user to generate multi-channel data of simulated arrays and sounds.
 
-Aside from the `hardware' issues of placing and planning microphone arrays, certain issues have also remained in the analysis of echolocation data. Many studies still use manual mesurements. Manual measurements are intuitive and yet susceptible to bias. For instance, spectrograms based measurements of acoustic parameters are heavily influenced by experimenter expectations \citep{brummspecmanual}. A majority of studies nowadays use automated methods to quantify call parameters in the form of inhouse-scripts, whose implementation is only briefly described in the associated publication. Descriptions are subject to interpretation and description-derived code implementations lead to differing scientific results \citep{bakervincent2019, mcfee2018open}. There is a strong need for a culture of openly shared, well-documented code in echolocation.
+Aside from the `hardware' issues of placing and planning microphone arrays, certain issues have also remained in the analysis of echolocation data. Many studies still use manual mesurements. Manual measurements are intuitive and yet susceptible to bias. For instance, spectrograms based measurements of acoustic parameters are heavily influenced by experimenter expectations \citep{brumm2017measurement}. A majority of studies nowadays use automated methods to quantify call parameters in the form of inhouse-scripts, whose implementation is only briefly described in the associated publication. Descriptions are subject to interpretation and description-derived code implementations lead to differing scientific results \citep{bakervincent2019, mcfee2018open}. There is a strong need for a culture of openly shared, well-documented code in echolocation.
 
 \hypertarget{thesis-outline}{%
 \section{Thesis outline}\label{thesis-outline}}
@@ -844,7 +840,7 @@ interpolated dataset (red line). The error between the data and our interpolatio
 
 This chapter is a manuscript under preparation:
 
-\emph{Neetash M. Rajagopalachari\(^{*}\), Thejasvi Beleyur\(^{*}\), Aditya Krishna, Holger R Goerlitz, (2021) High duty-cycle bats in the field do not alter echolocation calls when flying in groups}
+\emph{Neetash Mysuru\(^{*}\), Thejasvi Beleyur\(^{*}\), Aditya Krishna, Holger R Goerlitz, (2021) High duty-cycle bats in the field do not alter echolocation calls when flying in groups}
 
 \emph{\(^{*}\): joint first authors}
 
@@ -986,126 +982,31 @@ We measured 13 acoustic parameters of the initial and terminal frequency-modulat
 
 Our `whole dataset' results somewhat matched the results from the `clustered' and `isolated' subsets (SI \ref{subsetsindcall}). Median CF duration differed by \textasciitilde3ms in both isolated and clustered subsets, while iFM and tFM median durations differed by \textasciitilde{} 0.1ms. The spectral parameters (CF peak frequency, tFM bandwidth, i/tFM lower frequency) differed in the magnitude of difference across the `clustered' and `isolated' subsets. If pseudo-replication was not a major concern, we expect the results of the isolated and clustered datasets to match. The observed deviations imply that pseudo-replication may have been a concern however. Before reaching this conclusion, it is important to consider the severe drop in sample size in the isolated data subset as a possible cause for the deviation in trends across parameters. In the isolated subset, \(N_{multi}\) = 5 calls, in contrast to the much higher \(N_{single}\)=53. The severe drop in sample size in the `isolated' data set and the different trends in the spectral parameters make it hard to conclude whether pseudo-replication has played a major role in the individual call analysis.
 
-\begin{verbatim}
-## 
-## Attaching package: 'flextable'
-\end{verbatim}
-
-\begin{verbatim}
-## The following objects are masked from 'package:kableExtra':
-## 
-##     as_image, footnote
-\end{verbatim}
-
-\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\setlength{\tabcolsep}{8pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-\begin{table}
-
-\centering
-
-\begin{longtable}{|p{2.55in}|p{1.85in}|p{1.87in}}
-
-\caption{\label{tab:alldataindcall} *Difference between multi and single bat call parameters. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.*}\label{tab:alldataindcall}\\
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Measurement}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference (Multi-Single)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}
-
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:alldataindcall} Difference between multi and single bat call parameters. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.}\tabularnewline
+\toprule
+Measurement & Difference (Multi-Single) & Permutation test p-value\tabularnewline
+\midrule
 \endfirsthead
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Measurement}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference (Multi-Single)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}\endhead
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-2.95}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.003}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.14}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.16}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.04}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.7}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF peak frequency (range kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.18}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM lower frequency (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.03}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.29}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM lower frequency (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.07}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.24}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.48}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.2}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-3.15}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.01}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.66}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.32}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM-CF ratio (median dB)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.08}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.16}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM-CF ratio (median dB)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.25}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.75}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM bandwidth (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.83}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.12}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM bandwidth (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.27}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.82}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}
-
+\toprule
+Measurement & Difference (Multi-Single) & Permutation test p-value\tabularnewline
+\midrule
+\endhead
+CF duration (median ms) & -2.95 & 0.003\tabularnewline
+tFM duration (median ms) & 0.14 & 0.16\tabularnewline
+iFM duration (median ms) & -0.04 & 0.7\tabularnewline
+CF peak frequency (range kHz) & -1 & 0.18\tabularnewline
+tFM lower frequency (median kHz) & -1.03 & 0.29\tabularnewline
+iFM lower frequency (median kHz) & 1.07 & 0.24\tabularnewline
+CF level (median dB RMS) & -1.48 & 0.2\tabularnewline
+tFM level (median dB RMS) & -3.15 & 0.01\tabularnewline
+iFM level (median dB RMS) & -1.66 & 0.32\tabularnewline
+tFM-CF ratio (median dB) & -1.08 & 0.16\tabularnewline
+iFM-CF ratio (median dB) & 0.25 & 0.75\tabularnewline
+tFM bandwidth (median kHz) & 1.83 & 0.12\tabularnewline
+iFM bandwidth (median kHz) & 0.27 & 0.82\tabularnewline
+\bottomrule
 \end{longtable}
-
-\end{table}
 
 \hypertarget{windowed-call-analysis-1}{%
 \subsection{Windowed call analysis}\label{windowed-call-analysis-1}}
@@ -1436,115 +1337,31 @@ iFM bandwidth (kHz) & 2.94-17.98 & 3.49-17.97\tabularnewline
 
 All individual calls from annotations that are less than 1 minute away from adjacent annotations are included in this subset. \(N_{single}\)=124, \(N_{multi}\)=44.
 
-\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\setlength{\tabcolsep}{8pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-\begin{table}
-
-\centering
-
-\begin{longtable}{|p{2.55in}|p{1.85in}|p{1.87in}}
-
-\caption{\label{tab:indcallclustered}*Difference between multi and single bat call parameters using the clustered data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.*}\label{tab:indcallclustered}\\
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Measurement}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference (Multi-Single)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}
-
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:indcallclustered} Difference between multi and single bat call parameters using the clustered data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.}\tabularnewline
+\toprule
+Measurement & Difference (Multi-Single) & Permutation test p-value\tabularnewline
+\midrule
 \endfirsthead
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Measurement}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference (Multi-Single)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}\endhead
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-2.71}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.01}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.17}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.09}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.06}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.69}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF peak frequency (range kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-2.32}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.002}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM lower frequency (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.15}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.89}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM lower frequency (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.78}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.46}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.36}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.22}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-2.22}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.07}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.001}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.94}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM-CF ratio (median dB)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.24}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.16}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM-CF ratio (median dB)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.47}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.35}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM bandwidth (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.06}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.43}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM bandwidth (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.1}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.94}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}
-
+\toprule
+Measurement & Difference (Multi-Single) & Permutation test p-value\tabularnewline
+\midrule
+\endhead
+CF duration (median ms) & -2.71 & 0.01\tabularnewline
+tFM duration (median ms) & 0.17 & 0.09\tabularnewline
+iFM duration (median ms) & -0.06 & 0.69\tabularnewline
+CF peak frequency (range kHz) & -2.32 & 0.002\tabularnewline
+tFM lower frequency (median kHz) & -0.15 & 0.89\tabularnewline
+iFM lower frequency (median kHz) & 0.78 & 0.46\tabularnewline
+CF level (median dB RMS) & -1.36 & 0.22\tabularnewline
+tFM level (median dB RMS) & -2.22 & 0.07\tabularnewline
+iFM level (median dB RMS) & -0.001 & 0.94\tabularnewline
+tFM-CF ratio (median dB) & -1.24 & 0.16\tabularnewline
+iFM-CF ratio (median dB) & 0.47 & 0.35\tabularnewline
+tFM bandwidth (median kHz) & 1.06 & 0.43\tabularnewline
+iFM bandwidth (median kHz) & -0.1 & 0.94\tabularnewline
+\bottomrule
 \end{longtable}
-
-\end{table}
 
 \hypertarget{isolated-data-subset-results}{%
 \subsubsection{`Isolated' data subset results}\label{isolated-data-subset-results}}
@@ -1553,115 +1370,31 @@ All individual calls from annotations that are more than or equal to 1 minute aw
 
 The low sample size of the multi-bat calls must be kept in mind while interpreting the results in Table 2 cautiously.
 
-\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\setlength{\tabcolsep}{8pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-\begin{table}
-
-\centering
-
-\begin{longtable}{|p{2.55in}|p{1.85in}|p{1.87in}}
-
-\caption{\label{tab:isolatedindcall}*Difference between multi and single bat call parameters using the isolated data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.*}\label{tab:isolatedindcall}\\
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Measurement}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference (Multi-Single)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}
-
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:isolatedindcall} Difference between multi and single bat call parameters using the isolated data subset. The median difference is reported for all parameters except CF peak frequency, where the difference in range is reported.}\tabularnewline
+\toprule
+Measurement & Difference (Multi-Single) & Permutation test p-value\tabularnewline
+\midrule
 \endfirsthead
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Measurement}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference (Multi-Single)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}\endhead
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-3.93}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.24}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.05}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.88}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM duration (median ms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.1}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.82}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF peak frequency (range kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-4.08}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}<10e-4}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM lower frequency (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-3.84}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.16}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM lower frequency (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-3.46}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.32}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}CF level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.78}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.82}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.94}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.59}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM level (median dB RMS)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-3.21}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.32}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM-CF ratio (median dB)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.55}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.82}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM-CF ratio (median dB)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.58}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.36}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}tFM bandwidth (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}4.01}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.17}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.55in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}iFM bandwidth (median kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.85in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.58}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.87}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-3}
-
+\toprule
+Measurement & Difference (Multi-Single) & Permutation test p-value\tabularnewline
+\midrule
+\endhead
+CF duration (median ms) & -3.93 & 0.24\tabularnewline
+tFM duration (median ms) & 0.05 & 0.88\tabularnewline
+iFM duration (median ms) & -0.1 & 0.82\tabularnewline
+CF peak frequency (range kHz) & -4.08 & 0\tabularnewline
+tFM lower frequency (median kHz) & -3.84 & 0.16\tabularnewline
+iFM lower frequency (median kHz) & -3.46 & 0.32\tabularnewline
+CF level (median dB RMS) & -0.78 & 0.82\tabularnewline
+tFM level (median dB RMS) & -1.94 & 0.59\tabularnewline
+iFM level (median dB RMS) & -3.21 & 0.32\tabularnewline
+tFM-CF ratio (median dB) & -0.55 & 0.82\tabularnewline
+iFM-CF ratio (median dB) & -1.58 & 0.36\tabularnewline
+tFM bandwidth (median kHz) & 4.01 & 0.17\tabularnewline
+iFM bandwidth (median kHz) & 0.58 & 0.87\tabularnewline
+\bottomrule
 \end{longtable}
-
-\end{table}
 
 \hypertarget{subsetswincall}{%
 \subsection{Temporal subsets: windowed call analysis}\label{subsetswincall}}
@@ -1669,144 +1402,48 @@ The low sample size of the multi-bat calls must be kept in mind while interpreti
 \hypertarget{clustered-subset-results}{%
 \subsubsection{Clustered subset results}\label{clustered-subset-results}}
 
-\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
+The median difference in dominant frequency range of multi-bat vs single-bat was : 2.38 (\emph{p}-value=\textless10\(^{-4}\) )
+The median difference in dominant frequency range of multi-bat vs virtual-multi-bat was : 0.66 (\emph{p}-value=0.0876 )
 
-\setlength{\tabcolsep}{8pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-\begin{table}
-
-\centering
-
-\begin{longtable}{|p{2.42in}|p{0.91in}|p{1.87in}|p{2.07in}|p{2.16in}|p{1.36in}}
-
-\caption{\label{tab:clustered} *Difference in window parameters  in clustered annotations between single and multi-bat audio.* $Nfiles_{single}$= 176 , $Nfiles_{multi}=$ 79 , $Nfiles_{multi \:virtual}=$ 83}\label{tab:clustered}\\
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Parameter}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Median difference (2.5\%ile)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Median difference (97.5\%ile)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}comparison}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-6}
-
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:clustered} Difference in window parameters in clustered annotations between single and multi-bat audio.* \(Nfiles_{single}\)= 176 , \(Nfiles_{multi}=\) 79 , \(Nfiles_{multi \:virtual}=\) 83}\tabularnewline
+\toprule
+Parameter & \(\Delta\)median, 2.5-97.5\(\%\)ile & Comparison\tabularnewline
+\midrule
 \endfirsthead
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Parameter}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Median difference (2.5\%ile)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Median difference (97.5\%ile)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}comparison}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-6}\endhead
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Dominant frequency range (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}2.38}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.000}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-single}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Received level (dB rms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.20}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.52}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-single}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Terminal FM frequency (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.98}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.46}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-single}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Dominant frequency range (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.66}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.088}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-virtual multi}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Received level (dB rms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.77}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}2.28}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-virtual multi}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Terminal FM frequency (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.95}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.98}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-virtual multi}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-6}
-
+\toprule
+Parameter & \(\Delta\)median, 2.5-97.5\(\%\)ile & Comparison\tabularnewline
+\midrule
+\endhead
+Received level (dB rms) & -1.2-1.52 & multi-single\tabularnewline
+Terminal FM frequency (kHz) & -0.98-1.46 & multi-single\tabularnewline
+Received level (dB rms) & -0.77-2.28 & multi-virtual multi\tabularnewline
+Terminal FM frequency (kHz) & -1.95-0.98 & multi-virtual multi\tabularnewline
+\bottomrule
 \end{longtable}
-
-\end{table}
 
 \hypertarget{isolated-subset-results}{%
 \subsubsection{Isolated subset results}\label{isolated-subset-results}}
 
-\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
+The median difference in dominant frequency range of multi-bat vs single-bat was : 1.665 (\emph{p}-value=\textless10\(^{-4}\) )
+The median difference in dominant frequency range of multi-bat vs virtual-multi-bat was : -0.055 (\emph{p}-value=0.9504 )
 
-\setlength{\tabcolsep}{8pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-\begin{table}
-
-\centering
-
-\begin{longtable}{|p{2.42in}|p{0.91in}|p{1.87in}|p{2.07in}|p{2.16in}|p{1.36in}}
-
-\caption{\label{tab:isolated} *Difference in window parameters  in isolated annotations between single and multi-bat audio.* $Nfiles_{single}$= 57 , $Nfiles_{multi}=$ 8 , $Nfiles_{multi \:virtual}=$ 83}\label{tab:isolated}\\
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Parameter}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Median difference (2.5\%ile)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Median difference (97.5\%ile)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}comparison}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-6}
-
+\begin{longtable}[]{@{}lll@{}}
+\caption{\label{tab:isolated} \label{tab:isolated} \emph{Difference in window parameters in isolated annotations between single and multi-bat audio.} \(Nfiles_{single}\)= 57 , \(Nfiles_{multi}=\) 8 , \(Nfiles_{multi \:virtual}=\) 83}\tabularnewline
+\toprule
+Parameter & \(\Delta\)median, 2.5-97.5\(\%\)ile & Comparison\tabularnewline
+\midrule
 \endfirsthead
-
-\hhline{>{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{000000}\global\arrayrulewidth=2pt}-}
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Parameter}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Difference}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Permutation test p-value}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Median difference (2.5\%ile)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Median difference (97.5\%ile)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}comparison}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-6}\endhead
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Dominant frequency range (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.665}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.00}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-single}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Received level (dB rms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.9}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}3.3}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-single}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Terminal FM frequency (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-4.2}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.7}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-single}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Dominant frequency range (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.055}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.95}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-virtual multi}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Received level (dB rms)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-2.2}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}2.9}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-virtual multi}}} \\
-
-
-
-
-
-\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 2.42in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}Terminal FM frequency (kHz)}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.91in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 1.87in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.07in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-4.2}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 2.16in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.9}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 1.36in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{13}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}multi-virtual multi}}} \\
-
-\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{000000}\cline{1-6}
-
+\toprule
+Parameter & \(\Delta\)median, 2.5-97.5\(\%\)ile & Comparison\tabularnewline
+\midrule
+\endhead
+Received level (dB rms) & -1.88-3.29 & multi-single\tabularnewline
+Terminal FM frequency (kHz) & -4.15-1.71 & multi-single\tabularnewline
+Received level (dB rms) & -2.23-2.89 & multi-virtual multi\tabularnewline
+Terminal FM frequency (kHz) & -4.15-1.95 & multi-virtual multi\tabularnewline
+\bottomrule
 \end{longtable}
-
-\end{table}
 
 \hypertarget{simdomfreqranges}{%
 \subsection{Calculating expected dominant frequency ranges due to Doppler shift}\label{simdomfreqranges}}
@@ -2053,7 +1690,7 @@ TB: conception, experiment design, field data collection. HRG: conception, exper
 \hypertarget{acknowledgements-3}{%
 \section{Acknowledgements}\label{acknowledgements-3}}
 
-We would like to thank Antoniya Hubancheva, for her constant help and support in the collection of the \emph{Ushichka} dataset (also for christening the dataset with its Bulgarian name) and the Tabachka field crew of 2018. The electronics (Markus Abels, Hannes Sagunsky, Reinhard Biller) and Feinmechanik (Erich Koch, Felix Hartl, Klaus Pichler) teams were of invaluable help and support all through the process of experimental setup design and troubleshooting. We would like to thank Pranav Khandelwal for extensive help setting up the thermal camera calibration workflow and Hedrick Tyson for providing helpful feedback and estimating camera parameters. Fieldwork-wise, we are grateful to Joanna Furmankiewicz for supporting initial recordings at the Jaskinia Niedźwiedzia and Diane Theriault for providing advice on thermal cameras. Special thanks and acknowledgement to the field assistance of Aditya Krishna and Neetash MR, without whom the data collection would not have been possible. T.B. was funded by a doctoral fellowship from the German Academic Exchange Service (DAAD) and the International Max Planck Research School for Organismal Biology. H.R.G. was funded by the Emmy Noether program of the German Research Foundation (DFG, GO 2091/2-1, GO 2091/2-2). We would like to thank the members of the Acoustic and Functional Ecology groups and the Max Planck Institute for Ornithology, Seewiesen for its support and infrastructure.
+We would like to thank Antoniya Hubancheva, for her constant help and support in the collection of the \emph{Ushichka} dataset (also for christening the dataset with its Bulgarian name) and the Tabachka field crew of 2018. The electronics (Markus Abels, Hannes Sagunsky, Reinhard Biller) and Feinmechanik (Erich Koch, Felix Hartl, Klaus Pichler) teams were of invaluable help and support all through the process of experimental setup design and troubleshooting. We would like to thank Pranav Khandelwal for extensive help setting up the thermal camera calibration workflow and Hedrick Tyson for providing helpful feedback and estimating camera parameters. Fieldwork-wise, we are grateful to Joanna Furmankiewicz for supporting initial recordings at the Jaskinia Niedźwiedzia and Diane Theriault for providing advice on thermal cameras. Special thanks and acknowledgement to the field assistance of Aditya Krishna and Neetash Mysuru, without whom the data collection would not have been possible. T.B. was funded by a doctoral fellowship from the German Academic Exchange Service (DAAD) and the International Max Planck Research School for Organismal Biology. H.R.G. was funded by the Emmy Noether program of the German Research Foundation (DFG, GO 2091/2-1, GO 2091/2-2). We would like to thank the members of the Acoustic and Functional Ecology groups and the Max Planck Institute for Ornithology, Seewiesen for its support and infrastructure.
 
 \hypertarget{ushichkasi}{%
 \section{Supplementary Information}\label{ushichkasi}}
