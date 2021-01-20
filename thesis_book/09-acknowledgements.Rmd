@@ -30,7 +30,10 @@ And finally, I would not be here without all the bats flying through the night i
 # \foreignlanguage{bulgarian}{Благодаря},  \foreignlanguage{kannada}{ಧನ್ಯವಾದಗಳು}.
 ```
 
-To everyone and everything mentioned above, and especially to all those who I have not specifically mentioned, including you my reader - I convey my gratitude: thank you, Danke, <TOCOMPLETE><TOCOMPLETE>
+To everyone and everything mentioned above, and especially to all those who I have not specifically mentioned, including you my reader - I convey my gratitude: thank you, Danke, blagodarya, dhanyavAdagaLu, 
+
+inti nimma, 
+           Thejasvi (January 20, 2021)
 
 
 ```{r, include=FALSE}
