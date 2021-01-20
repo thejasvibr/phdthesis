@@ -13,3 +13,6 @@ Chapter 5: TB initiated the inter-disciplinary collaboration, carried out field 
 Chapter 6: TB wrote the code, analysed data, presented results and wrote the manuscript.
 
 Chapter 7: TB wrote the code, analysed data, presented results and wrote the manuscript.
+
+
+This thesis was made using the ```rbookdown``` package [@rbookdownpkg].
